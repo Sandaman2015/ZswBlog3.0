@@ -1,0 +1,469 @@
+video {
+    position: fixed;
+    /* position: relative; */
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+    /*灰色调*/
+    /*-webkit-filter:grayscale(100%)*/
+  }
+  .warp-content {
+    background-color: #faf9f9;
+  }
+  .content-middle {
+    width: 980px;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: touch;
+  }
+  .content-back {
+    height: 350px;
+    text-align: center;
+    background: url("https://singleblog.oss-cn-beijing.aliyuncs.com/images/index-content.jpg");
+  }
+  .content-back h2 {
+    width: 400px;
+    margin: 0 auto;
+  }
+  /* 公共区域 */
+  .introduce {
+    font-size: 34px;
+    margin-bottom: 25px;
+  }
+  .left {
+    float: left;
+  }
+  .clear::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .center {
+    text-align: center;
+  }
+  .w3 {
+    width: 33.33%;
+  }
+  .w10 {
+    width: 100%;
+  }
+  /* 打字机特效 */
+  .title-h {
+    font-size: 1.8rem;
+    margin-bottom: 5%;
+    font-weight: normal;
+    letter-spacing: 0.3rem;
+    /*padding-left: 29.2%;*/
+    -webkit-animation: type 10s steps(50, end) forwards;
+    animation: type 10s steps(50, end) forwards;
+  }
+  .typing {
+    text-align: center;
+    color: black;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  @-webkit-keyframes type {
+    from {
+      width: 0;
+    }
+  }
+  
+  @keyframes type {
+    from {
+      width: 0;
+    }
+  }
+  /* 关于我-更多 */
+  .about-me {
+    text-align: center !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .about-me > h3 {
+    color: #333;
+    font-size: 2.5em;
+    font-weight: 600;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+  }
+  .about-me > p {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 16px;
+    color: #777;
+    line-height: 1.9em;
+    letter-spacing: 1px;
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
+  }
+  .about-me > a {
+    cursor: pointer;
+    color: #fff;
+    background-color: #1e9fff;
+    border-color: #007bff;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+  }
+  /* 文章列表 */
+  .articles {
+    padding: 50px 0;
+  }
+  .articles-content:after {
+    padding: 20px 0;
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .content-middle article {
+    width: 280px;
+    overflow: hidden;
+    background: #f6f6f6;
+    box-sizing: border-box;
+    padding: 0 15px 25px;
+    float: left;
+    margin: 5px 20px;
+  }
+  article a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #535353;
+    text-decoration: none;
+  }
+  article:hover {
+    transition: 0.5s;
+    -ms-transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    transform: translateY(-10px);
+    z-index: 1002;
+    position: relative;
+    left: 0;
+  }
+  article > a:hover::after {
+    height: 10px;
+  }
+  article > a::after {
+    content: "";
+    width: 280px;
+    position: absolute;
+    background: #67c23a;
+    bottom: 0;
+    height: 0;
+    transition: height 0.3s linear;
+  }
+  article .imgBox {
+    width: 280px;
+    height: 186.67px;
+    overflow: hidden;
+  }
+  article .imgBox img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s linear;
+  }
+  article:hover img {
+    transform: scale(1.15);
+  }
+  article:hover .source {
+    background: #1ccfc9;
+    border-color: #1ccfc9;
+    color: #000;
+  }
+  article .source {
+    border: 1px solid #535353;
+    padding: 6px 20px;
+    border-radius: 25px;
+    margin: 20px;
+  }
+  article .title {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  article .detail {
+    font-size: 14px;
+    line-height: 160%;
+    text-align: justify;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  /* 背景图片区域 */
+  .content-back {
+    position: relative;
+  }
+  
+  .content-back > h2 {
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 16px;
+    color: #777;
+    line-height: 1.9em;
+    letter-spacing: 1px;
+  }
+  /* 留言列表 */
+  .messages {
+    padding: 50px 0;
+  }
+  .message-list {
+    height: 300px;
+  }
+  .message-list h2 {
+    width: 100px;
+    margin: 0 auto;
+    font-family: "微软雅黑";
+    font-weight: normal;
+  }
+  .ols-card {
+    width: 100% !important;
+    height: 230px;
+    border-top: #1e9fff solid 1px;
+    box-shadow: 0 0 2px 2px rgba(204, 204, 223, 0.5);
+    background: transparent;
+    margin-bottom: 10px;
+  }
+  .ols-header,
+  .ols-body {
+    float: left;
+    margin: 0 15px;
+    width: 100%;
+  }
+  .ols-header {
+    margin: 30px 0;
+    margin-left: 20px;
+  }
+  .ols-desc-img {
+    border-radius: 50%;
+    width: 65px !important;
+    height: 65px;
+    float: left;
+  }
+  .ols-desc-name {
+    float: left;
+    display: block;
+    padding-top: 14px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #444;
+    font-weight: 300;
+  }
+  .ols-body {
+    width: 250px;
+    height: 100px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .ols-body p {
+    text-indent: 2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .ols-body button {
+    margin-top: 15px;
+    margin-left: 3em;
+  }
+  /* 数字转动css */
+  .product-number-info {
+    position: relative;
+    background-color: #292929;
+  }
+  .product-number-inner {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .product-number-info ul.q::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .product-number-info ul {
+    padding: 85px 0;
+  }
+  .product-number-info li:first-child {
+    border: none;
+  }
+  .product-number-info li {
+    float: left;
+    width: 239px;
+    height: 90px;
+    border-left: 1px solid #3c3c3c;
+    color: #fff;
+    padding-top: 1px;
+  }
+  .product-number-info li {
+    color: #fff;
+  }
+  .product-number-info li b {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1;
+    display: inline-block;
+    position: relative;
+    margin: 15px 0 10px;
+  }
+  .product-number-info li:not(:first-child) b,
+  .product-number-info li:not(:first-child) p {
+    padding-left: 70px;
+  }
+  .product-number-info li b sup {
+    position: absolute;
+    font-size: 20px;
+    right: -15px;
+    top: -3px;
+  }
+  /* 底部区域 */
+  .footer {
+    position: static !important;
+  }
+  .footer .footer-top {
+    padding-top: 39px;
+    padding: 60px 0 90px;
+  }
+  .footer .single-widget {
+    margin-top: 30px;
+  }
+  .footer .single-widget h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .footer .footer-logo {
+    margin-bottom: 20px;
+  }
+  .footer .button {
+    margin-top: 20px;
+  }
+  .footer .button .btn {
+    cursor: pointer;
+    color: #fff;
+    background-color: #1e9fff;
+    border-color: #007bff;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+  }
+  .footer .social-icon li {
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  .footer .social-icon li a {
+    color: #000;
+  }
+  .footer .social-icon li a i {
+    margin-right: 10px;
+    width: 20px;
+    font-size: 16px;
+  }
+  .footer .social-icon li a:hover {
+    color: #82b440;
+  }
+  .footer .container {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .footer .contact ul li {
+    position: relative;
+    padding-left: 40px;
+    font-family: Roboto, sans-serif;
+    margin-bottom: 10px;
+  }
+  .footer .contact ul li i {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    left: 0;
+    margin-top: -15px;
+    font-size: 16px;
+  }
+  .footer .copyright {
+    padding: 12px 0;
+    background: #1d1d21;
+  }
+  .footer .copyright p {
+    font-size: 14px;
+    color: #eee;
+  }
+  @media only screen and (max-width: 475px) {
+    #v1 {
+      display: none;
+    }
+    .wrapper {
+      background: url("https://singleblog.oss-cn-beijing.aliyuncs.com/images/bg_index.jpg")
+        no-repeat fixed center !important;
+      background-position: 50% 50% !important;
+      background-size: 100% 100% !important;
+      background-attachment: fixed !important;
+    }
+  }
