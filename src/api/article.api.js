@@ -1,4 +1,4 @@
-import request from './request' // 引入axios的封装方法
+import request from '../utils/request'
 // 分页获取文章信息
 export const getArticlesByPage = (limit, pageIndex, params) => {
   return request('get', `/Whisper/GetArticlesByPage?limit=${limit}&pageIndex=${pageIndex}`, params)

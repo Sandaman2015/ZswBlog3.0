@@ -10,7 +10,7 @@ Vue.use(ElementUI);
 
 // 轮播组件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/swiper.scss'
+import 'swiper/swiper-bundle.css'
 Vue.use(VueAwesomeSwiper);
 
 // Vue分享功能

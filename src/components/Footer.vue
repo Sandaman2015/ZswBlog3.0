@@ -80,8 +80,8 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/css/font-awesome.min.css";
-@import "../assets/css/footer.css";
+@import "@/assets/css/font-awesome.min.css";
+@import "@/assets/css/footer.css";
 .footer-wrap {
   background-color: white;
 }

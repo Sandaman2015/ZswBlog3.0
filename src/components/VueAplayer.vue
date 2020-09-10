@@ -20,7 +20,7 @@
 <script>
 import axios from "axios";
 import Aplayer from "vue-aplayer";
-import { getTop30MusicList,getAllMusicList } from "../../static/js/api/common.api";
+import { getTop30MusicList,getAllMusicList } from "@/api/common.api";
 export default {
   components: {
     Aplayer

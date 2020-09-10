@@ -1,4 +1,4 @@
-import request from './request'
+import request from '../utils/request'
 //获取所有评论
 export const getAllComment = (articleId, limit, pageIndex, params) => {
   return request('get', `/Details/GetCommentsByPage?articleId=${articleId}&limit=${limit}&pageIndex=${pageIndex}`, params)

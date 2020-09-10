@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import emojiJson from "../assets/data/emoji.json";
-import emojiJson2 from "../assets/data/emoji2.json";
+import emojiJson from "@/assets/data/emoji.json";
+import emojiJson2 from "@/assets/data/emoji2.json";
 import E from "wangeditor";
 export default {
   name: "editoritem",

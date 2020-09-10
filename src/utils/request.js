@@ -5,6 +5,7 @@ import {
 import {
   Message
 } from 'element-ui'
+import config from '../config/config'
 // 过滤请求
 axios.interceptors.request.use(config => {
   config.timeout = 10 * 1000 // 请求响应时间
@@ -15,6 +16,7 @@ axios.interceptors.request.use(config => {
 }, error => {
   return Promise.reject(error)
 })
+
 // 添加响应拦截器
 axios.interceptors.response.use(
   response => {
@@ -39,18 +41,26 @@ axios.interceptors.response.use(
     return Promise.reject(error)
   }
 )
-export default function request(method, url, data) { // 暴露 request 给我们好API 管理
-  let BaseUrl = API_PATH + url; // 此处地址转换为webpack全局变量地址+请求地址
+// const request = axios.create({
+//   // // 用于将传递的json格式数据改为urlencoded格式
+//   // transformRequest: data => {
+//   //   return formEncode(data)
+//   // }
+// })
+
+export default function request(method, url, data) { // 暴露 request 给我们好API 管理  
+  let baseURL= config.baseUrl+url;
   method = method.toLocaleLowerCase() // 封装RESTful API的各种请求方式 以 post get delete为例
   if (method === 'post') {
-    return axios.post(BaseUrl, data) // axios的post 默认转化为json格式
+    return axios.post(baseURL, data) // axios的post 默认转化为json格式
   } else if (method === 'get') {
-    return axios.get(BaseUrl, {
+    return axios.get(baseURL, {
       params: data
     })
   } else if (method === 'delete') {
-    return axios.delete(BaseUrl, {
+    return axios.delete(baseURL, {
       params: data
     })
   }
 }
+// export default request

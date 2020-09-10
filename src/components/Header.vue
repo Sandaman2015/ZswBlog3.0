@@ -97,11 +97,11 @@
 </template>
 <script>
 import ScrollTop from "./Gotop";
-import $ from "../assets/js/jquery.js";
-import "../assets/js/header.js";
-import "../assets/js/scroll.js";
-import { getQQUserInfo } from "../assets/js/api/login.api";
-import { getCookie, setCookie } from "../assets/js/cookie";
+import $ from "@/assets/js/jquery.js";
+import "@/assets/js/header.js";
+import "@/assets/js/scroll.js";
+import { getQQUserInfo } from "@/api/login.api";
+import { getCookie, setCookie } from "@/assets/js/cookie";
 export default {
   components: {
     "scroll-top": ScrollTop

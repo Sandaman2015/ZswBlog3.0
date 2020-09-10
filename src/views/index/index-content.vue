@@ -180,7 +180,7 @@
           <br />当你以微笑的心想到了过去，以希望的心向前看，以宽厚的心向下看，以坦然的心向上看时，
           <br />你就站在了灵魂的最高处。
         </p>
-        <a href="about.html">Read More+</a>
+        <router-link to="/about">Read More</router-link>
       </div>
       <!-- 热门文章 -->
       <div class="content-middle articles">
@@ -260,9 +260,9 @@
                     :duration="10000"
                   ></countTo>
                 </i>
-                <sup>+</sup>
+                <em>+</em>
               </b>
-              <p>网站浏览数</p>
+              <p>浏览数</p>
             </li>
             <li class="li-2">
               <b>
@@ -327,7 +327,7 @@
                   </div>
                   <p>一名阳光,勇敢,治愈的程序员</p>
                   <div class="button">
-                    <a href="about.html" class="btn">About Me</a>
+                    <router-link to="/about" class="btn">About Me</router-link>
                   </div>
                 </div>
               </div>
@@ -336,29 +336,19 @@
                   <h2>相关链接</h2>
                   <ul class="social-icon">
                     <li class="active">
-                      <a href="whisper.html">
-                        <i class="fa fa-book"></i>所有文章
-                      </a>
+                      <router-link to="/whisper"><i class="fa fa-book"></i>所有文章</router-link>
                     </li>
                     <li class="active">
-                      <a href="leacots.html">
-                        <i class="fa fa-comments"></i>本站留言
-                      </a>
+                       <router-link to="/leacots"><i class="fa fa-comments"></i>本站留言</router-link>
                     </li>
                     <li class="active">
-                      <a href="tags.html">
-                        <i class="fa fa-tags"></i>文章标签
-                      </a>
+                      <router-link to="/tags"><i class="fa fa-tags"></i>文章标签</router-link>
                     </li>
                     <li class="active">
-                      <a href="about.html">
-                        <i class="fa fa-snowflake-o"></i>关于我
-                      </a>
+                      <router-link to="/share"><i class="fa fa-snowflake-o"></i>旅游分享</router-link>
                     </li>
                     <li class="active">
-                      <a href="link.html">
-                        <i class="fa fa-link"></i>友情链接
-                      </a>
+                      <router-link to="/link"><i class="fa fa-link"></i>友情链接</router-link>
                     </li>
                   </ul>
                 </div>
@@ -406,8 +396,7 @@
 import axios from "axios";
 import countTo from "vue-count-to";
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
-import { getInitData } from "../../assets/js/api/index.api.js";
-import "swiper/swiper.scss";
+import { getInitData } from "@/api/index.api.js";
 export default {
   components: { countTo },
   data() {
@@ -420,8 +409,8 @@ export default {
           clickable: true // 允许点击小圆点跳转
         },
         autoplay: {
-          delay: 3000,
-          disableOnInteraction: false // 手动切换之后继续自动轮播
+          delay: 1500,
+          disableOnInteraction: true // 手动切换之后继续自动轮播
         },
         loop: false,
         navigation: {
@@ -429,7 +418,7 @@ export default {
           prevEl: ".swiper-button-prev"
         },
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 25,
         centeredSlides: true
       },
       messageList: [],
@@ -456,7 +445,7 @@ export default {
   created() {
     this.initData();
     axios
-      .get("../../assets/data/indexVideo.json")
+      .get("/data/index-video.json")
       .then(resolve => {
         this.videoSrc = resolve.videosrc;
         this.poster = resolve.poster;
@@ -468,14 +457,14 @@ export default {
   },
   methods: {
     jumpToDetails(index) {
-      window.location.href = "details.html?ArticleDetails=" + index + "";
+      window.location.href = "/details?ArticleDetails=" + index + "";
     },
     async initData() {
       await getInitData().then(e => {
-        this.numberAdd.visitCount = e.dataCount.visit;
         this.numberAdd.runDays = e.dataCount.runDays;
         this.numberAdd.articleCount = e.dataCount.articleCount;
         this.numberAdd.siteTag = e.dataCount.tagsCount;
+        this.numberAdd.visitCount = e.dataCount.visit;
         this.hotArticles = e.articles;
         this.messageList = e.messages;
       });
@@ -484,5 +473,5 @@ export default {
 };
 </script>
 <style scoped>
-@import url("../../assets/css/index/index-content.css");
+@import "../../assets/css/index/index-content.css";
 </style>

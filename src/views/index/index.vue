@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import "../../assets/css/index/nheader.css";
-import "../../assets/css/index/nstyle.css";
-import "../../assets/css/font-awesome.min.css";
-import "../../assets/js/jquery.js"
-import "../../assets/js/page.js"
+import "@/assets/css/index/nheader.css";
+import "@/assets/css/index/nstyle.css";
+import "@/assets/css/font-awesome.min.css";
+import "@/assets/js/jquery.js"
+import "@/assets/js/page.js"
+import ScrollTop from "@/components/Gotop";
 import IndexHeader from "./index-header";
 import IndexContent from "./index-content";
-import ScrollTop from "../../components/Gotop";
 export default {
   components: {
     "index-header": IndexHeader,
@@ -34,7 +34,3 @@ export default {
   }  
 };
 </script>
-
-<style>
-
-</style>

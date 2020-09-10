@@ -1,4 +1,4 @@
-import request from './request'
+import request from '../utils/request'
 
 // 获取所有标签
 export const getAllTags = (params) => {

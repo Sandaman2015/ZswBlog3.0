@@ -1,4 +1,4 @@
-import request from './request'
+import request from '../utils/request'
 //获取所有评论
 export const getAllSiteTag = (params) => {
   return request('get', `/About/GetAllSiteTag`, params)

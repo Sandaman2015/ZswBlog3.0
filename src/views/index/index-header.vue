@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="header"> -->
   <ul class="nav_list">
     <li class="nav_li">
       <a href="javascript:;" class="btn_nav" id="nav_more">
@@ -9,37 +8,40 @@
         <i class="ic_bdot png" id="h_bdot"></i>
         <ul id="h_nav">
           <li>
-            <a href="whisper.html" class="btn_snav">文章</a>
+            <router-link to="/whisper" class="btn_snav">文章</router-link>
           </li>
           <li>
-            <a href="leacots.html" class="btn_snav">留言</a>
+            <router-link to="/leacots" class="btn_snav">留言</router-link>
           </li>
           <li>
-            <a href="link.html" class="btn_snav">友链</a>
+            <router-link to="/link" class="btn_snav">友链</router-link>
           </li>
           <li>
-            <a href="tags.html" class="btn_snav">标签</a>
+            <router-link to="/tags" class="btn_snav">标签</router-link>
+          </li>
+          <li>
+            <router-link to="/share" class="btn_snav">分享</router-link>
           </li>
           <li>
             <i class="ic_sdot png" id="h_sdot"></i>
             <dl class="sub_nav" id="h_subnav">
               <dt>
-                <a href="about.html" class="btn_snav">关于本站</a>
+                <router-link to="/about" class="btn_snav">关于本站</router-link>
               </dt>
               <dd>
-                <a href="about.html?id=1">微标签</a>
+                <router-link to="/about?id=1">微标签</router-link>
               </dd>
               <dd>
-                <a href="about.html?id=2">音乐馆</a>
+                <router-link to="/about?id=2">音乐馆</router-link>
               </dd>
               <dd>
-                <a href="about.html?id=3">时间线</a>
+                <router-link to="/about?id=3">时间线</router-link>
               </dd>
               <dd>
-                <a href="about.html?id=4">生活分享</a>
+                <router-link to="/about?id=4">生活分享</router-link>
               </dd>
               <dd>
-                <a href="about.html?id=5">关于我</a>
+                <router-link to="/whisper?id=5">关于我</router-link>
               </dd>
             </dl>
           </li>
@@ -47,12 +49,11 @@
       </div>
     </li>
   </ul>
-  <!-- </div> -->
 </template>
 
 <script>
-import { getQQUserInfo } from "../../assets/js/api/login.api";
-import { setCookie } from "../../assets/js/cookie";
+import { getQQUserInfo } from "@/api/login.api.js";
+import { setCookie } from "@/assets/js/cookie";
 export default {
   data() {
     return {
