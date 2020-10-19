@@ -188,16 +188,16 @@
         <div class="articles-content">
           <article
             v-for="item in hotArticles"
-            :key="item.articleId"
-            @click="jumpToDetails(item.articleId)"
+            :key="item.id"
+            @click="jumpToDetails(item.id)"
           >
             <a href="javascript:void(0)">
               <div class="imgBox">
                 <img :src="item.articleImage" alt="文章插图" />
               </div>
-              <span class="source">{{item.articleTitle}}</span>
-              <h2 class="title">{{item.articleTime|filterDate}}</h2>
-              <span class="detail" v-html="item.articleContent">{{item.articleContent}}</span>
+              <span class="source">{{item.createDate|filterDate}}</span>
+              <h2 class="title">{{item.title}}</h2>
+              <span class="detail" v-html="item.content">{{item.content}}</span>
             </a>
           </article>
         </div>
@@ -232,12 +232,12 @@
                   <div class="ols-desc-name">
                     {{item.userName}}
                     <br />
-                    <span>{{item.messageDate|filterDate}}</span>
+                    <span>{{item.createDate|filterDate}}</span>
                   </div>
                 </div>
                 <div class="ols-body">
                   留言:
-                  <p class="ols-message-body" v-html="item.message">{{item.message}}</p>
+                  <p class="ols-message-body" v-html="item.content">{{item.content}}</p>
                 </div>
               </div>
             </swiper-slide>
@@ -336,13 +336,13 @@
                   <h2>相关链接</h2>
                   <ul class="social-icon">
                     <li class="active">
-                      <router-link to="/whisper"><i class="fa fa-book"></i>所有文章</router-link>
+                      <router-link to="/article"><i class="fa fa-book"></i>所有文章</router-link>
                     </li>
                     <li class="active">
-                       <router-link to="/leacots"><i class="fa fa-comments"></i>本站留言</router-link>
+                       <router-link to="/message"><i class="fa fa-comments"></i>本站留言</router-link>
                     </li>
                     <li class="active">
-                      <router-link to="/tags"><i class="fa fa-tags"></i>文章标签</router-link>
+                      <router-link to="/category"><i class="fa fa-tags"></i>文章分类</router-link>
                     </li>
                     <li class="active">
                       <router-link to="/share"><i class="fa fa-snowflake-o"></i>旅游分享</router-link>
@@ -442,8 +442,8 @@ export default {
       }
     }
   },
-  created() {
-    this.initData();
+  async created() {
+    await this.initData();
     axios
       .get("/data/index-video.json")
       .then(resolve => {
@@ -461,12 +461,12 @@ export default {
     },
     async initData() {
       await getInitData().then(e => {
-        this.numberAdd.runDays = e.dataCount.runDays;
-        this.numberAdd.articleCount = e.dataCount.articleCount;
-        this.numberAdd.siteTag = e.dataCount.tagsCount;
-        this.numberAdd.visitCount = e.dataCount.visit;
-        this.hotArticles = e.articles;
-        this.messageList = e.messages;
+        this.numberAdd.runDays = Number.parseInt(e.result.dataCount.runDays);
+        this.numberAdd.articleCount = Number.parseInt(e.result.dataCount.articleCount);
+        this.numberAdd.siteTag = Number.parseInt(e.result.dataCount.tagsCount);
+        this.numberAdd.visitCount = Number.parseInt(e.result.dataCount.visitsCount)
+        this.hotArticles = e.result.articles;
+        this.messageList = e.result.messages;
       });
     }
   }
