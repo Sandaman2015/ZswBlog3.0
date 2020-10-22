@@ -193,7 +193,7 @@
           >
             <a href="javascript:void(0)">
               <div class="imgBox">
-                <img :src="item.articleImage" alt="文章插图" />
+                <img :src="item.coverImage" alt="文章插图" />
               </div>
               <span class="source">{{item.createDate|filterDate}}</span>
               <h2 class="title">{{item.title}}</h2>

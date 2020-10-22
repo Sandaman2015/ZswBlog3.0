@@ -2,12 +2,12 @@
   <header class="box">
     <!-- //使用组件 -->
     <scroll-top />
-    <a href="index.html" class="logo hide">ZswBlog</a>
-    <!-- <a href="index.html" class="logo">ZswBlog</a> -->
+    <a href="/index" class="logo hide">ZswBlog</a>
+    <!-- <a href="/index" class="logo">ZswBlog</a> -->
     <nav class="site-nav">
       <ul>
         <li>
-          <a href="index.html">首页</a>
+          <a href="/index">首页</a>
         </li>
         <li>
           <a href="whisper.html">文章</a>
@@ -37,22 +37,21 @@
         </div>
         <div v-else>
           <a
-            href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index.html"
+            href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index"
           >直接点击登录哦！</a>
         </div>
         <a
-          href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index.html"
+          href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index"
           id="qqLogin"
           slot="reference"
         >
           <p id="userId" hidden>{{userId}}</p>
-
           <img :src="userImage" alt="头像" class="userImage" />
         </a>
       </el-popover>
     </div>
     <div class="media-menu">
-      <a href="index.html" class="logo show">ZswBlog</a>
+      <a href="/index" class="logo show">ZswBlog</a>
       <div class="menu">
         <img :src="menu" @click="changeMenu" alt="menu" />
       </div>
@@ -60,35 +59,35 @@
     <div v-if="showMenu" class="mobile-menu">
       <ul>
         <li>
-          <a href="index.html">
-            <img src="../assets/img/index.png" />
+          <a href="/index">
+            <img src="../assets/img/icon-index.png" />
             &nbsp;&nbsp;首页
           </a>
         </li>
         <li>
           <a href="whisper.html">
-            <img src="../assets/img/article.png" />
+            <img src="../assets/img/icon-article.png" />
             &nbsp;&nbsp;文章
           </a>
         </li>
         <li>
           <a href="tags.html">
-            <img src="../assets/img/tag.png" />&nbsp;&nbsp;标签
+            <img src="../assets/img/icon-tag.png" />&nbsp;&nbsp;标签
           </a>
         </li>
         <li>
           <a href="leacots.html">
-            <img src="../assets/img/message.png" />&nbsp;&nbsp;留言
+            <img src="../assets/img/icon-message.png" />&nbsp;&nbsp;留言
           </a>
         </li>
         <li>
           <a href="link.html">
-            <img src="../assets/img/link.png" />&nbsp;&nbsp;友链
+            <img src="../assets/img/icon-link.png" />&nbsp;&nbsp;友链
           </a>
         </li>
         <li>
           <a href="about.html">
-            <img src="../assets/img/about.png" />&nbsp;&nbsp;关于
+            <img src="../assets/img/icon-about.png" />&nbsp;&nbsp;关于
           </a>
         </li>
       </ul>
@@ -97,11 +96,11 @@
 </template>
 <script>
 import ScrollTop from "./Gotop";
-import $ from "@/assets/js/jquery.js";
-import "@/assets/js/header.js";
-import "@/assets/js/scroll.js";
-import { getQQUserInfo } from "@/api/login.api";
-import { getCookie, setCookie } from "@/assets/js/cookie";
+import $ from "../assets/js/jquery";
+import "../assets/js/header";
+import "../assets/js/scroll";
+import { getQQUserInfo } from "../api/login.api";
+import { getCookie, setCookie } from "../assets/js/cookie";
 export default {
   components: {
     "scroll-top": ScrollTop

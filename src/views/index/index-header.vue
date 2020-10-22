@@ -8,7 +8,7 @@
         <i class="ic_bdot png" id="h_bdot"></i>
         <ul id="h_nav">
           <li>
-            <router-link to="/whisper" class="btn_snav">文章</router-link>
+            <router-link to="/article" class="btn_snav">文章</router-link>
           </li>
           <li>
             <router-link to="/leacots" class="btn_snav">留言</router-link>
