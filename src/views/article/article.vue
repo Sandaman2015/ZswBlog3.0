@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import "@/assets/css/font-awesome.min.css";
+import ScrollTop from "@/components/Gotop";
 import Header from "../../components/Header";
 import Content from "./article-content";
 import Footer from "../../components/Footer";
@@ -19,9 +21,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "../../assets/css/article/left-content.css";
-.float {
-  float: left;    
-}
+@import "../../assets/css/article/right-search.css";
 </style>

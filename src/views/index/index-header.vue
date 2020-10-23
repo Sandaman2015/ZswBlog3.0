@@ -11,13 +11,13 @@
             <router-link to="/article" class="btn_snav">文章</router-link>
           </li>
           <li>
-            <router-link to="/leacots" class="btn_snav">留言</router-link>
+            <router-link to="/category" class="btn_snav">分类</router-link>
+          </li>
+          <li>
+            <router-link to="/message" class="btn_snav">留言</router-link>
           </li>
           <li>
             <router-link to="/link" class="btn_snav">友链</router-link>
-          </li>
-          <li>
-            <router-link to="/tags" class="btn_snav">标签</router-link>
           </li>
           <li>
             <router-link to="/share" class="btn_snav">分享</router-link>
@@ -36,9 +36,6 @@
               </dd>
               <dd>
                 <router-link to="/about?id=3">时间线</router-link>
-              </dd>
-              <dd>
-                <router-link to="/about?id=4">生活分享</router-link>
               </dd>
               <dd>
                 <router-link to="/whisper?id=5">关于我</router-link>

@@ -242,9 +242,6 @@ video {
     letter-spacing: 1px;
   }
   /* 留言列表 */
-  .messages {
-    padding: 50px 0;
-  }
   .message-list {
     height: 300px;
   }
@@ -310,7 +307,6 @@ video {
   /* 数字转动css */
   .product-number-info {
     position: relative;
-    background-color: #292929;
   }
   .product-number-inner {
     width: 1200px;
@@ -322,7 +318,7 @@ video {
     display: table;
   }
   .product-number-info ul {
-    padding: 85px 0;
+    padding: 125px 0;
   }
   .product-number-info li:first-child {
     border: none;
@@ -330,7 +326,7 @@ video {
   .product-number-info li {
     float: left;
     width: 239px;
-    height: 90px;
+    height: 80px;
     border-left: 1px solid #3c3c3c;
     color: #fff;
     padding-top: 1px;

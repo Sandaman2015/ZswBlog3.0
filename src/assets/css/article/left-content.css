@@ -347,7 +347,13 @@ hr {
   background: transparent;
   text-decoration: none;
 }
-
+.flat-box:hover{
+    box-shadow: .1em .1em .1em .1em rgba(0,0,0,.6);
+    border-color: rgba(0,225,7,.3);
+}
+.new-meta-item a:hover{
+  font-size: 16px;
+}
 .post:hover {
   box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 8px 0px rgba(0, 0, 0, 0.1),
     0 8px 16px 0px rgba(0, 0, 0, 0.1), 0 16px 32px 0px rgba(0, 0, 0, 0.1);
@@ -359,7 +365,33 @@ hr {
 .layui-btn {
   width: 80px;
 }
-
+.left-articlelist {
+  float: left;
+  width: 860px;
+}
+li {
+  list-style: none;
+}
+.content-body {
+  display: flex;
+}
+.content-body .articleImage {
+  float: left;
+  width: 200px;
+  height: 200px;
+}
+.article-content {
+  height: 165px;
+  width: 620px;
+  margin: 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-indent: 2em;
+  float: left;
+  text-overflow: ellipsis;
+}
 @media screen and (max-width: 475px) {
   #categoryandsearch {
     display: none;

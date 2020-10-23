@@ -32,6 +32,9 @@ NProgress.configure({
 NProgress.start();
 NProgress.done();
 
+/* 通用CSS */
+import "./assets/css/common.css";
+
 // axios请求
 import axios from "axios";
 Vue.prototype.$http = axios;

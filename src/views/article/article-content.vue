@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="warp">
+    <div class="content-warp">
       <v-left :articleList="articleList" :isClassType="isClassType" :categoryId="categoryId" />
       <v-right
         :allClassArticleList="allClassArticleList"
@@ -42,7 +42,7 @@ export default {
       categoryId: null
     };
   },
-  created() {
+  mounted() {
     this.pageLoad();
   },
   methods: {
@@ -82,7 +82,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-/* 通用CSS */
-@import "../../assets/css/common.css";
-</style>

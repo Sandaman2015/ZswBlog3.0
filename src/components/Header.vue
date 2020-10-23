@@ -10,19 +10,22 @@
           <a href="/index">首页</a>
         </li>
         <li>
-          <a href="whisper.html">文章</a>
+          <a href="/article">文章</a>
         </li>
         <li>
-          <a href="tags.html">标签</a>
+          <a href="/category">分类</a>
         </li>
         <li>
-          <a href="leacots.html">留言</a>
+          <a href="/message">留言</a>
         </li>
         <li>
-          <a href="link.html">友链</a>
+          <a href="/link">友链</a>
         </li>
         <li>
-          <a href="about.html">关于</a>
+          <a href="/share">分享</a>
+        </li>
+        <li>
+          <a href="/about">关于</a>
         </li>
       </ul>
     </nav>
@@ -65,28 +68,33 @@
           </a>
         </li>
         <li>
-          <a href="whisper.html">
+          <a href="/article">
             <img src="../assets/img/icon-article.png" />
             &nbsp;&nbsp;文章
           </a>
         </li>
         <li>
-          <a href="tags.html">
+          <a href="/category">
             <img src="../assets/img/icon-tag.png" />&nbsp;&nbsp;标签
           </a>
         </li>
         <li>
-          <a href="leacots.html">
+          <a href="/message">
             <img src="../assets/img/icon-message.png" />&nbsp;&nbsp;留言
           </a>
         </li>
         <li>
-          <a href="link.html">
+          <a href="/link">
             <img src="../assets/img/icon-link.png" />&nbsp;&nbsp;友链
           </a>
         </li>
         <li>
-          <a href="about.html">
+          <a href="/share">
+            <img src="../assets/img/icon-about.png" />&nbsp;&nbsp;分享
+          </a>
+        </li>
+        <li>
+          <a href="/about">
             <img src="../assets/img/icon-about.png" />&nbsp;&nbsp;关于
           </a>
         </li>

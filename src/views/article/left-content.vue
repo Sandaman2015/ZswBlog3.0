@@ -1,6 +1,6 @@
 <template>
   <div class="left-articlelist">
-    <ul class="flow-default" id="LAY_demo1">
+    <ul class="flow-default">
       <li
         v-for="(item,index) in articleList"
         data-wow-delay="0.5s"
@@ -21,7 +21,6 @@
                 href="javascript:void(0)"
                 @click="jumpToDetails(item.id)"
               ></a>
-              <!-- <img class="thumbnail" src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/thumbnail/combat.png"> -->
               <div class="meta" id="header-meta">
                 <h2 class="title">
                   <a
@@ -96,7 +95,7 @@
             </section>
             <!-- 文章详情 -->
             <section class="article typo">
-              <div class="article-entry" itemprop="articleBody">
+              <div class="article-entry">
                 <div class="content-body">
                   <img class="articleImage" :src="item.coverImage" />
                   <p class="article-content" v-html="item.content">{{item.content}}</p>
@@ -118,12 +117,12 @@
                 <a
                   href="javascript:void(0)"
                   rel="nofollow"
-                  v-for="(tags,index) in item.articleTags"
+                  v-for="(tag,index) in item.tags"
                   :key="index"
                 >
                   &nbsp;
                   <i class="fa fa-tag"></i>
-                  &nbsp;{{tags}}
+                  &nbsp;{{tag}}
                 </a>
               </div>
             </section>
@@ -172,7 +171,7 @@ export default {
       return date.substring(0, 10);
     }
   },
-  updated() {
+  created() {
     this.load = false;
     this.loadMoreText = "加载更多";
   },
@@ -245,37 +244,8 @@ export default {
     },
     // 详情跳转
     jumpToDetails(index) {
-      window.location.href = "details.html?ArticleDetails=" + index + "";
+      window.location.href = "/details?ArticleDetails=" + index + "";
     }
   }
 };
 </script>
-<style scoped>
-.left-articlelist {
-  float: left;
-  width: 860px;
-}
-li {
-  list-style: none;
-}
-.content-body {
-  display: flex;
-}
-.content-body .articleImage {
-  float: left;
-  width: 200px;
-  height: 200px;
-}
-.article-content {
-  height: 165px;
-  width: 620px;
-  margin: 0 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-indent: 2em;
-  float: left;
-  text-overflow: ellipsis;
-}
-</style>

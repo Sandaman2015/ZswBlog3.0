@@ -1,5 +1,5 @@
 <template>
-  <div class="right_nav" id="categoryandsearch">
+  <div class="right_nav" id="categoryand-search">
       <!-- 文章搜索 -->
     <div class="nav_serch">
       <label class="search-wrap">
@@ -17,7 +17,7 @@
       </label>
     </div>
     <!-- 文章分类 -->
-    <ul class="category mt20" id="category">
+    <ul class="category mt20">
       <li data-index="0" class="slider" style="top: 0px;"></li>
       <li data-index="1" class v-on:click="GetArticle()">
         <a href="javascript:void(0);">全部文章</a>
@@ -122,12 +122,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-@import "../../assets/css/article/right-search.css";
-.box-active {
-  position: fixed;
-  top: 100px;
-  right: 0;
-  left: 0;
-}
-</style>
