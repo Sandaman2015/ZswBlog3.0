@@ -52,6 +52,11 @@ textarea {
   scroll-behavior: touch;
 }
 
+.w1000 {
+  margin: 0 auto;
+  max-width: 1000px !important;
+}
+
 .inner-content {
   display: -webkit-flex;
   -webkit-overflow-scrolling: touch;

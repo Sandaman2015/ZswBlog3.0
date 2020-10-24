@@ -26,6 +26,7 @@ import {
   getArticleOnVisit,
   getArticleByDimTitle
 } from "../../api/article.api";
+import {getNearUsers} from "../../api/user.api"
 export default {
  components: {
     "v-left": LeftContent,
@@ -61,6 +62,7 @@ export default {
         this.hotLikeArticleList = e.result;
       });
       await getNearUsers().then(e => {
+        console.log(e.result);
         this.guestList = e.result;
       });
     },

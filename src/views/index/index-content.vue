@@ -1,178 +1,14 @@
 <template>
   <div class="wrapContent">
-    <div class="warp-header">
-      <video
-        id="v1"
-        autoplay
-        ref="localVideo"
-        loop
-        style="width: 100%"
-        :src="videoSrc"
-        :poster="poster"
-      ></video>
-      <div id="wrap">
-        <div class="wrapper">
-          <div class="product_list" id="product_list">
-            <div class="product_box shoulei show">
-              <div class="bg_box">
-                <!-- <img :src="img1" /> -->
-              </div>
-              <div class="content">
-                <div class="main_box">
-                  <h2 class="hide_txt png"></h2>
-                  <a
-                    href="#"
-                    class="btn_product"
-                    title="Pursue yourself and become more perfect！ 追求自我，成为更完美！"
-                  >
-                    Pursue
-                    yourself and become more perfect！ 追求自我，成为更完美！
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="product_box xnet">
-              <div class="bg_box">
-                <!-- <img :src="img2" /> -->
-              </div>
-              <div class="content">
-                <div class="main_box">
-                  <h2 class="hide_txt png"></h2>
-                  <a
-                    href="#"
-                    class="btn_product"
-                    title="Maybe it was better to just really enjoy life.
-            享受生活，顺其自然。"
-                  >
-                    Maybe it was better to just really enjoy life.
-                    享受生活，顺其自然。
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="product_box member">
-              <div class="bg_box">
-                <!-- <img :src="img3" /> -->
-              </div>
-              <div class="content">
-                <div class="main_box">
-                  <h2 class="hide_txt png"></h2>
-                  <a
-                    href="#"
-                    class="btn_product"
-                    title=" Above all, we should first be kind, then honest, and then never forget each other.最要紧的是，我们首先应该善良，其次要诚实，再其次是以后永远不要相互遗忘。"
-                  >
-                    Above all, we should first be kind, then honest, and then never forget each other.
-                    最要紧的是，我们首先应该善良，其次要诚实，再其次是以后永远不要相互遗忘。
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="product_box xkn">
-              <div class="bg_box">
-                <!-- <img :src="img4" /> -->
-              </div>
-              <div class="content">
-                <div class="main_box">
-                  <h2 class="hide_txt png"></h2>
-                  <a
-                    href="#"
-                    class="btn_product"
-                    title="All the longevity in this world is due to intentions.这世上所有的久处不厌，都是因为用心。"
-                  >
-                    Allthe longevity in this world is due to intentions.
-                    这世上所有的久处不厌，都是因为用心。
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="product_box xav">
-              <div class="bg_box">
-                <!-- <img :src="img5" /> -->
-              </div>
-              <div class="content">
-                <div class="main_box">
-                  <h2 class="hide_txt png"></h2>
-                  <a
-                    href="#"
-                    class="btn_product"
-                    title="Years are quiet, from youth to dusk, only affectionate hoary head.岁月静好，从年少到暮夕，唯有深情共白头。"
-                  >
-                    Years are quiet, from youth to dusk, only affectionate hoary head.
-                    岁月静好，从年少到暮夕，唯有深情共白头。
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product_btns" id="product_btns">
-            <div class="content">
-              <div class="btns_area">
-                <div class="btns_box" id="control_box">
-                  <a
-                    href="#"
-                    class="btn_ipr btn_shoulei cur"
-                    title="追求自我，成为更完美！Pursue yourself and become more perfect"
-                  >
-                    <span
-                      class="ic_shoulei hide_txt png"
-                    >追求自我，成为更完美！Pursue yourself and become more perfect</span>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn_xnet"
-                    title="Maybe it was better to just really enjoy life.
-            享受生活，顺其自然。"
-                  >
-                    <span class="ic_xnet hide_txt png">
-                      Maybe it was better to just really enjoy life.
-                      享受生活，顺其自然。
-                    </span>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn_member"
-                    title="最要紧的是，我们首先应该善良，其次要诚实，再其次是以后永远不要相互遗忘。Above all, we should first be kind, then honest, and then never forget each other."
-                  >
-                    <span class="ic_member hide_txt png">
-                      最要紧的是，我们首先应该善良，其次要诚实，
-                      再其次是以后永远不要相互遗忘。
-                      Above all, we should first be kind, then honest, and then never forget each other.
-                    </span>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn_xkn"
-                    title="这世上所有的久处不厌，都是因为用心。All the longevity in this world is due to intentions."
-                  >
-                    <span class="ic_xkn hide_txt png">
-                      这世上所有的久处不厌，都是因为用心。All the longevity in this world is due to
-                      intentions.
-                    </span>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn_xav"
-                    title="岁月静好，从年少到暮夕，唯有深情共白头。Years are quiet, from youth to dusk, only affectionate hoary head."
-                  >
-                    <span class="ic_xav hide_txt png">
-                      岁月静好，从年少到暮夕，唯有深情共白头。Years are quiet, from youth to dusk, only
-                      affectionate hoary head.
-                    </span>
-                  </a>
-                  <span class="ic_line" id="ic_line"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="rpt_bg png" id="rpt_bg"></div>
-          <!-- pageContent -->
-        </div>
-      </div>
-    </div>
     <div class="warp-content">
+       <!-- 视频和主要填充区域 -->
+      <div id="wrap">
+        <video id="v1" autoplay ref="localVideo" loop style="width: 100%" :src="videoSrc" :poster="poster"></video>
+      </div>
       <!-- 关于我 -->
-      <div class="content-middle about-me">
+      <el-main>
+      <el-row>
+      <el-col :span="24" justify="center" class="about-me">
         <h3>About-me</h3>
         <p class="typing title-h">
           当你忘了自己的过去，满意自己的现在，漠视自己的未来，你就站在了生活的最高处。
@@ -180,30 +16,26 @@
           <br />当你以微笑的心想到了过去，以希望的心向前看，以宽厚的心向下看，以坦然的心向上看时，
           <br />你就站在了灵魂的最高处。
         </p>
-        <router-link to="/about">Read More</router-link>
-      </div>
+        <a href="/about">Read More</a>
+      </el-col>
       <!-- 热门文章 -->
-      <div class="content-middle articles">
+      <el-col :span="24" justify="center" class="articles">
         <h2 class="introduce">最新文章</h2>
-        <div class="articles-content">
-          <article
-            v-for="item in hotArticles"
-            :key="item.id"
-            @click="jumpToDetails(item.id)"
-          >
+        <el-col class="articles-content">
+          <el-col :span="24" tag="article" v-for="item in hotArticles" :key="item.id" @click="jumpToDetails(item.id)">
             <a href="javascript:void(0)">
               <div class="imgBox">
-                <img :src="item.coverImage" alt="文章插图" />
+                <img :src="item.coverImage" class="mini-img"  alt="文章插图" />
               </div>
               <span class="source">{{item.createDate|filterDate}}</span>
               <h2 class="title">{{item.title}}</h2>
               <span class="detail" v-html="item.content">{{item.content}}</span>
             </a>
-          </article>
-        </div>
-      </div>
-      <!-- Swiper区域 -->
-      <div class="content-middle messages">
+          </el-col>
+        </el-col>
+      </el-col>
+      <!-- Swiper区域 content-middle  -->
+      <el-col :span="24" justify="center" class="messages">
         <h2 class="introduce">最新留言</h2>
         <div class="message-list">
           <swiper :options="swiperOption">
@@ -228,74 +60,58 @@
             <div class="swiper-button-next" slot="button-next"></div>
           </swiper>
         </div>
-      </div>
+      </el-col>
       <!-- 背景图片 -->
-      <div class="content-back">
-      <!-- 数字增长 -->
-      <div class="product-number-info" id="productNumber">
-        <div class="product-number-inner">
-          <ul class="q">
-            <li class="li-1">
-              <b>
-                <i id="productNumber_1" class="fa fa-laptop">
-                  <countTo
-                    :startVal="numberAdd.startNum"
-                    :endVal="numberAdd.visitCount"
-                    :duration="10000"
-                  ></countTo>
-                </i>
-                <em>+</em>
-              </b>
-              <p>浏览数</p>
-            </li>
-            <li class="li-2">
-              <b>
-                <i id="productNumber_2" class="fa fa-calendar">
-                  <countTo
-                    :startVal="numberAdd.startNum"
-                    :endVal="numberAdd.runDays"
-                    :duration="10000"
-                  ></countTo>
-                </i>
-                <em>天</em>
-              </b>
-              <p>运行</p>
-            </li>
-            <li class="li-3">
-              <b>
-                <i id="productNumber_3" class="fa fa-book">
-                  <countTo
-                    :startVal="numberAdd.startNum"
-                    :endVal="numberAdd.articleCount"
-                    :duration="10000"
-                  ></countTo>
-                </i>
-                <sup>+</sup>
-              </b>
-              <p>文章数</p>
-            </li>
-            <li class="li-4">
-              <b>
-                <i id="productNumber_4" class="fa fa-tags">
-                  <countTo
-                    :startVal="numberAdd.startNum"
-                    :endVal="numberAdd.siteTag"
-                    :duration="10000"
-                  ></countTo>
-                </i>
-                <em>个</em>
-              </b>
-              <p>站点标签</p>
-            </li>
-            <li class="li-5">
-              <b>
-                <i id="productNumber_5">{{numberAdd.version}}</i>
-              </b>
-              <p>当前版本</p>
-            </li>
-          </ul>
+      <el-col :span="24" justify="center" class="content-back">
+        <!-- 数字增长 -->
+        <div class="product-number-info" id="productNumber">
+          <div class="product-number-inner">
+            <ul class="q">
+              <li class="li-1">
+                <b>
+                  <i id="productNumber_1" class="fa fa-laptop">
+                    <countTo :startVal="numberAdd.startNum" :endVal="numberAdd.visitCount" :duration="10000"></countTo>
+                  </i>
+                  <em>+</em>
+                </b>
+                <p>浏览数</p>
+              </li>
+              <li class="li-2">
+                <b>
+                  <i id="productNumber_2" class="fa fa-calendar">
+                    <countTo :startVal="numberAdd.startNum" :endVal="numberAdd.runDays" :duration="10000"></countTo>
+                  </i>
+                  <em>天</em>
+                </b>
+                <p>运行</p>
+              </li>
+              <li class="li-3">
+                <b>
+                  <i id="productNumber_3" class="fa fa-book">
+                    <countTo :startVal="numberAdd.startNum" :endVal="numberAdd.articleCount" :duration="10000"></countTo>
+                  </i>
+                  <sup>+</sup>
+                </b>
+                <p>文章数</p>
+              </li>
+              <li class="li-4">
+                <b>
+                  <i id="productNumber_4" class="fa fa-tags">
+                    <countTo :startVal="numberAdd.startNum" :endVal="numberAdd.siteTag" :duration="10000"></countTo>
+                  </i>
+                  <em>个</em>
+                </b>
+                <p>站点标签</p>
+              </li>
+              <li class="li-5">
+                <b>
+                  <i id="productNumber_5">{{numberAdd.version}}</i>
+                </b>
+                <p>当前版本</p>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
         <!-- <h2 class="typing title-h">
           无论如何，请记得一定要做自己！
           <br />
@@ -311,9 +127,11 @@
           <br />
           <br />
         </h2> -->
-      </div>      
+      </el-col>
+      </el-row>
+      </el-main>
       <!-- 底部区域 -->
-      <div class="footer">
+      <!-- <div class="footer">
         <div class="footer-top">
           <div class="container">
             <div
@@ -327,7 +145,7 @@
                   </div>
                   <p>一名阳光,勇敢,治愈的程序员</p>
                   <div class="button">
-                    <router-link to="/about" class="btn">About Me</router-link>
+                    <a href="/about" class="btn">About Me</a>
                   </div>
                 </div>
               </div>
@@ -336,19 +154,19 @@
                   <h2>相关链接</h2>
                   <ul class="social-icon">
                     <li class="active">
-                      <router-link to="/article"><i class="fa fa-book"></i>所有文章</router-link>
+                      <a href="/article"><i class="fa fa-book"></i>所有文章</a>
                     </li>
                     <li class="active">
-                       <router-link to="/message"><i class="fa fa-comments"></i>本站留言</router-link>
+                       <a href="/message"><i class="fa fa-comments"></i>本站留言</a>
                     </li>
                     <li class="active">
-                      <router-link to="/category"><i class="fa fa-tags"></i>文章分类</router-link>
+                      <a href="/category"><i class="fa fa-tags"></i>文章分类</a>
                     </li>
                     <li class="active">
-                      <router-link to="/share"><i class="fa fa-snowflake-o"></i>旅游分享</router-link>
+                      <a href="/share"><i class="fa fa-snowflake-o"></i>旅游分享</a>
                     </li>
                     <li class="active">
-                      <router-link to="/link"><i class="fa fa-link"></i>友情链接</router-link>
+                      <a href="/link"><i class="fa fa-link"></i>友情链接</a>
                     </li>
                   </ul>
                 </div>
@@ -388,7 +206,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -462,9 +280,13 @@ export default {
     async initData() {
       await getInitData().then(e => {
         this.numberAdd.runDays = Number.parseInt(e.result.dataCount.runDays);
-        this.numberAdd.articleCount = Number.parseInt(e.result.dataCount.articleCount);
+        this.numberAdd.articleCount = Number.parseInt(
+          e.result.dataCount.articleCount
+        );
         this.numberAdd.siteTag = Number.parseInt(e.result.dataCount.tagsCount);
-        this.numberAdd.visitCount = Number.parseInt(e.result.dataCount.visitsCount)
+        this.numberAdd.visitCount = Number.parseInt(
+          e.result.dataCount.visitsCount
+        );
         this.hotArticles = e.result.articles;
         this.messageList = e.result.messages;
       });

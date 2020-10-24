@@ -1,5 +1,5 @@
 <template>
-  <div class="right_nav" id="categoryand-search">
+  <div class="right_nav" id="category-search">
       <!-- 文章搜索 -->
     <div class="nav_serch">
       <label class="search-wrap">
@@ -17,8 +17,8 @@
       </label>
     </div>
     <!-- 文章分类 -->
-    <ul class="category mt20">
-      <li data-index="0" class="slider" style="top: 0px;"></li>
+    <ul class="category">
+      <!-- <li data-index="0" class="slider" style="top: 0px;"></li>
       <li data-index="1" class v-on:click="GetArticle()">
         <a href="javascript:void(0);">全部文章</a>
       </li>
@@ -29,7 +29,7 @@
         :key="index"
       >
         <a href="javascript:void(0);">{{item}}</a>
-      </li>
+      </li> -->
     </ul>
     <!-- 热门点赞文章 -->
     <div class="nav_top5 wow bounceInUp">
@@ -72,8 +72,8 @@
           class="wow slideInUp" 
           :key="index">
             <a href="javascript:;">
-              <img :src="item.userPortrait" />
-              <cite>{{item.userName}}</cite>
+              <img :src="item.portrait" />
+              <cite>{{item.nickName}}</cite>
             </a>
           </dd>
         </dl>

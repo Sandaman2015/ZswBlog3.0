@@ -1,101 +1,168 @@
 header {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 9;
-  width: 100%;
-  height: 85px;
-}
-
-.box-active {
-  transform: 1.5s;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.box-active a,
-p,
-h1,
-h2 {
-  color: black;
-}
-
-.logo {
-  padding-left: 150px;
-  font-size: 34px;
-  line-height: 50px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-weight: normal;
-}
-
-.site-nav {
-  margin-left: 30%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.site-nav ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.site-nav ul:hover li:not(:hover) a {
-  opacity: 0.2;
-}
-
-.site-nav ul li {
-  position: relative;
-  padding: 15px 20px 15px 20px;
-  cursor: pointer;
-}
-
-.site-nav ul li::after {
-  position: absolute;
-  content: "";
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #3498db;
-  transform: scaleX(0);
-  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.site-nav ul li:hover::after,
-ul li.active::after {
-  transform: scaleX(1);
-}
-
-.site-nav ul li a {
-  position: relative;
-  display: flex;
-  color: black;
-  font-family: Lato, sans-serif;
-  text-decoration: none;
-  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-aside {
-  height: 990px;
-}
-
-footer {
-  height: 500px;
-}
-
-#qqLogin {
-  display: inline-block;
-  line-height: 50px;
-  margin-right: 150px;
-}
-
-.userImage {
-  margin-top: 10px;
-  border-radius: 50%;
-}
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+    width: 100%;
+    height: 85px;
+  }
+  
+  .box-active {
+    transform: 1.5s;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .box-active a,
+  p,
+  h1,
+  h2 {
+    color: black;
+  }
+  
+  .logo {
+    padding-left: 150px;
+    font-size: 34px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+  }
+  
+  .site-nav {
+    margin-left: 30%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .site-nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  .site-nav ul:hover li:not(:hover) a {
+    opacity: 0.2;
+  }
+  
+  .site-nav ul li {
+    position: relative;
+    padding: 15px 20px 15px 20px;
+    cursor: pointer;
+  }
+  
+  .site-nav ul li::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #3498db;
+    transform: scaleX(0);
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .site-nav ul li:hover::after,
+  ul li.active::after {
+    transform: scaleX(1);
+  }
+  
+  .site-nav ul li a {
+    position: relative;
+    display: flex;
+    color: black;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  aside {
+    height: 990px;
+  }
+  
+  footer {
+    height: 500px;
+  }
+  
+  #qqLogin {
+    display: inline-block;
+    line-height: 50px;
+    margin-right: 150px;
+  }
+  
+  .userImage {
+    margin-top: 10px;
+    border-radius: 50%;
+  }
+  .media-menu {
+    display: none;
+  }
+  @media screen and (max-width: 475px) {
+    .media-menu {
+      display: flex;
+    }
+    .fa-bars {
+      font-size: 28px;
+    }
+  
+    .menu {
+      position: relative;
+      line-height: 100px;
+      margin-left: 36%;
+      width: 100%;
+    }
+    .menu img {
+      line-height: 100px;
+    }
+    .mobile-menu {
+      display: inline-block;
+      position: relative;
+      width: 96%;
+      height: 270px;
+      z-index: 99999;
+      margin: 0px 2%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .mobile-menu ul {
+      content: "";
+      display: table !important;
+      clear: both;
+      position: absolute;
+      width: 100%;
+    }
+    .mobile-menu ul li {
+      padding: 0 !important;
+      height: 28px;
+      line-height: 28px;
+      margin: 15px 0;
+      transition: 0.5s;
+    }
+    .box-active .mobile-menu ul li a {
+      display: block;
+      color: #fff !important;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 400;
+      font-family: Microsoft YaHei;
+    }
+    .mobile-menu ul li a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 400;
+      font-family: Microsoft YaHei;
+    }
+    .mobile-menu ul li img {
+      /* display: block; */
+      width: 22px;
+      height: 22px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }

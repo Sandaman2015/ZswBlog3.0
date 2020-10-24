@@ -31,9 +31,7 @@
               <a href="http://www.miit.gov.cn/">皖ICP备19012774号</a>
             </p>
             <p class="mt05">
-              Powered by .NET Core on Linux
-              <i class="fa fa-linux" aria-hidden="true"></i>&nbsp;
-              <a href="http://this.zswblog.xyz">后台管理</a>&nbsp;
+              Powered by .NET Core on Linux           
             </p>
           </div>
         </div>
@@ -80,15 +78,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/css/font-awesome.min.css";
 @import "../assets/css/footer.css";
-.footer-wrap {
-  background-color: white;
-}
-.contact a .fa {
-  color: #212220;
-}
-.fa-linux {
-  color: #555;
-}
 </style>

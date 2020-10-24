@@ -1,7 +1,5 @@
 <template>
   <header class="box">
-    <!-- //使用组件 -->
-    <scroll-top />
     <a href="/index" class="logo hide">ZswBlog</a>
     <!-- <a href="/index" class="logo">ZswBlog</a> -->
     <nav class="site-nav">
@@ -39,12 +37,10 @@
           </div>
         </div>
         <div v-else>
-          <a
-            href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index"
+          <a href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index"
           >直接点击登录哦！</a>
         </div>
-        <a
-          href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index"
+        <a href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index"
           id="qqLogin"
           slot="reference"
         >
@@ -103,16 +99,10 @@
   </header>
 </template>
 <script>
-import ScrollTop from "./Gotop";
-import $ from "../assets/js/jquery";
 import "../assets/js/header";
-import "../assets/js/scroll";
 import { getQQUserInfo } from "../api/login.api";
 import { getCookie, setCookie } from "../assets/js/cookie";
 export default {
-  components: {
-    "scroll-top": ScrollTop
-  },
   data() {
     return {
       userId: 0,
@@ -160,72 +150,4 @@ export default {
 
 <style scoped>
 @import "../assets/css/header.css";
-
-.media-menu {
-  display: none;
-}
-@media screen and (max-width: 475px) {
-  .media-menu {
-    display: flex;
-  }
-  .fa-bars {
-    font-size: 28px;
-  }
-
-  .menu {
-    position: relative;
-    line-height: 100px;
-    margin-left: 36%;
-    width: 100%;
-  }
-  .menu img {
-    line-height: 100px;
-  }
-  .mobile-menu {
-    display: inline-block;
-    position: relative;
-    width: 96%;
-    height: 270px;
-    z-index: 99999;
-    margin: 0px 2%;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .mobile-menu ul {
-    content: "";
-    display: table !important;
-    clear: both;
-    position: absolute;
-    width: 100%;
-  }
-  .mobile-menu ul li {
-    padding: 0 !important;
-    height: 28px;
-    line-height: 28px;
-    margin: 15px 0;
-    transition: 0.5s;
-  }
-  .box-active .mobile-menu ul li a {
-    display: block;
-    color: #fff !important;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 400;
-    font-family: Microsoft YaHei;
-  }
-  .mobile-menu ul li a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 400;
-    font-family: Microsoft YaHei;
-  }
-  .mobile-menu ul li img {
-    /* display: block; */
-    width: 22px;
-    height: 22px;
-    text-align: center;
-    vertical-align: middle;
-  }
-}
 </style>

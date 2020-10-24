@@ -21,6 +21,7 @@
   </div>
 </template>
 <script>
+import "../assets/js/scroll";
 export default {
   name: "goTop",
   data() {

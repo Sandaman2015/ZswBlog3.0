@@ -8,37 +8,37 @@
         <i class="ic_bdot png" id="h_bdot"></i>
         <ul id="h_nav">
           <li>
-            <router-link to="/article" class="btn_snav">文章</router-link>
+            <a href="/article" class="btn_snav">文章</a>
           </li>
           <li>
-            <router-link to="/category" class="btn_snav">分类</router-link>
+            <a href="/category" class="btn_snav">分类</a>
           </li>
           <li>
-            <router-link to="/message" class="btn_snav">留言</router-link>
+            <a href="/message" class="btn_snav">留言</a>
           </li>
           <li>
-            <router-link to="/link" class="btn_snav">友链</router-link>
+            <a href="/link" class="btn_snav">友链</a>
           </li>
           <li>
-            <router-link to="/share" class="btn_snav">分享</router-link>
+            <a href="/share" class="btn_snav">分享</a>
           </li>
           <li>
             <i class="ic_sdot png" id="h_sdot"></i>
             <dl class="sub_nav" id="h_subnav">
               <dt>
-                <router-link to="/about" class="btn_snav">关于本站</router-link>
+                <a href="/about" class="btn_snav">关于本站</a>
               </dt>
               <dd>
-                <router-link to="/about?id=1">微标签</router-link>
+                <a href="/about?id=1">微标签</a>
               </dd>
               <dd>
-                <router-link to="/about?id=2">音乐馆</router-link>
+                <a href="/about?id=2">音乐馆</a>
               </dd>
               <dd>
-                <router-link to="/about?id=3">时间线</router-link>
+                <a href="/about?id=3">时间线</a>
               </dd>
               <dd>
-                <router-link to="/whisper?id=5">关于我</router-link>
+                <a href="/whisper?id=5">关于我</a>
               </dd>
             </dl>
           </li>
@@ -82,4 +82,8 @@ export default {
   }
 };
 </script>
+<style lang="css" scoped>
+@import "../../assets/css/index/nheader.css";
+@import "../../assets/css/index/nstyle.css";
+</style>
 
