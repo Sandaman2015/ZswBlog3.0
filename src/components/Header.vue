@@ -99,7 +99,6 @@
   </header>
 </template>
 <script>
-import "../assets/js/header";
 import { getQQUserInfo } from "../api/login.api";
 import { getCookie, setCookie } from "../assets/js/cookie";
 export default {

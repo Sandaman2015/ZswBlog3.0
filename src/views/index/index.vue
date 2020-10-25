@@ -1,9 +1,7 @@
 <template>
-   <div id="index">
     <div class="index-content">
       <index-content></index-content>
     </div>
-  </div>
 </template>
 
 <script>

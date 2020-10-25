@@ -265,11 +265,20 @@ hr {
 }
 
 .article p {
-  margin-top: 0.5em;
+  /* margin-top: 0.5em;*/
   margin-bottom: 1em;
-  text-align: justify;
-  max-width: 100%;
   overflow: auto;
+  font-size: 14px;
+  line-height: 160%; 
+  display: -webkit-box;
+  text-align: justify;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .article .readmore {
