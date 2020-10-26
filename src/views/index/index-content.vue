@@ -5,7 +5,31 @@
         <video id="v1" autoplay ref="localVideo" loop  :src="videoSrc" :poster="poster">
         </video>        
         <div class="video-container">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores in adipisci, odit at esse labore soluta autem quos consectetur, fuga, tenetur quisquam! Optio dolorum illum iusto dolorem quos fuga nam quasi sapiente? Nostrum iure debitis nisi repellat id, sit dolorem consequuntur, similique, magnam laudantium doloremque illum dolore porro quae at iusto eius vero nam? Sapiente ullam repellat ipsa, illum, deleniti veritatis voluptate provident qui sed accusamus magnam aspernatur sint pariatur et atque voluptatum. Voluptas, earum? Qui, temporibus laborum. Earum quis assumenda, laudantium vitae, asperiores vero fuga quaerat error est tempora doloribus pariatur facilis dolor distinctio accusamus possimus laboriosam quos totam rem sequi cupiditate? Itaque praesentium blanditiis et sed aliquid unde molestias veritatis explicabo, dolorum doloremque, ipsum totam eligendi aut omnis! Asperiores amet nihil molestias qui distinctio debitis veniam quas harum aliquam. Hic blanditiis iure aliquam, obcaecati modi reiciendis velit, excepturi ad itaque eum officiis veritatis quae accusantium ea! Expedita, sunt laboriosam. Facere corporis consequuntur libero veritatis numquam tenetur corrupti magnam itaque, consequatur similique beatae inventore maxime sequi ab consectetur totam perferendis suscipit! Est unde autem ipsa dicta beatae vero corrupti quam atque cum inventore possimus aperiam sunt eum deserunt, illo at. Iste quam nobis culpa illo consequatur quos alias eveniet, consequuntur minus hic, porro sequi magni aliquam voluptatibus nihil optio veniam veritatis, aperiam doloremque non harum suscipit. Perspiciatis error praesentium debitis ex eius distinctio minus ipsam unde, facere sit fugiat fuga quidem similique excepturi, perferendis minima enim nihil facilis placeat rem aut quisquam corrupti. Deserunt hic magni corrupti adipisci molestias voluptatibus sed, debitis suscipit at nihil explicabo? Similique ab provident optio itaque veritatis voluptates, aspernatur dignissimos distinctio voluptatibus eos pariatur est asperiores maxime ducimus delectus sequi dolor alias. Accusantium in quidem molestias quos possimus facilis debitis voluptates tempora commodi dolorum laboriosam incidunt nobis nihil voluptatem rem sequi delectus reprehenderit corrupti hic, itaque asperiores ipsa! Animi unde id fuga perferendis quisquam beatae aliquam delectus amet voluptatem? Distinctio iure amet debitis illum facere quasi vitae eligendi assumenda magni. Magni odio animi repudiandae consequuntur alias modi. Consequuntur reprehenderit laborum nisi suscipit, illum qui! Beatae ipsum sit officiis repudiandae esse odio, accusamus animi cum aliquid eaque, at natus optio facilis! Repellat quasi modi quae exercitationem cumque porro nihil dolore sed iste accusamus officia sint distinctio error corrupti corporis tempore rem deserunt numquam beatae obcaecati saepe, voluptatem aspernatur. Perferendis quaerat velit officiis corrupti, odit enim accusantium molestiae laboriosam eum, labore et! Delectus, nostrum accusantium. Mollitia nam molestiae ipsum atque rem explicabo recusandae molestias ratione reprehenderit id voluptates quo praesentium, eligendi odit. Sequi natus at nesciunt illum nihil deleniti, explicabo quis nobis sint hic accusamus placeat velit quas recusandae veritatis delectus incidunt ea ullam. Incidunt dolorem voluptates quisquam corporis, excepturi aperiam velit, quae deleniti dolorum, corrupti rerum perferendis adipisci labore sequi! Assumenda odio repellendus eos officia ad incidunt asperiores debitis odit cupiditate, recusandae aliquid tempore quis maiores nobis, animi similique dolor magni temporibus voluptatem! Minima tempora amet cum illo rerum animi quas, esse nulla ea aliquam expedita cumque blanditiis fugiat numquam, eligendi, saepe eius error cupiditate?测试
+          <el-col justify="center">
+            <img src="../../assets/img/index-logo.png" class="content-logo">
+            <div class="header-info">
+			<p><i class="fa fa-quote-left"></i>追求自我，成为更完美！<i class="fa fa-quote-right"></i></p>
+			<div class="top-social_v2">
+			    <li id="bg-pre">
+            		<img class="flipx" src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/next-b.svg">
+          		</li>
+				<li class="wechat"><a href="#"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/wechat.png"></a>
+					<div class="wechatInner">
+						<img src="http://47.97.43.95:8090/upload/2020/09/wechat.1e1b0e5-17b1700392ca4e66bbc51d4ca97a7a21.jpg" alt="微信公众号">
+					</div>
+				</li>
+				<li><a href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank" class="social-sina" title="sina"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/sina.png"></a></li>
+				<li class="qq"><a href="//wpa.qq.com/msgrd?v=3&amp;uin=1761317983&amp;site=qq&amp;menu=yes" target="_blank" title="Initiate chat ?"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/qq.png"></a></li>
+				<li><a href="https://github.com/Sandaman2015" target="_blank" class="social-github" title="github"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/github.png"></a></li>
+				<li><a href="https://space.bilibili.com/12014895" target="_blank" class="social-bili" title="bilibili"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/bilibili.png"></a></li>
+				<li><a href="https://twitter.com/DnUJoG07tYOs99p" target="_blank" class="social-wangyiyun" title="Twitter"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/twitter.png"></a></li>
+				<li><a href="https://www.zhihu.com/people/ben-jiu-yi-yang" target="_blank" class="social-wangyiyun" title="知乎"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/zhihu.png"></a></li>
+				<li id="bg-next">
+            		<img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/next-b.svg">
+          		</li>
+			</div>
+		</div>
+          </el-col>
         </div>
       </div>
       <!-- 关于我 -->
@@ -241,7 +265,7 @@ export default {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
         },
-        slidesPerView: this._isMobile()==true?1:3,
+        slidesPerView: this.isMobile()==true?1:3,
         spaceBetween: 25,
         centeredSlides: true
       },
@@ -287,7 +311,7 @@ export default {
       });
   },
   methods: {
-    _isMobile() {
+    isMobile() {
       let flag = navigator.userAgent.match(`
         /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
       );

@@ -108,7 +108,7 @@ export default {
       userImage: require("../assets/img/qq.png"),
       flag: false,
       value: false,
-      showMenu: false,
+      showMenu: this.showMenu(),
       menu: require("../assets/img/cc-menu.png"),
       msg: "哈哈"
     };
@@ -117,6 +117,12 @@ export default {
     this.login();
   },
   methods: {
+    isMobile() {
+      let flag = navigator.userAgent.match(`
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
+      );
+      return flag;
+    },
     changeMenu() {
       if (this.showMenu == false) {
         this.menu = require("../assets/img/error.png");
