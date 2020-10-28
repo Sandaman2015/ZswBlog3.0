@@ -1,5 +1,6 @@
-<template>
+<template>  
   <header class="box">
+    <div class="box-nav">
     <a href="/index" class="logo hide">ZswBlog</a>
     <!-- <a href="/index" class="logo">ZswBlog</a> -->
     <nav class="site-nav">
@@ -27,7 +28,7 @@
         </li>
       </ul>
     </nav>
-    <div class="head-login">
+    <div class="header-login">
       <el-popover placement="bottom-start" trigger="hover">
         <div v-if="userId!==0">
           <p>确定退出登录吗？</p>
@@ -41,7 +42,7 @@
           >直接点击登录哦！</a>
         </div>
         <a href="https://graph.qq.com/oauth2.0/authorize?client_id=101858486&response_type=token&scope=all&redirect_uri=http://www.zswblog.xyz/index"
-          id="qqLogin"
+          class="qqLogin"
           slot="reference"
         >
           <p id="userId" hidden>{{userId}}</p>
@@ -96,6 +97,7 @@
         </li>
       </ul>
     </div>
+  </div>
   </header>
 </template>
 <script>

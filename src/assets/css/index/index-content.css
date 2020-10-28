@@ -1,13 +1,10 @@
-header{
-  background-color: rgba(255, 255, 255, 0.9);
-}
 video {
   position: absolute;
     /* right: 0; */
     z-index: -9999999;
     /* bottom: 0; */
     width: 100%;
-    top: -85px;
+    top: -70px;
     /* min-width: 100%; */
     /* min-height: 100%;  */
     /*灰色调*/
@@ -16,18 +13,17 @@ video {
   .video-container{
     width: 1080px;
     margin: 0 auto;
-    /* margin-top: 100px; */
     z-index: -99999;
   }
   .wrap{
     height: calc(100vh);
     width: auto;
-    /* height: auto; */
+    background-image: url("../../img/grid.png");
   } 
   .content-logo{
     position: relative;
     top: calc(20vh);
-    left: calc(40vh)
+    left: calc(16vw)
   }
   .header-info {
     width: 60%;
@@ -102,11 +98,14 @@ video {
   height: 121px;
   padding: 10px;
   background: rgba(0,0,0,.4);
-  top: 40px;
-  left: -40px;
+  /* top: 40px;
+  left: -40px; */
   -webkit-transform: translate3d(0,50px,0);
   transform: translate3d(0,50px,0);
   opacity: 0;
+  position: relative;
+  left: -50px;
+  top: 0;
 }
 .wechatInner:before {
   content: "";
@@ -126,10 +125,7 @@ video {
   background: 0 0;
 }
 .flipx {
-  -moz-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  /* transform: scaleX(-1); */
+  transform: scaleX(-1);
   filter: FlipH;
 }
   .content-back {
@@ -259,7 +255,7 @@ video {
     -moz-transform: translateY(-10px);
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
-    z-index: 1002;
+    z-index: 99;
     position: relative;
     left: 0;
   }

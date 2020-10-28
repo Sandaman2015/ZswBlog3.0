@@ -184,7 +184,7 @@ export default {
   background-size: 1.4rem;
   background-repeat: no-repeat;
   background-position: center center;
-  z-index: 999;
+  z-index: 9999;
 }
 .fa-github {
   margin: 7px 8.5px;

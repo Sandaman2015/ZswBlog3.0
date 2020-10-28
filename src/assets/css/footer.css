@@ -50,7 +50,10 @@
   }
   .footer-wrap{
     width: 100%;
-    background-color: white;
+    /* background-color: white; */
+    background: url(../../assets/img/foreground.png) repeat-x;
+    background-repeat: repeat-x !important;
+    background-size: 225em 15em;
   }
   .copyright {
     padding: 20px 0 20px 0;
