@@ -416,9 +416,6 @@ video {
     .product-number-info ul{
       padding: 0;
     }
-    .product-number-info li:first-child{      
-      /* border-bottom: yellowgreen solid 0.5px; */
-    }
     .product-number-info ul li{
       padding-top: 10px;
       padding-bottom: 10px;
