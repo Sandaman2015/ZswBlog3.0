@@ -16,10 +16,10 @@ header {
   }
   
   .box-active a,
-  p,
-  h1,
-  h2 {
-    z-index: 9999;
+  .box-active p,
+  .box-active h1,
+  .box-active h2 {
+    z-index: 99;
     color: black;
   }
   
@@ -103,6 +103,37 @@ header {
     display: none;
   }
   @media screen and (max-width: 475px) {
+  
+    .cont {
+      width: 100% !important;
+    }
+  
+    .box {
+      width: 100% !important;
+    }
+  
+    .site-nav {
+      display: none !important;
+    }
+  
+    .head-login {
+      display: none !important;
+    }
+  
+    .hide {
+      display: none !important;
+    }
+  
+    .show {
+      position: relative;
+      padding-left: 50px !important;
+      line-height: 100px !important;
+    }
+  
+    .el-tooltip {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
     .media-menu {
       display: flex;
     }
@@ -124,7 +155,7 @@ header {
       position: relative;
       width: 96%;
       height: 270px;
-      z-index: 99999;
+      z-index: 99999999;
       margin: 0px 2%;
       background-color: rgba(0, 0, 0, 0.8);
     }

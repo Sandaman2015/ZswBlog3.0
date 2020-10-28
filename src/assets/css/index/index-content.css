@@ -16,15 +16,122 @@ video {
   .video-container{
     width: 1080px;
     margin: 0 auto;
-    height: 600px;
     /* margin-top: 100px; */
     z-index: -99999;
   }
   .wrap{
-    min-height: 853px;
+    height: calc(100vh);
     width: auto;
     /* height: auto; */
   } 
+  .content-logo{
+    position: relative;
+    top: calc(20vh);
+    left: calc(40vh)
+  }
+  .header-info {
+    width: 60%;
+    margin: auto;
+    font-size: 16px;
+    color: #eaeadf;
+    background: rgba(0,0,0,.5);
+    padding: 15px;
+    margin-top: calc(18vh);
+    letter-spacing: 0;
+    line-height: 35px;
+    border-radius: 10px;
+    box-sizing: initial;
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box;
+  }
+.glitch+.header-info:before {
+  top: 112px;
+  content: "";
+}
+.header-info:before {
+  position: absolute;
+  /* left: 20%; */
+  margin-left: -15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0,0,0,.5) transparent;
+}
+.header-info p {
+  margin: 0;
+  font-family: Ubuntu,sans-serif;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.top-social_v2 {
+  height: 32px;
+  margin-bottom: -15px;
+  margin-left: 50px;
+  list-style: none;
+  display: inline-block;
+}
+.top-social_v2 li {
+  float: left;
+  margin-right: 13px;
+}
+:after, :before {
+  box-sizing: inherit;
+}
+.top-social_v2 img {
+  height: 35px;
+  width: 35px;
+  padding: 6px;
+  background: 0 0;
+}
+.wechat {
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+.wechat:hover .wechatInner {
+  transition: 1s;
+  -webkit-transform: translate3d(0,16px,0);
+  transform: translate3d(0,16px,0);
+  opacity: 1;
+  visibility: visible;
+  border-radius: 8px;
+}
+.wechatInner {
+  width: 121px;
+  height: 121px;
+  padding: 10px;
+  background: rgba(0,0,0,.4);
+  top: 40px;
+  left: -40px;
+  -webkit-transform: translate3d(0,50px,0);
+  transform: translate3d(0,50px,0);
+  opacity: 0;
+}
+.wechatInner:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0,0,0,.4) transparent;
+}
+.wechatInner img {
+  border-radius: 0;
+  width: 121px;
+  height: auto;
+  padding: 0;
+  background: 0 0;
+}
+.flipx {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  /* transform: scaleX(-1); */
+  filter: FlipH;
+}
   .content-back {
     background: url("https://singleblog.oss-cn-beijing.aliyuncs.com/images/index-content.jpg");
   }
@@ -126,12 +233,13 @@ video {
     clear: both;
   }
   article {
-    max-width: 300px;
-    max-height: 420px;
+    max-width: 320px;
+    max-height: 420px; 
+    display: block;
     background: #f6f6f6;
     box-sizing: border-box;
-    padding: 10px 15px 25px;
-    margin: 5px 20px;  
+    padding: 10px 10px;
+    margin: 10px 10px;  
   }
   article:hover{   
     box-shadow: inset 0.125em -0.125em 0.3em rgba(68, 68, 68, 0.4), inset -0.3em 0 0.0625em -0.25em rgba(34, 34, 34, 0.5), inset 0.4em 0.5em 0.5em -0.25em rgba(255, 255, 255, 0.6), 0.04em 0.25em 0 -0.3em #333;
@@ -359,6 +467,15 @@ video {
     #v1 {
       display: none;
     }
+    article {
+      max-width: 475px;
+      max-height: 420px; 
+      display: block;
+      background: #f6f6f6;
+      box-sizing: border-box;
+      padding: 10px 10px;
+      margin: 10px 10px;  
+    }
     .wrapper {
       background: url("https://singleblog.oss-cn-beijing.aliyuncs.com/images/bg_index.jpg")
         no-repeat fixed center !important;
@@ -372,22 +489,6 @@ video {
     .video-container{
       width: 100%;
     }
-    .wrap:after {
-      content: '';
-      width: 150%;
-      height: 4.375rem;
-      background: #f9f9f9;
-      left: -25%;
-      bottom: -5.875rem;
-      /* border-radius: 100%; */
-      border-top-left-radius: 100%;
-      border-top-right-radius: 100%;
-      /* border-bottom-right-radius: 100%; */
-      /* border-bottom-left-radius: 100%; */
-      position: absolute;
-            
-      z-index: 4;
-  }
     .middle-container {
       width: 100%;
       margin: 0 auto;
