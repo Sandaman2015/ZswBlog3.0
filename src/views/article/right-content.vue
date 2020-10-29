@@ -9,24 +9,19 @@
         </span>
       </label>
     </div>
-    <!-- 文章分类 -->
-    <div class="introduce">
-      <div class="widget">
+    <div class="nav_category">
+      <div class="about-logo">
         <img src="../../assets/img/about-me.jpg" class="about-me">
       </div>
       <h1>
-        ZswBlog
+        Sandaman
         <br />
       </h1>
-      <time class="time">10:00</time>      
-    </div>
-    <div class="category">
-      <h5 class="other-item-title">热门浏览文章</h5>
+      <time class="time">10:00</time>
+      <h5 class="other-item-title">所有文章分类</h5>
       <div class="inner">
         <ul class="widget">
-          <li v-for="(category,index) in categoryList" :key="index">
-            <a href="/category" class="category">{{category.categoryName}}</a>
-          </li>
+          <a v-for="(category,index) in categoryList" :key="index">{{category.categoryName}}</a>
         </ul>
       </div>
     </div>
@@ -90,19 +85,19 @@
         pageSize: 3,
         pageIndex: 1,
         categoryList: [{
-            categoryName: "test5asfasf"
+            categoryName: "JAVA"
           },
           {
-            categoryName: "test4"
+            categoryName: "C#"
           },
           {
-            categoryName: "test3asfasf"
+            categoryName: "SpringCloud"
           },
           {
-            categoryName: "fasfasf"
+            categoryName: "DotNetCore"
           },
           {
-            categoryName: "test1"
+            categoryName: "随笔"
           },
         ]
       };

@@ -19,11 +19,11 @@ export default {
     "scroll-top": scroll
   },
   mounted() {
-    const script = document.createElement("script");
-    script.src =
-      "https://v1.cnzz.com/z_stat.php?id=1278706390&web_id=1278706390"; //友盟中的代码
-    script.language = "JavaScript";
-    document.getElementById("parent")[0].appendChild(script);
+    // const script = document.createElement("script");
+    // script.src =
+    //   "https://v1.cnzz.com/z_stat.php?id=1278706390&web_id=1278706390"; //友盟中的代码
+    // script.language = "JavaScript";
+    // document.getElementById("parent")[0].appendChild(script);
   } 
 }
 </script>

@@ -110,7 +110,7 @@ export default {
       userImage: require("../assets/img/qq.png"),
       flag: false,
       value: false,
-      showMenu: this.showMenu(),
+      showMenu: this.isMobile(),
       menu: require("../assets/img/cc-menu.png"),
       msg: "哈哈"
     };

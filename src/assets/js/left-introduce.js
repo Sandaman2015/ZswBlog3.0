@@ -13,17 +13,9 @@ window.onload=function(){
     h = h ? h : 12; // the hour '0' should be '12'
     m = m < 10 ? '0' + m : m;
     var strTime = h + ':' + m + ' ' + ampm;
-    document.getElementsByClassName('time')[0].innerHTML = y + ' ' + month + ' ' + day + '<br />' + '&nbsp;&nbsp;&nbsp;&nbsp; ' + w + ' ' + strTime +'<br />' + "Pursue yourself and become more perfect";
-
+    document.getElementsByClassName('time')[0].innerHTML = y + ' ' + month + ' ' + day + '<br />' + '&nbsp;&nbsp;&nbsp;&nbsp; ' + w + ' ' + strTime+'<br/>'+'<br/>'+'<br/>';
     var body = document.body;
     setTimeout(function () {
         body.classList.add('active');
     }, 200);
-
-    document.getElementsByClassName('reload')[0].onclick = function () {
-        body.classList.remove('active');
-        setTimeout(function () {
-            body.classList.add('active');
-        }, 1500);
-    }
 };
