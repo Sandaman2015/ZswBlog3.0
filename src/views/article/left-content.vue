@@ -38,7 +38,7 @@
                     >
                       <a href="http://www.zswblog.xyz" rel="nofollow">
                         <img class="article-image" src="../../assets/img/icon-me.jpg" />
-                        <p>{{item.operatorId}}</p>
+                        <p>Sandman</p>
                       </a>
                     </el-tooltip>
                   </div>
@@ -51,7 +51,7 @@
                   <div class="new-meta-item category">
                     <a href="javascript:void(0)" rel="nofollow">
                       <i class="fa fa-folder-open" aria-hidden="true"></i>
-                      <p>&nbsp;{{item.categoryId}}</p>
+                      <p>&nbsp;{{item.category.name}}</p>
                     </a>
                   </div>
                   <div class="new-meta-item wordcount">
@@ -122,7 +122,7 @@
                 >
                   &nbsp;
                   <i class="fa fa-tag"></i>
-                  &nbsp;{{tag}}
+                  &nbsp;{{tag.name}}
                 </a>
               </div>
             </section>
@@ -184,32 +184,11 @@ export default {
     //   如果不是搜索类型则按照默认分页查询文章列表
       if (!this.isClassType) {
         await getArticlesByPage(this.pageSize, this.pageIndex).then(e => {
-          console.log(e.result);
            for (let i = 0; i < e.result.count; i++) {
               this.articleList.push(e.result.data[i]);
             }
             that.loadMoreText = "加载更多";
-          // if (e.result.length < 3) {
-          //   that.loadMoreText = "到底了呦！刷新页面重新看吧！";
-          //   for (let i = 0; i < e.result.length; i++) {
-          //     this.articleList.push(e.result[i]);
-          //   }
-          //   that.disabledBtn = true;
-          //   that.$message.error(
-          //     "已经没有文章了哦！去关于本站看看吧！哪里也有好玩的！"
-          //   );
-          // } else if (e.result.length > 2) {
-          //   for (let i = 0; i < e.result.length; i++) {
-          //     this.articleList.push(e.result[i]);
-          //   }
-          // } else {
-          //   that.loadMoreText = "到底了呦！刷新页面重新看吧！";
-          //   that.disabledBtn = true;
-          //   that.$message.error(
-          //     "已经没有文章了哦！去关于本站看看吧！哪里也有好玩的！"
-          //   );
-          // }
-          that.load = false;
+            that.load = false;
         });
       } else {
         await getArticlesPageByClass(
@@ -244,7 +223,10 @@ export default {
     },
     // 详情跳转
     jumpToDetails(index) {
-      window.location.href = "/details?ArticleDetails=" + index + "";
+      this.$router.push({
+                        path: `/article-details/${index}`,
+                    })
+      // window.location.href = "/article-details/" + index ;
     }
   }
 };

@@ -105,13 +105,13 @@ hr {
   margin-inline-end: auto;
   overflow: hidden;
 } 
-p {
+/* p {
   letter-spacing: -0.5px;
-}
+}*/
 
 a {
   text-decoration: none;
-}
+} 
 
 /* 
 @media screen and (max-width:475px) {

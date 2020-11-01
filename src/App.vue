@@ -4,6 +4,7 @@
     <router-view :key="$route.fullPath"></router-view>
     <common-footer class="float" />
     <scroll-top/>
+    <music style="padding:0;margin-left:0.3px;" />
   </div>
 </template>
 <script>
@@ -12,8 +13,10 @@ import $ from "./assets/js/jquery";
 import head from "./components/header";
 import foot from "./components/footer";
 import scroll from "./components/scroll-top";
+  import musicLocation from "./components/vue-aplayer";
 export default {  
    components: {
+    "music": musicLocation,
     "common-header": head,
     "common-footer": foot,
     "scroll-top": scroll

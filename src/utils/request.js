@@ -25,16 +25,16 @@ axios.interceptors.response.use(
     } else {
       return response.data // Promise.reject()
     }
-  },
-  error => {
+  }
+  ,error => {
     if (error && error.response) {
       let res = {}
       res.code = error.response.status
-      res.msg = throwErr(error.response.status, error.response) // throwErr 捕捉服务端的http状态码 定义在utils工具类的方法      
+      res.msg = throwErr(error.response.status, error.response) // throwErr 捕捉服务端的http状态码 定义在utils工具类的方法    ;  
       Message({
         type: 'error',
         duration: 5 * 1000,
-        message: "服务器出现一个Bug,工程师正在抓它呢!"
+        message: res.msg
       })
       return Promise.reject(res)
     }

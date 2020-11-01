@@ -21,7 +21,7 @@
       <h5 class="other-item-title">所有文章分类</h5>
       <div class="inner">
         <ul class="widget">
-          <a v-for="(category,index) in categoryList" :key="index">{{category.categoryName}}</a>
+          <a v-for="(category,index) in categoryList" :key="index">{{category.name}}</a>
         </ul>
       </div>
     </div>
@@ -67,7 +67,7 @@
   import "../../assets/js/left-introduce";
   export default {
     props: {
-      allClassArticleList: {
+      categoryList: {
         type: Array
       },
       hotLikeArticleList: {
@@ -83,24 +83,8 @@
     data() {
       return {
         pageSize: 3,
-        pageIndex: 1,
-        categoryList: [{
-            categoryName: "JAVA"
-          },
-          {
-            categoryName: "C#"
-          },
-          {
-            categoryName: "SpringCloud"
-          },
-          {
-            categoryName: "DotNetCore"
-          },
-          {
-            categoryName: "随笔"
-          },
-        ]
-      };
+        pageIndex: 1
+      }
     },
     methods: {
       // 根据类型获取文章分页

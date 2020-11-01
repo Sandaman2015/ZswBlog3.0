@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import "./assets/css/font-awesome.min.css";
 // Element-UI
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -10,11 +11,6 @@ Vue.use(ElementUI);
 
 // 轮播组件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-// import 'swiper/swiper-bundle.css'
-// import style (>= Swiper 6.x)
-// import 'swiper/swiper-bundle.css'
-
-// import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
 Vue.use(VueAwesomeSwiper);
 
@@ -23,6 +19,23 @@ import Share from 'vue-social-share'
 import 'vue-social-share/dist/client.css';
 import '../node_modules/social-share.js/dist/js/social-share.min.js'
 Vue.use(Share);
+
+// 代码高亮
+import hljs from 'highlight.js' // 导入代码高亮文件
+import 'highlight.js/styles/monokai-sublime.css' // 导入代码高亮样式
+Vue.directive('highlight', function (el) {
+  let blocks = el.querySelectorAll('pre code');
+  blocks.forEach((block) => {
+    hljs.highlightBlock(block)
+  })
+})
+
+// Vue音乐播放器组件
+import APlayer from '@moefe/vue-aplayer';
+Vue.use(APlayer, {
+  defaultCover: 'https://github.com/u3u.png',
+  productionTip: true,
+});
 
 // 顶部进度条插件
 import NProgress from 'nprogress'
