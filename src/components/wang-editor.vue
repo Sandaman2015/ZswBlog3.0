@@ -145,7 +145,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 .editor {
   width: 100%;
   margin: 0 auto;

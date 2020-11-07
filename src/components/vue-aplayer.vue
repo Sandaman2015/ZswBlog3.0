@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <aplayer :audio="songList" :lrcType="1" fixed/>
+    <aplayer v-if="songList" :audio="songList" :lrcType="1" fixed/>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
       songList: []
     };
   },
-  mounted() {
+  created() {
     this.init();
   },
   methods: {

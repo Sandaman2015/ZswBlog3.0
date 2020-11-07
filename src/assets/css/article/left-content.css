@@ -264,20 +264,15 @@ hr {
 }
 
 .article p {
-  /* margin-top: 0.5em;*/
-  margin-bottom: 1em;
-  overflow: auto;
-  font-size: 14px;
-  line-height: 160%; 
-  display: -webkit-box;
   text-align: justify;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  word-wrap: break-word;
-  word-break: break-all;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .article .readmore {
@@ -389,16 +384,9 @@ li {
   height: 200px;
 }
 .article-content {
-  height: 165px;
-  width: 620px;
+  max-height: 160px;
   margin: 0 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-indent: 2em;
   float: left;
-  text-overflow: ellipsis;
 }
 @media screen and (max-width: 475px) {
   #categoryandsearch {

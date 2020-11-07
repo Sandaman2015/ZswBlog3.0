@@ -10,6 +10,11 @@ const routes = [
     component:()=>import("../views/index/index.vue")
   },
   {
+    path:"/404",
+    name:"404",
+    component:()=>import("../views/404.vue")
+  },
+  {
     path: "/index",
     name: "index",
     component:()=>import("../views/index/index.vue")
@@ -39,9 +44,9 @@ const routes = [
     component:()=>import("../views/detail/article-details.vue")
   },
   {
-    path:"/404",
-    name:"404",
-    component:()=>import("../views/404.vue")
+    path:"/message",
+    name:"message",
+    component:()=>import("../views/message/message.vue")
   }
 ];
 

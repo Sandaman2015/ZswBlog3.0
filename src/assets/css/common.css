@@ -3,7 +3,7 @@
   padding: 0;
 }
  html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Varela Round", "Microsoft YaHei", "Source Sans Pro", "Helvetica Neue", Menlo, Monaco, monospace, "Lucida Console", sans-serif, Helvetica, "Hiragino Sans GB", "Hiragino Sans GB W3", Source Han Sans CN Regular, WenQuanYi Micro Hei, Arial, sans-serif;
   font-weight: 400;
   font-display: swap;
   font-size: 16px;
@@ -17,7 +17,7 @@ button,
 input,
 select,
 textarea {
-  /* font: 300 1rem/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans; */
+  font: 400 1.8rem/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
   font-size: 1rem;
 }
 
@@ -112,7 +112,9 @@ hr {
 a {
   text-decoration: none;
 } 
-
+.right{
+  float: right;
+}
 /* 
 @media screen and (max-width:475px) {
   .comment-list {

@@ -16,6 +16,86 @@
   position: relative;
 }
 
+
+.nav_followme .aside-list-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: .3rem 0;
+  border-bottom: 1px dashed #f5f5f5;
+}
+.nav_followme .aside-list>.aside-list-item .thumbnail {
+  overflow: hidden;
+  width: 4.2em;
+  height: 4.2em;
+  margin-left: 25px;
+}
+
+.nav_followme .aside-list>.aside-list-item .thumbnail>img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-transition: all .6s;
+  -moz-transition: all .6s;
+  -o-transition: all .6s;
+  -ms-transition: all .6s;
+  transition: all .6s;
+  object-fit: cover;
+  position: relative;
+  left: 5px;
+}
+
+.nav_followme .aside-list>.aside-list-item .content {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: -10px;
+  word-break: break-all;
+}
+.nav_followme .aside-list .follow{
+  width: 100%;
+  display: flex;
+  box-sizing: content-box;
+}
+.nav_followme .aside-list .follow::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.nav_followme .aside-list .follow li{  
+  float: left;
+  box-sizing: content-box;
+  padding: 0.2em;
+}
+.nav_followme .aside-list>.aside-list-item .content>.title {
+  color: var(--font-color);
+  font-size: 95%;
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.nav_followme .aside-list>.aside-list-item .content>.name,
+.nav_followme .aside-list>.aside-list-item .content>time {
+  display: block;
+  color: #858585;
+  font-size: 85%;
+}
+
 /* 侧边介绍 */
 .nav_category {
   padding-bottom: 15px;
@@ -26,13 +106,6 @@
   clear: both;
   display: block;
   content: " ";
-}
-
-.nav_category .about-me {
-  float: left;
-  border-radius: 50px;
-  width: 100px;
-  height: 100px;
 }
 
 .nav_category h1 {
@@ -74,13 +147,8 @@
   margin: 10px 15px;
 }
 
-.nav_category .widget:after {
-  clear: both;
-  display: block;
-  content: " ";
-}
-
-.nav_category .widget a {
+/* 分类 */
+ .nav_category .widget a{
   line-height: 22px;
   display: block;
   color: #fff;
@@ -94,7 +162,13 @@
   transform: scale(0);
 }
 
-.active .nav_category .widget a {
+.nav_category .widget:after {
+  clear: both;
+  display: block;
+  content: " ";
+}
+
+ .nav_category .widget a {
   -webkit-transform: scale(1);
   transform: scale(1);
   transition: 0.2s cubic-bezier(0.67, 0.13, 0.1, 0.81);
@@ -150,59 +224,59 @@
   transition-delay: .3s;
 }
 
-.active .nav_category .widget a:first-child {
+ .nav_category .widget a:first-child {
   background: #428BCA;
 }
 
-.active .nav_category .widget a:nth-child(9n-8) {
+ .nav_category .widget a:nth-child(9n-8) {
   background: #567E95;
   -webkit-transform-origin: right bottom;
   transform-origin: right bottom;
 }
 
-.active .nav_category .widget a:nth-child(9n-7) {
+ .nav_category .widget a:nth-child(9n-7) {
   background: #eb6841;
   -webkit-transform-origin: left bottom;
   transform-origin: right top;
 }
 
-.active .nav_category .widget a:nth-child(9n-6) {
+ .nav_category .widget a:nth-child(9n-6) {
   background: #3fb8af;
   -webkit-transform-origin: left top;
   transform-origin: left top;
 }
 
-.active .nav_category .widget a:nth-child(9n-5) {
+ .nav_category .widget a:nth-child(9n-5) {
   background: #B433FF;
   -webkit-transform-origin: right bottom;
   transform-origin: left top;
 }
 
-.active .nav_category .widget a:nth-child(9n-4) {
+ .nav_category .widget a:nth-child(9n-4) {
   background: #fc9d9a;
   -webkit-transform-origin: left top;
   transform-origin: left bottom;
 }
 
-.active .nav_category .widget a:nth-child(9n-3) {
+ .nav_category .widget a:nth-child(9n-3) {
   background: #5CB85C;
   -webkit-transform-origin: left top;
   transform-origin: right bottom;
 }
 
-.active .nav_category .widget a:nth-child(9n-2) {
+ .nav_category .widget a:nth-child(9n-2) {
   background: #567E95;
   -webkit-transform-origin: right top;
   transform-origin: right top;
 }
 
-.active .nav_category .widget a:nth-child(9n-1) {
+ .nav_category .widget a:nth-child(9n-1) {
   background: #2db7f5;
   -webkit-transform-origin: left top;
   transform-origin: left top;
 }
 
-.active .nav_category .widgeta:nth-child(9n) {
+ .nav_category .widgeta:nth-child(9n) {
   background: #ed4014;
   -webkit-transform-origin: left top;
   transform-origin: right top;

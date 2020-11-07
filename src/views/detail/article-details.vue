@@ -2,7 +2,7 @@
   <div id="content">
     <div class="content-header" :style="headerStyle">
       <!-- 文章信息 -->
-      <div class="warp-content wow slideInRight">
+      <div class="warp-content wow slideInRight" v-if="article">
         <h1 class="title">{{article.title}}</h1>
         <div class="info" v-highlight>
           <p>
@@ -11,7 +11,7 @@
               Sandman
             </span>
             &nbsp;
-            <span>
+            <span v-if="article.category">
               <i class="fa fa-keyboard-o" aria-hidden="true"></i>
               文章类型:
               {{article.category.name}}
@@ -26,10 +26,10 @@
         </div>
         <div class="info">
           <p>
-            <span>
+            <span v-if="article.createDate">
               <i class="fa fa-calendar" aria-hidden="true"></i>
               发布日期:
-              {{article.createDate|filterSubDate}}日
+              {{article.createDate|filterDate}}日
             </span>&nbsp;
             &nbsp;
             <span>
@@ -96,7 +96,7 @@
         <!-- 评论列表 -->
         <div class="comments">
           <h3>评论列表</h3>
-          <comments :commentsList="commentList" :articleId="articleId" @changeList="loadMoreComments"
+          <comments v-if="commentList" :commentsList="commentList" :articleId="articleId" @changeList="loadMoreComments"
             :disabledBtn="disabledBtn" />
           <div class="load-more">
             <el-pagination layout="prev, pager, next" :total="total" :disabled="disabledBtn"
@@ -105,17 +105,83 @@
           </div>
         </div>
       </div>
-      <!-- 广告区域 -->
+      <!-- 侧边区域 -->
       <div class="ad">
         <div class="whitebg cloud">
-          <h2 class="htitle">标签云</h2>
+          <div class="item-headline"><i class="fa fa-bolt"></i><span>关注我</span></div>
+          <div class="aside-list">
+            <div class="aside-list-item"><a href="/messageboard/" class="thumbnail" ><img
+                  src="http://thirdqq.qlogo.cn/g?b=oidb&k=G9TRERmssnfaKEE3OKxVicA&s=40&t=1591118864" alt="haha"></a>
+              <div class="content">
+                <ul class="follow">
+                  <li>
+                    <a class="comment" target="blank" href="https://www.zhihu.com/people/ben-jiu-yi-yang" >
+                      <img src="../../assets/img/detail/zhihu.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://space.bilibili.com/12014895" >
+                      <img src="../../assets/img/detail/bilibili.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" >
+                      <img src="../../assets/img/detail/weibo.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://twitter.com/DnUJoG07tYOs99p" >
+                      <img src="../../assets/img/detail/tuite.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://github.com/Sandaman2015" >
+                      <img src="../../assets/img/detail/github.png">
+                    </a>
+                  </li>
+                </ul>
+                <div class="name"><time>追求自我，成为更完美</time></div>
+              </div>
+            </div>            
+          </div>          
+        </div>
+        <div class="whitebg cloud">
+          <div class="item-headline">
+            <svg t="1604745508647" class="icon card-announcement-animation" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5701" width="32" height="32"><path d="M347.904 764.672a213.418667 213.418667 0 0 1-275.541333-122.752c-42.197333-109.952 12.8-233.386667 122.624-275.584l346.538666-133.034667 107.946667-182.954666c30.293333-50.816 92.416-45.44 113.578667 9.685333l75.392 196.437333a85.333333 85.333333 0 1 1 61.184 159.317334l75.690666 197.205333c21.162667 55.168-21.333333 100.778667-77.824 83.2l-205.184-63.744-54.442666 20.906667 120.021333 172.202666c29.354667 42.069333 12.928 96.128-35.114667 114.56l-119.466666 45.866667c-40.32 15.488-89.898667 0.213333-114.56-35.157333l-132.096-189.525334-8.746667 3.370667z m210.816 137.344c2.261333 3.2 10.325333 5.717333 14.165333 4.821333l108.586667-41.685333-125.653333-180.266667-117.12 44.928 120.021333 172.202667z m-212.053333-319.658667a42.666667 42.666667 0 1 1-30.592-79.658666l139.349333-53.504-30.592-79.658667-199.253333 76.458667a128.042667 128.042667 0 0 0-73.514667 165.333333 128.085333 128.085333 0 0 0 165.248 73.685333l199.253333-76.501333-30.549333-79.658667-139.392 53.504z m353.237333-448.725333l-94.378667 156.757333a42.666667 42.666667 0 0 1-21.333333 17.962667l-79.701333 30.592 91.733333 238.976 79.701333-30.549333a42.666667 42.666667 0 0 1 27.989334-0.896l175.573333 54.698666-89.088-231.893333a86.912 86.912 0 0 1-1.962667-5.162667l-88.533333-230.485333z" p-id="5702" fill="#d81e06"></path></svg>
+            <span>公告</span></div>
           <ul>
-            <a href="javascript:void(0)" v-for="(item,index) in categoryList" :key="index" class="wow fadeInLeft"
-              @click="jumpToCategory(item.id)">{{item.name}}</a>
+            <li v-if="announcementList" v-for="(item,index) in announcementList" :key="index">            
+              <span class="wow fadeInLeft announcement-span" v-html="item.content">
+                {{item.content}}
+              </span>
+            </li>
           </ul>
         </div>
         <div class="whitebg cloud">
-          <h2 class="htitle">音乐</h2>
+          <div class="item-headline"><i class="fa fa-bars"></i><span>所有分类</span></div>
+          <ul class="category-list">
+            <a :href="'/category-details/'+item.id" v-if="categoryList" v-for="(item,index) in categoryList" :key="index" class="wow fadeInLeft"
+              >{{item.name}}</a>
+          </ul>
+        </div>
+        <div class="whitebg cloud">
+          <div class="item-headline"><i class="fa fa-commenting"></i><span>最新留言</span></div>
+          <div class="aside-list" v-if="messageList" v-for="(item,index) in messageList" :key="index">
+            <div class="aside-list-item">
+              <a href="/message" class="thumbnail">
+                <img :src="item.userPortrait" alt="haha">
+              </a>
+              <div class="content">
+                <p class="comment" href="/messageboard/" v-html="item.content">
+                  {{item.content}}
+                </p>
+                <div class="name">
+                  <span >{{item.userName}}</span>
+                  <br/>
+                  <time>{{item.createDate|filterDateTime}}</time></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -134,7 +200,15 @@
   import {
     getArticleById
   } from "../../api/article.api";
-  import {getAllCategory} from "../../api/category.api"
+  import {
+    getAllCategory
+  } from "../../api/category.api";
+  import{
+    getPushAnnouncement
+  }from "../../api/annocement.api";
+  import{
+    getNearSaveMessage
+  } from "../../api/message.api"
   import list from "../../assets/data/detailsPic.json";
   export default {
     components: {
@@ -160,30 +234,36 @@
         },
         commentList: [],
         categoryList: [],
+        messageList:[],
+        announcementList:[],
         article: {
-          id: Number,
-          createDate: Date,
-          title: String,
-          content: String,
-          like: Number,
-          visits: Number,
-          readTime: Number,
-          textCount: Number,
-          category: {},
-          coverImage: String
+          // id: Number,
+          // createDate: Date,
+          // title: String,
+          // content: String,
+          // like: Number,
+          // visits: Number,
+          // readTime: Number,
+          // textCount: Number,
+          // category: {},
+          // coverImage: String
         }
       }
     },
     filters: {
-      filterSubDate(date) {
+      filterDate(date) {
         return date.toString().substring(0, 10);
+      },
+      filterDateTime(date) {
+        return date.toString().replace("T"," ").substring(0, date.toString().length);
       }
     },
-    mounted() {
+    created() {
       this.articleId = this.$route.params.id;
       this.article = {};
       this.initBackgroundImage();
       this.getArticleDetailAndCategoryList();
+      this.loadInitData();
       this.siteUrl =
         "https://www.zswblog.xyz/details.html?ArticleDetails=" + this.index;
     },
@@ -192,13 +272,13 @@
         let index = Math.floor(Math.random() * (0 - 4) + 4);
         this.headerStyle.backgroundImage = "url(" + list[index].src + ")";
       },
-      getArticleDetailAndCategoryList() {
+      async getArticleDetailAndCategoryList() {
         if (this.articleId == undefined || this.articleId == null || this.articleId === '' || this.articleId <= 0) {
           this.$router.push({
             path: `/404`,
           })
         }
-        getArticleById(this.articleId).then(e => {
+        await getArticleById(this.articleId).then(e => {
           if (e.code === 404) {
             this.$router.push({
               path: `/404`,
@@ -206,12 +286,19 @@
           }
           this.article = e.result;
         })
-        getAllCategory().then(e=>{
+        await getAllCategory().then(e => {
           this.categoryList = e.result;
         })
-        getAllComment().then(e=>{
-          console.log(e);
-            this.commentList = e.result;
+        await getAllComment(this.articleId, this.limit, this.pageIndex).then(e => {
+          this.commentList = e.result.data;
+        })
+      },
+      loadInitData(){
+        getNearSaveMessage(5).then(e=>{
+          this.messageList = e.result;
+        })
+        getPushAnnouncement().then(e=>{
+          this.announcementList = e.result;
         })        
       },
       jumpToCategory(id) {
@@ -222,17 +309,17 @@
           page = this.pageIndex;
         }
         await getAllComment(this.articleId, this.limit, page).then(e => {
-          this.commentList = e.result;
+          this.commentList = e.result.data;
         });
       },
       prev(p) {
         getAllComment(this.articleId, this.limit, p).then(e => {
-          this.commentList = e.data;
+          this.commentList = e.result.data;
         });
       },
       next(p) {
         getAllComment(this.articleId, this.limit, p).then(e => {
-          this.commentList = e.data;
+          this.commentList = e.result.data;
         });
       },
       // 文章点赞

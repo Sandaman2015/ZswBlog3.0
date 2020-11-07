@@ -20,7 +20,7 @@ import LeftContent from "./left-content";
 import RightContent from "./right-content";
 import {
   getArticlesByPage,
-  getArticlesPageByClass,
+  getArticlesPageByCategory,
   getArticleOnLike,
   getArticleOnClassType,
   getArticleOnVisit,
@@ -69,7 +69,7 @@ export default {
     // 根据类型获取文章列表
     async startGetPageByClass(pageSize, pageIndex, categoryId) {
       this.isClassType = true;
-      await getArticlesPageByClass(pageSize, pageIndex, this.categoryId).then(
+      await getArticlesPageByCategory(pageSize, pageIndex, this.categoryId).then(
         e => {
           this.articleList = e.result;
         }

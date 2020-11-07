@@ -143,7 +143,7 @@
 <script>
 import {
   getArticlesByPage,
-  getArticlesPageByClass
+  getArticlesPageByCategory
 } from "../../api/article.api";
 export default {
   props: {

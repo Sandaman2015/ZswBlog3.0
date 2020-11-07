@@ -9,19 +9,50 @@
         </span>
       </label>
     </div>
+    <div class="nav_followme">      
+      <h5 class="other-item-title">关注我</h5>
+      <div class="aside-list">
+            <div class="aside-list-item"><a href="/messageboard/" class="thumbnail" ><img
+                  src="../../assets/img/about-me.jpg" alt="haha"></a>
+              <div class="content">
+                <ul class="follow">
+                  <li>
+                    <a class="comment" target="blank" href="https://www.zhihu.com/people/ben-jiu-yi-yang" >
+                      <img src="../../assets/img/detail/zhihu.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://space.bilibili.com/12014895" >
+                      <img src="../../assets/img/detail/bilibili.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" >
+                      <img src="../../assets/img/detail/weibo.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://twitter.com/DnUJoG07tYOs99p" >
+                      <img src="../../assets/img/detail/tuite.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="comment" target="blank" href="https://github.com/Sandaman2015" >
+                      <img src="../../assets/img/detail/github.png">
+                    </a>
+                  </li>
+                </ul>
+                <div class="name"><time>追求自我，成为更完美</time></div>
+              </div>
+            </div>            
+      </div> 
+    </div>
     <div class="nav_category">
-      <div class="about-logo">
-        <img src="../../assets/img/about-me.jpg" class="about-me">
-      </div>
-      <h1>
-        Sandaman
-        <br />
-      </h1>
-      <time class="time">10:00</time>
       <h5 class="other-item-title">所有文章分类</h5>
       <div class="inner">
         <ul class="widget">
-          <a v-for="(category,index) in categoryList" :key="index">{{category.name}}</a>
+          <a class="category-a" href="/category">全部分类</a>
+          <a class="category-a" :href="'/category-details/'+category.id" v-for="(category,index) in categoryList" :key="index">{{category.name}}</a>
         </ul>
       </div>
     </div>
@@ -64,7 +95,6 @@
   </div>
 </template>
 <script>
-  import "../../assets/js/left-introduce";
   export default {
     props: {
       categoryList: {
