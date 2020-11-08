@@ -6,7 +6,7 @@
       </video>
       <div class="video-container">
         <el-col justify="center">
-          <img src="../../assets/img/index-logo.png" class="content-logo">
+          <img src="../../assets/img/index-logo-cut.png" class="content-logo">
           <div class="header-info">
             <p><i class="fa fa-quote-left"></i>追求自我，成为更完美！<i class="fa fa-quote-right"></i></p>
             <div class="top-social_v2">
@@ -56,7 +56,7 @@
             <br />当你以微笑的心想到了过去，以希望的心向前看，以宽厚的心向下看，以坦然的心向上看时，
             <br />你就站在了灵魂的最高处。
           </p>
-          <a href="/about">Read More</a>
+          <a href="/web/about">Read More</a>
         </el-col>
         <!-- 热门文章 -->
         <el-col :span="24" justify="center" class="back-continer">

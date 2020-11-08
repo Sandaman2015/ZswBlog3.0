@@ -238,7 +238,7 @@ video {
     margin: 10px 10px;  
   }
   article:hover{   
-    box-shadow: inset 0.125em -0.125em 0.3em rgba(68, 68, 68, 0.4), inset -0.3em 0 0.0625em -0.25em rgba(34, 34, 34, 0.5), inset 0.4em 0.5em 0.5em -0.25em rgba(255, 255, 255, 0.6), 0.04em 0.25em 0 -0.3em #333;
+    box-shadow: inset 0.125em -0.125em 0.3em rgba(87, 112, 221, 0.4), inset -0.3em 0 0.0625em -0.25em rgba(34, 34, 34, 0.5), inset 0.4em 0.5em 0.5em -0.25em rgba(255, 255, 255, 0.6), 0.04em 0.25em 0 -0.3em #333;
     border-radius: 6px;
     transition: 1s;
   }
@@ -250,32 +250,34 @@ video {
   }
   article:hover {
     transition: 0.5s;
-    -ms-transform: translateY(-10px);
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
-    transform: translateY(-10px);
+    -ms-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
     z-index: 99;
     position: relative;
     left: 0;
   }
-  article >a {    
+  article a {    
     align-items: center;
   }
-  article > a:hover::after {
+  /* article a:hover::before {
+    width: 100%;
     height: 10px;
   }
-  article > a::after {
+  article a::before {
+    transform: translateY(-5px);
     content: "";
-    width: 100%;
     position: absolute;
-    background: #67c23a;
+    background: #1ccfc9;
+    border: 10px;
     bottom: 0;
     height: 0;
     -webkit-transition: 0.3s linear;
     -o-transition: 0.3s linear;
     transition: 0.3s linear;
-  }
+  } */
   article .imgBox {
     max-width: 100%;
     overflow: hidden;
@@ -301,7 +303,6 @@ video {
     margin: 20px;
   }
   article .title {
-    margin-bottom: 20px;
     font-size: 20px;
     font-weight: 400;
     font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";

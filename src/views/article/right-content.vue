@@ -51,8 +51,8 @@
       <h5 class="other-item-title">所有文章分类</h5>
       <div class="inner">
         <ul class="widget">
-          <a class="category-a" href="/category">全部分类</a>
-          <a class="category-a" :href="'/category-details/'+category.id" v-for="(category,index) in categoryList" :key="index">{{category.name}}</a>
+          <a class="category-a" href="/web/category">全部分类</a>
+          <a class="category-a" :href="'/web/category-details/'+category.id" v-for="(category,index) in categoryList" :key="index">{{category.name}}</a>
         </ul>
       </div>
     </div>
@@ -62,7 +62,7 @@
       <div class="inner">
         <ul class="hot-list-article">
           <li v-for="(item,index) in hotLikeArticleList" class="wow slideInLeft" :key="index">
-            <a href="javascript:void(0);" @click="jumpToDetails(item.id)">{{item.title}}</a>
+            <a :href="'/web/article-details/'+item.id">{{item.title}}</a>
           </li>
         </ul>
       </div>
@@ -73,7 +73,7 @@
       <div class="inner">
         <ul class="hot-list-article">
           <li v-for="(item,index) in hotVisitArticleList" class="wow slideInLeft" :key="index">
-            <a href="javascript:void(0);" @click="jumpToDetails(item.id)">{{item.title}}</a>
+            <a :href="'/web/article-details/'+item.id">{{item.title}}</a>
           </li>
         </ul>
       </div>
@@ -135,10 +135,6 @@
         let inputText =
           event.target.parentElement.parentElement.childNodes[0].value;
         this.$emit("SearchArticle", inputText);
-      },
-      // 文章详情跳转
-      jumpToDetails(index) {
-        window.location.href = "details.html?ArticleDetails=" + index + "";
       }
     }
   };

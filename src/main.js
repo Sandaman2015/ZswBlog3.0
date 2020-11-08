@@ -37,6 +37,10 @@ Vue.use(APlayer, {
   productionTip: true,
 });
 
+// 关于页面的标签云
+import tagCloud from 'v-tag-cloud'
+Vue.use(tagCloud)
+
 // 顶部进度条插件
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'

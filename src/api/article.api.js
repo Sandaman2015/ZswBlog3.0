@@ -3,10 +3,6 @@ import request from '../utils/request'
 export const getArticlesByPage = (limit, pageIndex, params) => {
   return request('get', `/article/get/page?limit=${limit}&pageIndex=${pageIndex}`, params)
 }
-
-// export const register = (params) => {
-//   return request('post', ''/Article/GetArticles', params) //添加管理员
-// }
 // 获取点赞次数前五的文章
 export const getArticleOnLike = (params) => {
   return request('get', `/article/get/list/like`, params)
@@ -14,10 +10,6 @@ export const getArticleOnLike = (params) => {
 // 获取浏览次数前五的文章
 export const getArticleOnVisit = (params) => {
   return request('get', `/article/get/list/visit`, params)
-}
-// 获取文章类别（目前暂定）
-export const getArticleOnClassType = (params) => {
-  return request('get', `/article/GetArticlesOnClassType`, params)
 }
 // 根据类型获取分页文章
 export const getArticlesPageByCategory = (limit, pageIndex, categoryId, params) => {

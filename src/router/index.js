@@ -5,22 +5,22 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/web/",
     name: "main",
     component:()=>import("../views/index/index.vue")
   },
   {
-    path:"/404",
+    path:"/web/404",
     name:"404",
     component:()=>import("../views/404.vue")
   },
   {
-    path: "/index",
+    path: "/web/index",
     name: "index",
     component:()=>import("../views/index/index.vue")
   },
   {
-    path: "/article",
+    path: "/web/article",
     name: "article",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -29,24 +29,43 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/article/article.vue")
   },
   {
-    path: "/category",
+    path: "/web/category",
     name: "category",
     component:()=>import("../views/category/category.vue")
   },
   {
-    path:"/category-details/:id",
+    path:"/web/category-details/:id",
     name:"category-detail",
     component:()=>import("../views/detail/category-details.vue")
   },
   {
-    path:"/article-details/:id",
+    path:"/web/article-details/:id",
     name:"article-detail",
     component:()=>import("../views/detail/article-details.vue")
   },
   {
-    path:"/message",
+    path:"/web/message",
     name:"message",
     component:()=>import("../views/message/message.vue")
+  },
+  {
+    path:"/web/link",
+    name:"link",
+    component:()=>import("../views/link/link.vue")
+  },
+  {
+    path:"/web/share",
+    name:"share",
+    component:()=>import("../views/share/share.vue")
+  },
+  {
+    path:"/web/about",
+    name:"about",
+    component:()=>import("../views/about/about.vue")
+  }
+  ,{
+    path: "*",
+    redirect: "/web/404"
   }
 ];
 

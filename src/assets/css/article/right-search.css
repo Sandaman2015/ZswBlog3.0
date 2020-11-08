@@ -78,6 +78,12 @@
   float: left;
   box-sizing: content-box;
   padding: 0.2em;
+  transition: .2s;
+}
+
+.nav_followme .aside-list .follow li:hover{
+  transform:translateY(-5px);
+  transition: .5s;
 }
 .nav_followme .aside-list>.aside-list-item .content>.title {
   color: var(--font-color);

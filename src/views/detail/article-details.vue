@@ -97,11 +97,11 @@
         <div class="comments">
           <h3>评论列表</h3>
           <comments v-if="commentList" :commentsList="commentList" :articleId="articleId" @changeList="loadMoreComments"
-            :disabledBtn="disabledBtn" />
+            :disabledBtn="disabled" />
           <div class="load-more">
-            <el-pagination layout="prev, pager, next" :total="total" :disabled="disabledBtn"
-              @current-change="loadMoreComments" :current-page="pageIndex" :page-size="limit" @prev-click="prev"
-              @next-click="next" :hide-on-single-page="true"></el-pagination>
+            <el-pagination layout="prev, pager, next" :total="total" :disabled="disabled"
+              @current-change="loadMoreComments" :current-page="pageIndex" :page-size="pageSize" @prev-click="prev"
+              @next-click="next"></el-pagination>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@
         <div class="whitebg cloud">
           <div class="item-headline"><i class="fa fa-bolt"></i><span>关注我</span></div>
           <div class="aside-list">
-            <div class="aside-list-item"><a href="/messageboard/" class="thumbnail" ><img
+            <div class="aside-list-item"><a href="/web/index" class="thumbnail" ><img
                   src="http://thirdqq.qlogo.cn/g?b=oidb&k=G9TRERmssnfaKEE3OKxVicA&s=40&t=1591118864" alt="haha"></a>
               <div class="content">
                 <ul class="follow">
@@ -168,11 +168,11 @@
           <div class="item-headline"><i class="fa fa-commenting"></i><span>最新留言</span></div>
           <div class="aside-list" v-if="messageList" v-for="(item,index) in messageList" :key="index">
             <div class="aside-list-item">
-              <a href="/message" class="thumbnail">
+              <a href="/web/message" class="thumbnail">
                 <img :src="item.userPortrait" alt="haha">
               </a>
               <div class="content">
-                <p class="comment" href="/messageboard/" v-html="item.content">
+                <p class="comment"  v-html="item.content">
                   {{item.content}}
                 </p>
                 <div class="name">
@@ -217,36 +217,20 @@
     },
     data() {
       return {
+        article: {},
         articleId: "",
-        pageIndex: 1,
-        siteUrl: "",
-        config: {
-          url: this.siteUrl
-        },
         tagsList: [],
-        limit: 5,
-        disabledBtn: false,
+        pageIndex: 1,
+        pageSize: 5,
         total: 1,
-        comment: "",
-        likeClass: "fa fa-heart",
-        headerStyle: {
-          backgroundImage: ""
-        },
+        disabled: false,
         commentList: [],
         categoryList: [],
         messageList:[],
         announcementList:[],
-        article: {
-          // id: Number,
-          // createDate: Date,
-          // title: String,
-          // content: String,
-          // like: Number,
-          // visits: Number,
-          // readTime: Number,
-          // textCount: Number,
-          // category: {},
-          // coverImage: String
+        likeClass: "fa fa-heart",
+        headerStyle: {
+          backgroundImage: ""
         }
       }
     },
@@ -264,8 +248,6 @@
       this.initBackgroundImage();
       this.getArticleDetailAndCategoryList();
       this.loadInitData();
-      this.siteUrl =
-        "https://www.zswblog.xyz/details.html?ArticleDetails=" + this.index;
     },
     methods: {
       initBackgroundImage() {
@@ -289,7 +271,7 @@
         await getAllCategory().then(e => {
           this.categoryList = e.result;
         })
-        await getAllComment(this.articleId, this.limit, this.pageIndex).then(e => {
+        await getAllComment(this.articleId, this.pageSize, this.pageIndex).then(e => {
           this.commentList = e.result.data;
         })
       },
@@ -301,24 +283,21 @@
           this.announcementList = e.result;
         })        
       },
-      jumpToCategory(id) {
-
-      },
-      async loadMoreComments(page) {
-        if (page == null) {
-          page = this.pageIndex;
+      async loadMoreComments(p) {
+        if (p == null) {
+          p = this.pageIndex;
         }
-        await getAllComment(this.articleId, this.limit, page).then(e => {
+        await getAllComment(this.articleId, this.pageSize, p).then(e => {
           this.commentList = e.result.data;
         });
       },
       prev(p) {
-        getAllComment(this.articleId, this.limit, p).then(e => {
+        getAllComment(this.articleId, this.pageSize, p).then(e => {
           this.commentList = e.result.data;
         });
       },
       next(p) {
-        getAllComment(this.articleId, this.limit, p).then(e => {
+        getAllComment(this.articleId, this.pageSize, p).then(e => {
           this.commentList = e.result.data;
         });
       },

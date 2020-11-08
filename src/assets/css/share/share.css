@@ -1,0 +1,188 @@
+.clearfix-time {
+    display: block;
+    zoom: 1
+}
+
+.clearfix-time:after {
+    content: '\20';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0
+}
+
+.f12 {
+    font-size: 12px;
+    font-weight:300;
+}
+
+.f30 {
+    font-size: 30px;
+    font-weight:300;
+}
+
+.f24 {
+    font-size: 24px;
+    font-weight:300;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.content-cont {
+    padding-bottom: 80px
+}
+
+.content-cont .tit {
+    text-align: center
+}
+
+.content-cont ul {
+    background: url("../../img/share/share-line.png") repeat-y center;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-cont .tit h6 {
+    color: #666
+}
+
+.content-cont .tit h5 {
+    color: #333;
+    margin: 15px 0 45px
+}
+
+.content-cont ul li {
+    list-style: none;
+}
+
+.content-cont li h4:hover {
+    color: #f8f8f8;
+    transition: all 1s;
+    transform: translateY(-15px)
+}
+
+.content-cont li h4 {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #ecf0f1;
+    text-transform: uppercase;
+    padding: 4px 0;
+    transition: .5s
+}
+
+.content-cont li h4::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 100%;
+    left: 0;
+    background: #3498db;
+    transition: transform .5s;
+    transform: scaleX(0);
+    transform-origin: right
+}
+
+.content-cont li h4:hover {
+    color: #95a5a6
+}
+
+.content-cont li h4:hover::after {
+    transform: scaleX(1);
+    transform-origin: left
+}
+.content-cont li{
+    left:55%;
+    margin-top:-100px;
+}
+.content-cont li:nth-child(2n){
+    left:0;
+}
+.content-cont li:before {
+    background: url("../../img/share/share-point.png") no-repeat center center;
+    left: -45px;
+    top: 12px;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 17px;
+    height: 17px
+}
+
+.content-cont li:nth-child(2n):before {
+    background: url("../../img/share/share-point.png") no-repeat center center;
+    right: -45px;
+    top: 12px;
+    left: auto;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 17px;
+    height: 17px
+}
+
+.content-cont li h4 {
+    color: #333;
+    font-weight: 400;
+    transition: all 1s
+}
+
+.content-cont li p {
+    color: #666;
+    margin-top: 10px;
+    max-height: 480px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5
+}
+.content-cont li p img{
+    vertical-align:text-top;
+    clear: both;
+ }
+ .content-cont li p img:nth-child(n){
+    visibility: hidden;
+ }
+ .content-cont li p img:first-child{
+    visibility: visible;
+ }
+ .content-cont li p::before{
+    content: '</br>';
+    white-space: pre;
+    visibility: hidden;
+ }
+.future {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-top: 17px
+}
+
+.content-cont li:nth-child(1) {
+    margin-top: 0
+}
+
+.content-cont li {
+    float: right;
+    width: 45%;
+    text-align: left;
+    position: relative;
+    /* margin-top: 100px */
+}
+
+.content-cont li:nth-child(2n) {
+    float: left;
+    text-align: right;
+    /* margin-top: 90px */
+}
+
+.span {
+    display: inline-block;
+    color: green;
+    font-size: 20px;
+}
