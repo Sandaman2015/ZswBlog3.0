@@ -90,7 +90,7 @@
           <h3>评论区</h3>
           <editor ref="baseTextarea" />
           <el-row class="btn-up">
-            <el-button @click="CommentsSubmit()">提交留言</el-button>
+            <el-button @click="commentsSubmit">提交留言</el-button>
           </el-row>
         </div>
         <!-- 评论列表 -->
@@ -110,47 +110,53 @@
         <div class="whitebg cloud">
           <div class="item-headline"><i class="fa fa-bolt"></i><span>关注我</span></div>
           <div class="aside-list">
-            <div class="aside-list-item"><a href="/web/index" class="thumbnail" ><img
+            <div class="aside-list-item"><a href="/web/index" class="thumbnail"><img
                   src="http://thirdqq.qlogo.cn/g?b=oidb&k=G9TRERmssnfaKEE3OKxVicA&s=40&t=1591118864" alt="haha"></a>
               <div class="content">
                 <ul class="follow">
                   <li>
-                    <a class="comment" target="blank" href="https://www.zhihu.com/people/ben-jiu-yi-yang" >
+                    <a class="comment" target="blank" href="https://www.zhihu.com/people/ben-jiu-yi-yang">
                       <img src="../../assets/img/detail/zhihu.png">
                     </a>
                   </li>
                   <li>
-                    <a class="comment" target="blank" href="https://space.bilibili.com/12014895" >
+                    <a class="comment" target="blank" href="https://space.bilibili.com/12014895">
                       <img src="../../assets/img/detail/bilibili.png">
                     </a>
                   </li>
                   <li>
-                    <a class="comment" target="blank" href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" >
+                    <a class="comment" target="blank"
+                      href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1">
                       <img src="../../assets/img/detail/weibo.png">
                     </a>
                   </li>
                   <li>
-                    <a class="comment" target="blank" href="https://twitter.com/DnUJoG07tYOs99p" >
+                    <a class="comment" target="blank" href="https://twitter.com/DnUJoG07tYOs99p">
                       <img src="../../assets/img/detail/tuite.png">
                     </a>
                   </li>
                   <li>
-                    <a class="comment" target="blank" href="https://github.com/Sandaman2015" >
+                    <a class="comment" target="blank" href="https://github.com/Sandaman2015">
                       <img src="../../assets/img/detail/github.png">
                     </a>
                   </li>
                 </ul>
                 <div class="name"><time>追求自我，成为更完美</time></div>
               </div>
-            </div>            
-          </div>          
+            </div>
+          </div>
         </div>
         <div class="whitebg cloud">
           <div class="item-headline">
-            <svg t="1604745508647" class="icon card-announcement-animation" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5701" width="32" height="32"><path d="M347.904 764.672a213.418667 213.418667 0 0 1-275.541333-122.752c-42.197333-109.952 12.8-233.386667 122.624-275.584l346.538666-133.034667 107.946667-182.954666c30.293333-50.816 92.416-45.44 113.578667 9.685333l75.392 196.437333a85.333333 85.333333 0 1 1 61.184 159.317334l75.690666 197.205333c21.162667 55.168-21.333333 100.778667-77.824 83.2l-205.184-63.744-54.442666 20.906667 120.021333 172.202666c29.354667 42.069333 12.928 96.128-35.114667 114.56l-119.466666 45.866667c-40.32 15.488-89.898667 0.213333-114.56-35.157333l-132.096-189.525334-8.746667 3.370667z m210.816 137.344c2.261333 3.2 10.325333 5.717333 14.165333 4.821333l108.586667-41.685333-125.653333-180.266667-117.12 44.928 120.021333 172.202667z m-212.053333-319.658667a42.666667 42.666667 0 1 1-30.592-79.658666l139.349333-53.504-30.592-79.658667-199.253333 76.458667a128.042667 128.042667 0 0 0-73.514667 165.333333 128.085333 128.085333 0 0 0 165.248 73.685333l199.253333-76.501333-30.549333-79.658667-139.392 53.504z m353.237333-448.725333l-94.378667 156.757333a42.666667 42.666667 0 0 1-21.333333 17.962667l-79.701333 30.592 91.733333 238.976 79.701333-30.549333a42.666667 42.666667 0 0 1 27.989334-0.896l175.573333 54.698666-89.088-231.893333a86.912 86.912 0 0 1-1.962667-5.162667l-88.533333-230.485333z" p-id="5702" fill="#d81e06"></path></svg>
+            <svg t="1604745508647" class="icon card-announcement-animation" viewBox="0 0 1024 1024" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" p-id="5701" width="32" height="32">
+              <path
+                d="M347.904 764.672a213.418667 213.418667 0 0 1-275.541333-122.752c-42.197333-109.952 12.8-233.386667 122.624-275.584l346.538666-133.034667 107.946667-182.954666c30.293333-50.816 92.416-45.44 113.578667 9.685333l75.392 196.437333a85.333333 85.333333 0 1 1 61.184 159.317334l75.690666 197.205333c21.162667 55.168-21.333333 100.778667-77.824 83.2l-205.184-63.744-54.442666 20.906667 120.021333 172.202666c29.354667 42.069333 12.928 96.128-35.114667 114.56l-119.466666 45.866667c-40.32 15.488-89.898667 0.213333-114.56-35.157333l-132.096-189.525334-8.746667 3.370667z m210.816 137.344c2.261333 3.2 10.325333 5.717333 14.165333 4.821333l108.586667-41.685333-125.653333-180.266667-117.12 44.928 120.021333 172.202667z m-212.053333-319.658667a42.666667 42.666667 0 1 1-30.592-79.658666l139.349333-53.504-30.592-79.658667-199.253333 76.458667a128.042667 128.042667 0 0 0-73.514667 165.333333 128.085333 128.085333 0 0 0 165.248 73.685333l199.253333-76.501333-30.549333-79.658667-139.392 53.504z m353.237333-448.725333l-94.378667 156.757333a42.666667 42.666667 0 0 1-21.333333 17.962667l-79.701333 30.592 91.733333 238.976 79.701333-30.549333a42.666667 42.666667 0 0 1 27.989334-0.896l175.573333 54.698666-89.088-231.893333a86.912 86.912 0 0 1-1.962667-5.162667l-88.533333-230.485333z"
+                p-id="5702" fill="#d81e06"></path>
+            </svg>
             <span>公告</span></div>
           <ul>
-            <li v-if="announcementList" v-for="(item,index) in announcementList" :key="index">            
+            <li v-if="announcementList" v-for="(item,index) in announcementList" :key="index">
               <span class="wow fadeInLeft announcement-span" v-html="item.content">
                 {{item.content}}
               </span>
@@ -160,8 +166,8 @@
         <div class="whitebg cloud">
           <div class="item-headline"><i class="fa fa-bars"></i><span>所有分类</span></div>
           <ul class="category-list">
-            <a :href="'/category-details/'+item.id" v-if="categoryList" v-for="(item,index) in categoryList" :key="index" class="wow fadeInLeft"
-              >{{item.name}}</a>
+            <a :href="'/category-details/'+item.id" v-if="categoryList" v-for="(item,index) in categoryList"
+              :key="index" class="wow fadeInLeft">{{item.name}}</a>
           </ul>
         </div>
         <div class="whitebg cloud">
@@ -172,12 +178,12 @@
                 <img :src="item.userPortrait" alt="haha">
               </a>
               <div class="content">
-                <p class="comment"  v-html="item.content">
+                <p class="comment" v-html="item.content">
                   {{item.content}}
                 </p>
                 <div class="name">
-                  <span >{{item.userName}}</span>
-                  <br/>
+                  <span>{{item.userName}}</span>
+                  <br />
                   <time>{{item.createDate|filterDateTime}}</time></div>
               </div>
             </div>
@@ -203,13 +209,16 @@
   import {
     getAllCategory
   } from "../../api/category.api";
-  import{
+  import {
     getPushAnnouncement
-  }from "../../api/annocement.api";
-  import{
+  } from "../../api/annocement.api";
+  import {
     getNearSaveMessage
   } from "../../api/message.api"
   import list from "../../assets/data/detailsPic.json";
+  import {
+    get
+  } from "../../utils/storage";
   export default {
     components: {
       editor: editorBar,
@@ -226,8 +235,8 @@
         disabled: false,
         commentList: [],
         categoryList: [],
-        messageList:[],
-        announcementList:[],
+        messageList: [],
+        announcementList: [],
         likeClass: "fa fa-heart",
         headerStyle: {
           backgroundImage: ""
@@ -239,7 +248,7 @@
         return date.toString().substring(0, 10);
       },
       filterDateTime(date) {
-        return date.toString().replace("T"," ").substring(0, date.toString().length);
+        return date.toString().replace("T", " ").substring(0, date.toString().length);
       }
     },
     created() {
@@ -275,13 +284,13 @@
           this.commentList = e.result.data;
         })
       },
-      loadInitData(){
-        getNearSaveMessage(5).then(e=>{
+      loadInitData() {
+        getNearSaveMessage(5).then(e => {
           this.messageList = e.result;
         })
-        getPushAnnouncement().then(e=>{
+        getPushAnnouncement().then(e => {
           this.announcementList = e.result;
-        })        
+        })
       },
       async loadMoreComments(p) {
         if (p == null) {
@@ -305,9 +314,76 @@
       likeAdd() {
 
       },
+      getBrowser() {
+        let userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串
+        let broswer = "";
+        let isOpera = userAgent.indexOf("Opera") > -1;
+        if (isOpera) {
+          broswer = "Opera";
+        } else if (userAgent.indexOf("Firefox") > -1) {
+          broswer = userAgent.substring(66, 78);
+        } else if (userAgent.indexOf("Chrome") > -1) {
+          broswer = userAgent.substring(81, 92);
+        } else if (userAgent.indexOf("Safari") > -1) {
+          broswer = "Safari";
+        } else if (
+          userAgent.indexOf("compatible") > -1 &&
+          userAgent.indexOf("MSIE") > -1 &&
+          !isOpera
+        ) {
+          broswer = "IE";
+        } else if (userAgent.indexOf("Trident") > -1) {
+          broswer = "Edge";
+        } else {}
+        return broswer;
+      },
       // 文章提交评论
       commentsSubmit() {
-
+        this.comment = this.$refs.baseTextarea.getContent();
+        let that = this;
+        if (this.comment !== "" && this.comment !== "<p><br></p>") {
+          let userId = get("userId");
+          if (userId != null) {
+            if (get("userEmail") !== null) {
+              let param = {
+                browser: this.getBrowser(),
+                userId: parseInt(userId),
+                articleId: this.articleId,
+                content: this.comment
+              };
+              addComment(param).then(e => {
+                if (e.result) {
+                  this.$message({
+                    message: "添加成功",
+                    type: "success"
+                  });
+                  that.total += 1;
+                  that.loadMoreComments(that.pageIndex);
+                } else if (!e.success) {
+                  this.$message({
+                    message: e.msg,
+                    type: "error"
+                  });
+                }
+              });
+            } else {
+              this.$message({
+                message: "请注册邮箱后再填写哦!",
+                type: "error"
+              });
+            }
+          } else {
+            this.$message({
+              message: "请先登录哦！",
+              type: "error"
+            });
+          }
+        } else {
+          this.$message({
+            message: "再多写点字吧,我相信你的文笔！",
+            type: "error"
+          });
+        }
       }
     }
   }

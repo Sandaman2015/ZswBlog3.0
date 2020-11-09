@@ -79,7 +79,7 @@
                             <div v-bind:class="{'editor-reply':true,'hide':isShow}">
                                 <form class="form">
                                     <div class="reply-box">
-                                        <editor class="box"  :ref="'replytextArea'+index" />
+                                        <editor class="box" :ref="'replytextArea'+index" />
                                     </div>
                                     <div class="submit">
                                         <el-button @click="replySubmit(index,replyIndex,$event)" class="right"
@@ -103,8 +103,9 @@
         addMessage
     } from "../../api/message.api";
     import {
-        getCookie
-    } from "../../assets/js/cookie";
+        get,
+        set
+    } from "../../utils/storage";
     export default {
         components: {
             editor: editorBar
@@ -148,41 +149,34 @@
             async mainSubmit(index, target) {
                 const mainText = this.$refs.textArea[index].getContent();
                 if (mainText !== "" && mainText !== "<p><br></p>") {
-                    let userId = document.getElementById("userId").innerText;
-                    if (parseInt(userId) !== 0) {
-                        if (getCookie("userEmail") !== null) {
-                            let ip = "";
-                            let url = "https://bird.ioliu.cn/ip";
-                            await this.$jsonp(url).then(e => {
-                                ip = e.data.ip;
-                            });
-                            let tUserId =
-                                target.target.parentElement.parentElement.childNodes[2].innerText;
+                    let userId = get("userId");
+                    if (userId !== null) {
+                        if (get("userEmail") !== null) {
+                            let tUserId = parseInt(
+                                target.currentTarget.parentElement.children[1].innerText);
                             let tId = parseInt(
-                                target.target.parentElement.parentElement.childNodes[4].innerText
+                                target.currentTarget.parentElement.children[2].innerText
                             );
                             // 主回复
-                            let comment = {
-                                location: ip,
+                            let param = {
                                 browser: this.getBrowser(),
-                                userId: userId,
+                                userId: parseInt(userId),
                                 content: mainText,
                                 targetId: tId,
                                 targetUserId: tUserId
                             };
-                            await addMessage(comment).then(e => {
-                                if (e.code == 200) {
+                            await addMessage(param).then(e => {
+                                if (e.result) {
                                     this.$message({
-                                        message: e.msg,
+                                        message: "添加成功",
                                         type: "success"
                                     });
                                     this.changeMessageList();
-                                } else if (e.code == 401) {
+                                } else if (!e.success) {
                                     this.$message({
-                                        message: "请注册邮箱后再填写哦!",
-                                        type: "warning"
+                                        message: e.msg,
+                                        type: "error"
                                     });
-                                    window.location.href = "register.html";
                                 }
                             });
                         } else {
@@ -190,7 +184,6 @@
                                 message: "请注册邮箱后再填写哦!",
                                 type: "warning"
                             });
-                            window.location.href = "register.html";
                         }
                     } else {
                         this.$message({
@@ -250,43 +243,34 @@
                         break;
                 }
                 if (this.replyText !== "" && this.replyText !== "<p><br></p>") {
-                    let userId = document.getElementById("userId").innerText;
-                    if (parseInt(userId) !== 0) {
-                        if (getCookie("userEmail") !== null) {
-                            let ip = "";
-                            let url = "https://bird.ioliu.cn/ip";
-                            await this.$jsonp(url).then(e => {
-                                ip = e.data.ip;
-                            });
-
-                            let tUserId =
-                                target.target.parentElement.parentElement.childNodes[2].innerText;
+                    let userId = get("userId");
+                    if (userId !== null) {
+                        if (get("userEmail") !== null) {
+                            let tUserId = parseInt(
+                                target.currentTarget.parentElement.children[1].innerText);
                             let tId = parseInt(
-                                target.target.parentElement.parentElement.childNodes[4].innerText
+                                target.currentTarget.parentElement.children[2].innerText
                             );
-
                             // 主回复
-                            let comment = {
-                                location: ip,
+                            let param = {
                                 browser: this.getBrowser(),
-                                userId: userId,
+                                userId: parseInt(userId),
                                 content: this.replyText,
                                 targetId: tId,
                                 targetUserId: tUserId
                             };
-                            await addMessage(comment).then(e => {
-                                if (e.code == 200) {
+                            await addMessage(param).then(e => {
+                                if (e.result) {
                                     this.$message({
-                                        message: e.msg,
+                                        message: "添加成功",
                                         type: "success"
                                     });
                                     this.changeMessageList();
-                                } else if (e.code == 401) {
+                                } else if (!e.success) {
                                     this.$message({
-                                        message: "请注册邮箱后再填写哦!",
-                                        type: "warning"
+                                        message: e.msg,
+                                        type: "error"
                                     });
-                                    window.location.href = "register.html";
                                 }
                             });
                         } else {
@@ -294,7 +278,6 @@
                                 message: "请注册邮箱后再填写哦!",
                                 type: "warning"
                             });
-                            window.location.href = "register.html";
                         }
                     } else {
                         this.$message({
@@ -446,7 +429,9 @@
         border: none;
         background-color: #fff;
     }
-  .box,.submit{    	
-    width: 70% !important;
-  }
+
+    .box,
+    .submit {
+        width: 70% !important;
+    }
 </style>

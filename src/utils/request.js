@@ -26,7 +26,8 @@ axios.interceptors.response.use(
       return response.data // Promise.reject()
     }
   }
-  ,error => {
+  ,
+  error => {
     if (error && error.response) {
       let res = {}
       res.code = error.response.status
@@ -41,13 +42,6 @@ axios.interceptors.response.use(
     return Promise.reject(error)
   }
 )
-// const request = axios.create({
-//   // // 用于将传递的json格式数据改为urlencoded格式
-//   // transformRequest: data => {
-//   //   return formEncode(data)
-//   // }
-// })
-
 export default function request(method, url, data) { // 暴露 request 给我们好API 管理  
   let baseURL= config.baseUrl+url;
   method = method.toLocaleLowerCase() // 封装RESTful API的各种请求方式 以 post get delete为例
@@ -63,4 +57,3 @@ export default function request(method, url, data) { // 暴露 request 给我们
     })
   }
 }
-// export default request

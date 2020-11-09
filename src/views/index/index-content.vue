@@ -164,7 +164,6 @@
   </div>
 </template>
 <script>
-  import axios from "axios";
   import countTo from "vue-count-to";
   import {
     Swiper,

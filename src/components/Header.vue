@@ -99,10 +99,7 @@
   import {
     getQQUserInfo
   } from "../api/login.api";
-  import {
-    getCookie,
-    setCookie
-  } from "../assets/js/cookie";
+  import {get,set,clear} from "../utils/storage";
   export default {
     data() {
       return {
@@ -123,8 +120,7 @@
     methods: {
       isMobile() {
         let flag = navigator.userAgent.match(
-          `
-        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
+          `/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
         );
         return flag;
       },
@@ -138,8 +134,8 @@
         }
       },
       resetCookie() {
-        setCookie("userImage", "../assets/img/qq.png", -1);
-        setCookie("userId", 0, -1);
+        // 清空localstorage缓存
+        clear();
         this.$message({
           message: "退出成功",
           type: "success"
@@ -151,15 +147,19 @@
         let accessToken = window.location.search.replace("?access_token=", "");
         // 验证token字符有效
         if (accessToken != "" && accessToken.length == 32) {
-        console.log(accessToken);
+          console.log(accessToken);
           let callbackUrl = window.location.href;
           // 调用获取用户请求
           await getQQUserInfo(accessToken, callbackUrl).then(e => {
-        console.log(e);
+          console.log(e);
             // 判断是否登录成功
             if (e.result.code == 200) {
               this.userImage = e.result.user.portrait;
               this.userId = e.result.user.id;
+              // 保存用户到localstorage
+              set("userImage", this.userImage);
+              set("userId", this.userId);
+              set("userEmail", e.result.user.email);
               if (e.result.user.loginCount <= 1) {
                 this.$message({
                   message: "第一次访问建议先完善邮箱哦",
@@ -182,8 +182,8 @@
         }
       },
       login() {
-        let image = getCookie("userImage");
-        let id = getCookie("userId");
+        let image = get("userImage");
+        let id = get("userId");
         if (image !== null && id !== null && id !== 0) {
           this.userId = id;
           this.userImage = image.replace("%3A", ":");

@@ -11,7 +11,7 @@
                             </div>
                             <div class="tag-chips">
                                 <a :href="'/web/category-details/'+item.id" v-for="(item,index) in categoryList"
-                                    :key="index" title="随笔: 1">
+                                    :key="index" :title="item.name">
                                     <span class="chip center-align waves-effect waves-light chip-default">{{item.name}}
                                         <span class="tag-length">{{item.articleCount}}</span>
                                     </span>

@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import LeftContent from "./left-content";
-import RightContent from "./right-content";
+import leftContent from "./left-content";
+import rightContent from "./right-content";
 import {
   getArticlesByPage,
   getArticlesPageByCategory,
@@ -30,8 +30,8 @@ import {getAllCategory} from "../../api/category.api";
 import {getNearUsers} from "../../api/user.api"
 export default {
  components: {
-    "v-left": LeftContent,
-    "v-right": RightContent
+    "v-left": leftContent,
+    "v-right": rightContent
   }, 
   data() {
     return {
