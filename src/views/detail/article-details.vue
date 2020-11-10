@@ -55,13 +55,15 @@
     </div>
     <div class="warp">
       <div class="details-warp">
-        <!-- 内容区域 -->
-        <div class="article-detail container" v-html="article.content" v-highlight>{{article.content}}</div>
+        <!-- 内容区域 -->        
+        <viewer :images="article.content">
+          <div class="article-detail container" v-html="article.content" v-highlight></div>
+        </viewer>
         <!-- 分享 -->
         <div class="share-info">
           <blockquote class="elem-quote quote-nm share">
             <div class="op-list" style="margin-bottom: 10px;">
-              <a href="javascript:void(0)" @click="likeAdd(article.id)">
+              <a href="javascript:void(0)" @click="likeAdd">
                 <p style="font-size: 18px;color:rgba(0,0,0,0.8)">
                   觉得不错,点个赞吧！👉
                   <i :class="likeClass" aria-hidden="true" class="like" style="font-size: 20px; line-height: 20px;"></i>
@@ -204,7 +206,8 @@
     getMusicList
   } from "../../api/common.api"
   import {
-    getArticleById
+    getArticleById,
+    addArticleLike
   } from "../../api/article.api";
   import {
     getAllCategory
@@ -240,7 +243,8 @@
         likeClass: "fa fa-heart",
         headerStyle: {
           backgroundImage: ""
-        }
+        },
+        alreadyLike: false
       }
     },
     filters: {
@@ -312,7 +316,22 @@
       },
       // 文章点赞
       likeAdd() {
-
+        if (!this.alreadyLike) {
+          addArticleLike(this.articleId).then(e => {
+            if (e.result) {
+              this.alreadyLike = true;
+              this.$message({
+                message: "添加成功",
+                type: "success"
+              });
+            } else {
+              this.$message({
+                message: e.msg,
+                type: "error"
+              });
+            }
+          })
+        }
       },
       getBrowser() {
         let userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串

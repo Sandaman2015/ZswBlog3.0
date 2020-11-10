@@ -23,9 +23,10 @@
         </div>
         <div class="about">
           <p class="about-site">
-            本站为张晟玮博客2.0版本，目前已开源至Github和Gitee，欢迎大家给我点一个star！
+            本站为ZswBlog博客3.0版本（2.0版本不再维护），目前已开源至Github和Gitee，欢迎大家给我点一个star！
             <br />后端：
             <span>
+              2.0的寄语:<br />&nbsp;&nbsp;
               该博客由原先的.Net MVC+EF+SqlServer2008作为后端支持,
               但是由于前端设计的太烂，而且正好服务器到期，所以我放弃了维护
               并重新设计并且将后端服务改为了.Net Core WebApi+Mysql,
@@ -36,9 +37,17 @@
               相关技术我会有时间分享的，
               目前SpringBoot版本已经在准备中而且我准备将前端转换为有利于SEO优化的大型静态化HTML页面
               因为前后端分离的缺点，导致了该站点的SEO并未很好的被百度收录！
+              <br />
+            </span>
+            <span>
+              3.0的寄语:<br />&nbsp;&nbsp;
+              对比于2.0功能更多了，我花了很多的时间在后端上，后端的框架目前还算比较满意，但是还需要优化，
+              以前针对2.0后台管理使用的WTM快速开发框架，那时候啥都不懂一股脑上线了，慢慢发现很多弊端，后台的扩展不好，
+              现在我重新规划后端管理准备制作一套专属ZswBlog3.0的RBAC后台管理系统
             </span>
             <br />前端：
             <span>
+              2.0的寄语:<br />&nbsp;&nbsp;
               前端在1.0的时候设计就是like shit！,称它为我写过最恶心的代码一点都不为过。
               强行拼凑jquery+vue+layui,而且有的直接复制的js我自己都没看懂直接先跑再说。。。
               所以这次我吸取教训，提前做好了Vue的功课和笔记，也做了不少小例子，
@@ -46,16 +55,21 @@
               模块化的开发思想很棒，也很符合未来软件设计，其实不止前端，后端也是！
               运用到的技术：Node,Webpack,VueCli3.0,Element-Ui,还有一些网上百度的自认为很漂亮的组件
             </span>
+            <span>
+              3.0的寄语:<br />&nbsp;&nbsp;
+              3.0的前端多了几个页面以及从Cli3升级到4了，原本的网站是多页面的练手货，现在随着越来越深入Vue发现自己对Vue不仅仅局限于能做页面了，
+              我有点对设计这块琢磨了。这也就是后面多出来的几个页面重构和全局样式优化
+            </span>
           </p>
           <p class="about-thanks animated swing">
             以下是为本站做过贡献的人:
             <br />
-            <span>隆重介绍我的同学---"🐒胖童鞋",感谢她为我设计的博客图标！</span>
+            <span>感谢我的同学---"🐒胖童鞋",感谢她为我设计的博客图标！</span>
             <br />
             <span>
               感谢燕十三的博客开源分享,让我一些组件可以借鉴
               感谢尤雨溪这个闪闪发光的大佬！Vue是我用的最快速上手的一门前端框架,
-              同时也要感谢Layui平台、Element-UI开发组,他们推动了行业的进步，让我能快速成长！
+              同时也要感谢Element-UI开发组,他们推动了行业的进步，让我能快速成长！
             </span>
           </p>
           <p>
@@ -143,7 +157,7 @@
   }
   .location span,
   .date span {
-    font-size: 22px;
+    font-size: 20px;
   }
   h4 {
     float: left;
@@ -153,22 +167,26 @@
     line-height: 30px;
   }
   .about-site {
+    display: inline-block;
     font-size: 24px;
+    box-sizing: content-box;
   }
-  .about-site > span {
-    text-indent: 2em;
+  .about-site span {
+    display: block;    
     float: left;
     margin-bottom: 15px;
-    font-size: 18px;
+    margin-left: 2em;
+    font-size: 16px;
   }
   .about-thanks {
-    font-size: 24px;
+    font-size: 20px;
   }
-  .about-thanks > span {
-    text-indent: 2em;
+  .about-thanks  span {
+    display: block;
+    margin-left: 2em;
     float: left;
     margin-bottom: 25px;
-    font-size: 18px;
+    font-size: 16px;
   }
   a {
     text-decoration: none;

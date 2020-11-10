@@ -14,17 +14,17 @@
 
 .f12 {
     font-size: 12px;
-    font-weight:300;
+    font-weight: 300;
 }
 
 .f30 {
     font-size: 30px;
-    font-weight:300;
+    font-weight: 300;
 }
 
 .f24 {
     font-size: 24px;
-    font-weight:300;
+    font-weight: 300;
 }
 
 .f14 {
@@ -95,13 +95,16 @@
     transform: scaleX(1);
     transform-origin: left
 }
-.content-cont li{
-    left:55%;
-    margin-top:-100px;
+
+.content-cont li {
+    left: 55%;
+    margin-top: -100px;
 }
-.content-cont li:nth-child(2n){
-    left:0;
+
+.content-cont li:nth-child(2n) {
+    left: 0;
 }
+
 .content-cont li:before {
     background: url("../../img/share/share-point.png") no-repeat center center;
     left: -45px;
@@ -133,29 +136,49 @@
 
 .content-cont li p {
     color: #666;
+    display: -webkit-box;
     margin-top: 10px;
-    max-height: 480px;
+    width: 480px;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5
+    -webkit-line-clamp: 5;
+    box-sizing: content-box;
 }
-.content-cont li p img{
-    vertical-align:text-top;
-    clear: both;
- }
- .content-cont li p img:nth-child(n){
-    visibility: hidden;
- }
- .content-cont li p img:first-child{
-    visibility: visible;
- }
- .content-cont li p::before{
+
+.content-cont li p {
+    display: block;
+    font-size: 13px;
+    color: #95a5a6;
+    text-align: left;
+}
+
+.content-cont li p img {
+    float: left;
+    margin: 5px 2px 2px 0;
+}
+
+.content-cont li p img:first-child:nth-last-child(n+2):nth-last-child(-n+6),
+.content-cont li p img:first-child:nth-last-child(n+2):nth-last-child(-n+6)~img {
+    /* 当列表包含2～6项时，命中所有列表项 */
+    width: 160px;
+    height: 155px;
+}
+
+.content-cont li p img:only-child {
+    vertical-align: middle;
+}
+
+.content-cont li p img:last-child {
+    margin-right: 0;
+}
+
+.content-cont li p::before {
     content: '</br>';
     white-space: pre;
     visibility: hidden;
- }
+}
+
 .future {
     text-align: center;
     color: #999;

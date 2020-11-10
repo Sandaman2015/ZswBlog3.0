@@ -208,7 +208,7 @@
           runDays: 0,
           articleCount: 0,
           siteTag: 0,
-          version: "v2.1.8"
+          version: "v3.0.1"
         }
       };
     },

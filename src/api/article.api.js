@@ -25,5 +25,5 @@ export const getArticleById = (id, params) => {
 }
 // 添加文章的点赞数(目前暂定)
 export const addArticleLike = (id, params) => {
-  return request('get', `/Details/AddArticleLike/${id}`, params)
+  return request('post', `/article/save/like/${id}`, params)
 }

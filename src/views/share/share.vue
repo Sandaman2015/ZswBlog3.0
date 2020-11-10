@@ -10,7 +10,10 @@
           <li v-for="(item,index) in travelList" :key="index">
             <h4 class="f30">{{item.title}}</h4>
             <span class="span">{{item.createDate|filterDate}}</span>
+            <viewer :images="item.content">
             <p class="f14" v-html="item.content">{{item.content}}</p>
+            <p class="f14">create by iphone 12</p>
+          </viewer>
           </li>
         </ul>
         <div class="future">

@@ -20,6 +20,7 @@
   
   <script>
   import { getAllSiteTag, addSiteTag } from "../../api/about.api";
+  import{get} from "../../utils/storage";
   export default {
     data() {
       return {
@@ -56,7 +57,6 @@
     methods: {
       async getSiteTags() {
         await getAllSiteTag().then(e => {
-            console.log(e);
           this.hotTag = e.result;
         });
       },
@@ -68,18 +68,18 @@
         this.$refs[formName].validate(valid => {
           if (valid) {
             let sitetag = {
-              SitetagTitle: this.formInline.tagTitle,
-              UserId: this.userId
+              title: this.formInline.tagTitle,
+              operatorId: this.userId
             };
             addSiteTag(sitetag).then(e => {
-              if (e.code == 200) {
+              if (e.result) {
                 this.$message({
                   message: "提交成功,请耐心等待管理员审核查看！",
                   type: "success"
                 });
               } else {
                 this.$message({
-                  message: "提交失败,请刷新重试",
+                  message: e.msg,
                   type: "error"
                 });
               }
@@ -93,8 +93,8 @@
         });
       },
       beforeSubmit() {
-        let userId = document.getElementById("userId").innerText;
-        if (userId !== "0" && userId !== 0) {
+        let userId = get("userId");
+        if (userId !== null && userId >= 0) {
           this.userId = userId;
           this.onSubmit("tagApplyForm");
         } else {
