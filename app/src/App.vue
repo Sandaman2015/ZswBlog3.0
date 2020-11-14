@@ -29,7 +29,7 @@ export default {
     };
   },
   updated() {
-    if (this.$route.fullPath.toString() == "/web/404") {
+    if (this.$route.fullPath == "/web/404") {
       this.isShow = false;
     }
     // const script = document.createElement("script");

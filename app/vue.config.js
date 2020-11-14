@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === "production" ? "/dist/" : "./",
   lintOnSave: false,
   chainWebpack: config => {
     config.plugin('html')
@@ -8,13 +8,4 @@ module.exports = {
         return args;
       })
   }
-  // ,devServer: {
-  //   proxy: {
-  //     '/api/*': {
-  //       target: 'http://localhost:8004',
-  //       changeOrigin: true
-  //     }
-  //   }
-  // }
-
 }

@@ -64,7 +64,7 @@
             <h2 class="introduce">最新文章</h2>
             <div class="articles-content">
               <el-col tag="article" v-for="(item,index) in hotArticles" :key="index" >
-                <a :href="'/article-details/'+item.id">
+                <a :href="'/web/article-details/'+item.id">
                   <div class="imgBox">
                     <img :src="item.coverImage" class="mini-img" alt="文章插图" />
                   </div>
