@@ -49,14 +49,14 @@
     <el-main>
       <el-row>
         <el-col :span="24" justify="center" class="about-me back-continer">
-          <h3>About-me</h3>
+          <h3>Winged Words</h3>
           <p class="typing title-h">
             当你忘了自己的过去，满意自己的现在，漠视自己的未来，你就站在了生活的最高处。
             <br />当成功不会让你太高兴，失败不会把你怎么样，平淡不会淹没你时，你就站在了生命的最高处。
             <br />当你以微笑的心想到了过去，以希望的心向前看，以宽厚的心向下看，以坦然的心向上看时，
             <br />你就站在了灵魂的最高处。
           </p>
-          <a href="/web/about">Read More</a>
+          <a href="/web/about">About-me</a>
         </el-col>
         <!-- 热门文章 -->
         <el-col :span="24" justify="center" class="back-continer">

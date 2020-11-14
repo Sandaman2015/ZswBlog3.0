@@ -146,15 +146,20 @@
     box-sizing: content-box;
 }
 
-.content-cont li p {
-    display: block;
+.content-cont li .f14 {
+    display: flex;
+    width:100%;
     font-size: 13px;
     color: #95a5a6;
     text-align: left;
+    overflow: hidden;
 }
 
 .content-cont li p img {
-    float: left;
+    width: auto;  
+    height: auto;  
+    max-width: 90%;  
+    max-height: 90%;  
     margin: 5px 2px 2px 0;
 }
 
@@ -162,7 +167,7 @@
 .content-cont li p img:first-child:nth-last-child(n+2):nth-last-child(-n+6)~img {
     /* 当列表包含2～6项时，命中所有列表项 */
     width: 160px;
-    height: 155px;
+    height: 155px; 
 }
 
 .content-cont li p img:only-child {

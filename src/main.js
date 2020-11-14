@@ -61,8 +61,12 @@ NProgress.configure({
 NProgress.start();
 NProgress.done();
 
-/* 通用CSS */
+// 通用CSS
 import "./assets/css/common.css";
+
+// 粒子线条动画 
+import VueParticles from 'vue-particles';
+Vue.use(VueParticles);
 
 // axios请求
 import axios from "axios";
