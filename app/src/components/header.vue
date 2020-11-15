@@ -144,14 +144,13 @@
       },
       // QQ登录
       async qqLogin() {
-        let accessToken = window.location.search.replace("?access_token=", "");
+        let accessToken = window.location.hash.toString().substring(14,46);
         // 验证token字符有效
         if (accessToken != "" && accessToken.length == 32) {
           console.log(accessToken);
           let callbackUrl = window.location.href;
           // 调用获取用户请求
           await getQQUserInfo(accessToken, callbackUrl).then(e => {
-          console.log(e);
             // 判断是否登录成功
             if (e.result.code == 200) {
               this.userImage = e.result.user.portrait;

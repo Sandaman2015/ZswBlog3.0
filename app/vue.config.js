@@ -1,5 +1,14 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/dist/" : "./",
+  devServer: {
+    proxy: {
+      '/api/*': {
+        target: 'http://47.97.43.95:8004',
+        changeOrigin: true
+      }
+    },
+    before: () => {}
+  },
+  publicPath: "/",
   lintOnSave: false,
   chainWebpack: config => {
     config.plugin('html')
