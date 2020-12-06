@@ -1,7 +1,7 @@
 # STEP 1: Build
 FROM node:10
 
-LABEL authors="bim999 <office@bim999.com>"
+LABEL authors="sandaman2015 <office@sandaman2015.com>"
 
 # COPY package.json package-lock.json ./
 

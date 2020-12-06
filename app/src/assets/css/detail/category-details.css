@@ -122,15 +122,14 @@ i.fa.fa-fire {
 }
 .post-list p {
     min-height: 60px;
-    margin: 0 0 0 8%;
-    font-size: 15px;
+    margin: 0 0 0 15%;
+    font-size: 13px;
     color: rgba(0,0,0,.66);
     letter-spacing: 0;
     line-height: 30px;
 }
 .content-body{
     text-align: justify;
-    width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
