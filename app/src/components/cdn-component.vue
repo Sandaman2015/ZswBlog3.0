@@ -5,6 +5,7 @@
     <remote-css href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.css"></remote-css>
     <remote-js src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.bundle.js"></remote-js> -->
         <remote-js src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></remote-js>
+        <remote-js src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></remote-js>
     </div>
 </template>
 <script>
