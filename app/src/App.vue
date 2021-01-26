@@ -7,10 +7,12 @@
     <music style="padding:0;margin-left:0.3px;" v-if="isShow" />
     <audio v-if="!isShow" autoplay loop src="https://zswblog.oss-cn-hangzhou.aliyuncs.com/404/404.mp3">
     </audio>
+    <bulletin-board />
   </div>
 </template>
 <script>
 import "./assets/css/font-awesome.min.css";
+import bulletin from "./components/bulletin-board.vue";
 import $ from "./assets/js/jquery";
 import head from "./components/header";
 import foot from "./components/footer";
@@ -22,6 +24,7 @@ export default {
     "common-header": head,
     "common-footer": foot,
     "scroll-top": scroll,
+    "bulletin-board": bulletin,
   },
   data() {
     return {

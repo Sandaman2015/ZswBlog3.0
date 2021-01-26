@@ -36,7 +36,7 @@
 
 <script>
   import messageComment from "./message-comment";
-  import cdnFlower from "../../components/cdn-component.vue";
+  import cdnFlower from "../../components/sakura-board.vue";
   import editorBar from "../../components/wang-editor";
   import {
     getMessageByPage,
