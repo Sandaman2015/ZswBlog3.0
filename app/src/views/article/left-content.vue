@@ -98,7 +98,7 @@
       </li>
     </ul>
     <div class="load-more">
-      <el-button type="text" @click="loadMore()" :disabled="disabled">{{message}}</el-button>
+      <el-button type="text" @click="loadMore" :disabled="disabled">{{message}}</el-button>
     </div>
   </div>
 </template>
@@ -117,13 +117,15 @@
       },
       categoryId: {
         type: Number
+      },
+      total:{
+        type: Number
       }
     },
     data() {
       return {
         pageSize: 3,
         pageIndex: 1,
-        total: 0,
         message: "加载更多",
         disabled: false
       };
@@ -138,14 +140,15 @@
       async loadMore() {
         this.pageIndex++;
         let that = this;
-        if (this.pageIndex * this.pageSize > this.total) {
+        if (this.total<=this.articleList.length && (this.total%this.pageSize) <= this.pageIndex) {
           this.message = "没有更多了";
           this.disabled = true;
         } else {
           //   如果不是搜索类型则按照默认分页查询文章列表
           if (!this.isClassType) {
             await getArticlesByPage(this.pageSize, this.pageIndex).then(e => {
-              for (let i = 0; i < e.result.count; i++) {
+              let index = e.result.count - this.articleList.length;
+              for (let i = 0; i < index; i++) {
                 this.articleList.push(e.result.data[i]);
               }
             });

@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="content-warp">
-      <v-left :articleList="articleList" :isClassType="isClassType" :categoryId="categoryId" />
+      <v-left :articleList="articleList" :isClassType="isClassType" :total="total" :categoryId="categoryId" />
       <v-right
         :categoryList="categoryList"
         :guestList="guestList"
@@ -41,7 +41,8 @@ export default {
       hotLikeArticleList: [],
       hotVisitArticleList: [],
       isClassType: false,
-      categoryId: null
+      categoryId: null,
+      total:0
     };
   },
   mounted() {
@@ -52,6 +53,7 @@ export default {
     async pageLoad() {
       await getArticlesByPage(3, 1).then(e => {
         this.articleList = e.result.data;
+        this.total=e.result.count;
       });
       await getAllCategory().then(e => {
         this.categoryList = e.result;

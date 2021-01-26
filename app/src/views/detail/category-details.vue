@@ -83,7 +83,7 @@ export default {
     },
     async loadMore() {
       this.pageIndex++;
-      if (this.pageIndex * this.pageSize > this.total) {
+      if (this.total<=this.articleList.length && (this.total%this.pageSize) <= this.pageIndex) {
         this.message = "没有更多了";
         this.disabled = true;
       } else {
@@ -92,8 +92,12 @@ export default {
           this.pageIndex,
           this.categoryId
         ).then(e => {
-          this.articleList = e.result.data;
-          this.total = e.result.count;
+          let index = this.total - this.articleList.length;
+          for (let i = 0; i < index; i++) {
+            this.articleList.push(e.result.data[i]);
+          }
+          // this.articleList = e.result.data;
+          // this.total = e.result.count;
         });
       }
     }
