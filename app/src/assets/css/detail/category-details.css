@@ -70,7 +70,6 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 h1.entry-title {
-    font-size: 24px;
     font-weight: 300;
 }
 .post{
@@ -90,8 +89,9 @@ h1.entry-title {
 .post-list h1.entry-title {
     font-size: 20px;
     font-weight: 400;
-    line-height: 50px;
-    margin: 0 0 0 17%;
+    line-height: 40px;
+    margin: 0  0 0 15%;
+    padding-top: 25px;
     position: relative;
     z-index: 1;
     display: inline-block;
@@ -101,12 +101,13 @@ h1.entry-title {
     width: 70%;
 }
 .entry-title a {
+    font-size: 20px;
     color: #504e4e;
 }
 .p-time {
     position: absolute;
     right: 20px;
-    top: 16px;
+    top: 20px;
     font-size: 14px;
     color: #989898;
     letter-spacing: 0;

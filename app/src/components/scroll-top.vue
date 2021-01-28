@@ -150,11 +150,11 @@ export default {
       this.$notify({
         title: "提醒",
         message:
-          "芜湖航班，即将起飞！目的地：博客码云地址!点击Star！祝你快乐百分百！！",
+          "芜湖航班，即将起飞！目的地：博客Github地址!点击Star！祝你快乐百分百！！",
         type: "success",
       });
       window.location.href =
-        "https://gitee.com/kidsnosplit/zswblog_open_source";
+        "https://github.com/Sandaman2015/ZswBlog3.0";
     },
   },
   mounted() {

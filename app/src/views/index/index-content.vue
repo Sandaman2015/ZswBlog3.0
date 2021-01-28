@@ -16,8 +16,7 @@
               <li class="wechat"><a href="#"><img
                     src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/wechat.png"></a>
                 <div class="wechatInner">
-                  <img src="http://47.97.43.95:8090/upload/2020/09/wechat.1e1b0e5-17b1700392ca4e66bbc51d4ca97a7a21.jpg"
-                    alt="微信公众号">
+                  <img src="../../assets/img/wechat.jpg" alt="微信"/>
                 </div>
               </li>
               <li><a href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1"

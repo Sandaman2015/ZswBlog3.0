@@ -339,6 +339,7 @@ hr {
   position: relative;
   display: inline-block;
   word-spacing: 0;
+  padding-left: 10px;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   -webkit-transition: all 0.25s ease;
@@ -380,7 +381,7 @@ li {
 }
 .content-body .articleImage {
   float: left;
-  width: 200px;
+  width: 270px;
   height: 200px;
 }
 .article-content {

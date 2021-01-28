@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <cover description="{ 友情链接 }" coverHeight="320" coverWidth="100" class="content-warp" />
+    <cover description="{ 友情链接 }" coverHeight="280" coverWidth="100" class="content-warp" />
     <div class="content-cont">
       <div class="link-content-middle">
         <fieldset class="field field-title wow zoomIn">

@@ -159,16 +159,16 @@
             <span>公告</span></div>
           <ul>
             <li v-if="announcementList" v-for="(item,index) in announcementList" :key="index">
-              <span class="wow fadeInLeft announcement-span" v-html="item.content">
-                {{item.content}}
-              </span>
+              <p class="wow fadeInLeft announcement-p" >
+                <p>{{index+1}}、<span class="announcement-span" v-html="item.content">{{item.content}}</span></p>
+              </p>
             </li>
           </ul>
         </div>
         <div class="whitebg cloud">
           <div class="item-headline"><i class="fa fa-bars"></i><span>所有分类</span></div>
           <ul class="category-list">
-            <a :href="'/category-details/'+item.id" v-if="categoryList" v-for="(item,index) in categoryList"
+            <a :href="'/web/category-details/'+item.id" v-if="categoryList" v-for="(item,index) in categoryList"
               :key="index" class="wow fadeInLeft">{{item.name}}</a>
           </ul>
         </div>

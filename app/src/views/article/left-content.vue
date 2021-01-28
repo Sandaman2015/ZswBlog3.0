@@ -3,12 +3,12 @@
     <ul class="flow-default">
       <li v-for="(item,index) in articleList" data-wow-delay="0.5s" data-wow-duration="1s" class="wow zoomIn"
         :key="index">
-        <div class="post-wrapper">
+        <div class="post-wrapper" v-if="item" >
           <article class="post reveal" data-sr-id="0"
             style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;">
             <!-- 文章统计 -->
             <section class="meta">
-              <a :title="item.title" href="javascript:void(0)"></a>
+              <!-- <a :title="item.title" href="javascript:void(0)"></a> -->
               <div class="meta" id="header-meta">
                 <h2 class="title">
                   <a :href="'/web/article-details/'+item.id">{{item.title}}</a>
@@ -119,7 +119,8 @@
         type: Number
       },
       total:{
-        type: Number
+        type: Number,
+        default: 10
       }
     },
     data() {
@@ -137,23 +138,22 @@
     },
     methods: {
       //   加载更多
-      async loadMore() {
-        this.pageIndex++;
-        let that = this;
+      loadMore() {
+        this.pageIndex++
         if (this.total<=this.articleList.length && (this.total%this.pageSize) <= this.pageIndex) {
           this.message = "没有更多了";
           this.disabled = true;
         } else {
           //   如果不是搜索类型则按照默认分页查询文章列表
           if (!this.isClassType) {
-            await getArticlesByPage(this.pageSize, this.pageIndex).then(e => {
-              let index = e.result.count - this.articleList.length;
-              for (let i = 0; i < index; i++) {
+            getArticlesByPage(this.pageSize, this.pageIndex).then(e => {
+              // let index = e.result.count - this.articleList.length;
+              for (let i = 0; i <= e.result.count; i++) {
                 this.articleList.push(e.result.data[i]);
               }
             });
           } else {
-            await getArticlesPageByClass(
+            getArticlesPageByClass(
               this.pageSize,
               this.pageIndex,
               this.categoryId

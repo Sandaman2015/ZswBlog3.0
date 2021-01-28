@@ -478,6 +478,9 @@ li {
   font-size: 27px !important;  
   animation: announ_animation .8s linear infinite;
 }
+.announcement-p{
+  margin-top: 5px;
+}
 .announcement-span{
   text-align: center;
   text-indent: 2em;

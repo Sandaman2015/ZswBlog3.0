@@ -1,6 +1,6 @@
 <template>
     <div class="category-content">
-        <cover description="{ 文章分类 }" coverHeight="320" coverWidth="100" class="content-warp" />
+        <cover description="{ 文章分类 }" coverHeight="280" coverWidth="100" class="content-warp" />
         <div id="content" class="site-content">
             <div class="tag-contents">
                 <div id="tags" class="container chip-container" style="margin-top: 0px;">
