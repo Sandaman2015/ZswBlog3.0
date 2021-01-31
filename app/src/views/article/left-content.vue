@@ -15,7 +15,7 @@
                 </h2>
                 <div class="new-meta-box">
                   <div class="new-meta-item author">
-                    <el-tooltip class="item" effect="dark" content="菜逼就是我！" placement="left-start">
+                    <el-tooltip class="item" effect="dark" content="打工人，打工魂，打工都是人上人！" placement="left-start">
                       <a href="/web/index" rel="nofollow">
                         <img class="article-image" src="../../assets/img/icon-me.jpg" />
                         <p>Sandman</p>
@@ -31,7 +31,7 @@
                   <div class="new-meta-item category">
                     <a href="javascript:void(0)" rel="nofollow">
                       <i class="fa fa-folder-open" aria-hidden="true"></i>
-                      <p>&nbsp;{{item.category.name}}</p>
+                      <p v-if="item.category">&nbsp;{{item.category.name}}</p>
                     </a>
                   </div>
                   <div class="new-meta-item wordcount">
@@ -86,7 +86,7 @@
               </div>
               <!-- 文章标签 -->
               <div class="full-width auto-padding tags">
-                <a href="javascript:void(0)" rel="nofollow" v-for="(tag,index) in item.tags" :key="tag.id">
+                <a href="javascript:void(0)" rel="nofollow" v-if="item.tags" v-for="(tag,index) in item.tags" :key="tag.id">
                   &nbsp;
                   <i class="fa fa-tag"></i>
                   &nbsp;{{tag.name}}

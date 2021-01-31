@@ -13,7 +13,7 @@ export const getArticleOnVisit = (params) => {
 }
 // 根据类型获取分页文章
 export const getArticlesPageByCategory = (limit, pageIndex, categoryId, params) => {
-  return request('get', `/article/get/page/category?limit=${limit}&pageIndex=${pageIndex}&categoryId=${categoryId}`, params)
+  return request('get', `/article/get/page?limit=${limit}&pageIndex=${pageIndex}&categoryId=${categoryId}`, params)
 }
 // 模糊查询文章
 export const getArticleByDimTitle = (title, params) => {
