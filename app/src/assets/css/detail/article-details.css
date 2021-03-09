@@ -126,12 +126,12 @@
   content: " ";
 }
 
-.article-detail a {
+.article-detail >>> a {
   text-decoration: none;
   color: #2db7f5;
 }
 
-.article-detail h2 {
+.article-detail >>> h2 {
   display: block;
   font-size: 1.5em;
   margin-block-start: 0.83em;
@@ -141,7 +141,7 @@
   font-weight: bold;
 }
 
-.article-detail h3 {
+.article-detail >>> h3 {
   display: block;
   font-size: 1.17em;
   margin-block-start: 1em;
@@ -151,7 +151,7 @@
   font-weight: bold;
 }
 
-.article-detail h4 {
+.article-detail >>> h4 {
   display: block;
   margin-block-start: 1.33em;
   margin-block-end: 1.33em;
@@ -160,7 +160,7 @@
   font-weight: bold;
 }
 
-.article-detail h5 {
+.article-detail >>> h5 {
   display: block;
   font-size: 0.83em;
   margin-block-start: 1.67em;
@@ -170,7 +170,7 @@
   font-weight: bold;
 }
 
-.article-detail figure {
+.article-detail >>> figure {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -189,7 +189,7 @@
   line-height: 1.5rem;
 }
 
-.article-detail blockquote {
+.article-detail >>> blockquote {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -201,36 +201,6 @@
   padding: .25rem .75rem;
   margin: 1rem 0;
 }
-/* 
-.article-detail pre {
-  display: block;
-  font-family: monospace;
-  white-space: pre;
-  margin: 1em 0px;
-  font-size: 1em;
-  margin: 0;
-  padding: .25rem 0 .25rem .5rem;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  background: #f5f5f5;
-} */
-/* 
-.article-detail code {
-  display: inline-block;
-  max-width: 100%;
-  padding: 0 .4rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  -webkit-line-break: anywhere;
-  -ms-line-break: anywhere;
-  line-break: anywhere;
-  font-size: .875rem;
-  font-family: Source Code Pro, Menlo, Consolas, Monaco, monospace, system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #E74C3C;
-} */
 
 .article-detail img {
   float: none;

@@ -20,15 +20,15 @@ import 'vue-social-share/dist/client.css';
 import '../node_modules/social-share.js/dist/js/social-share.min.js';
 Vue.use(Share);
 
-// 代码高亮
-import hljs from 'highlight.js'; // 导入代码高亮文件
-import 'highlight.js/styles/monokai-sublime.css'; // 导入代码高亮样式
+// // 代码高亮
+import hljs from 'highlight.js' // 导入代码高亮文件
+import 'highlight.js/styles/monokai-sublime.css' // 导入代码高亮样式
 Vue.directive('highlight', function (el) {
   let blocks = el.querySelectorAll('pre code');
   blocks.forEach((block) => {
     hljs.highlightBlock(block)
-  });
-});
+  })
+})
 
 import Viewer from 'v-viewer';
 import 'viewerjs/dist/viewer.css';

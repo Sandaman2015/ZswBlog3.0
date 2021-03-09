@@ -13,7 +13,7 @@
             <viewer :images="item.content">
               <p class="f14" v-html="item.priview">{{item.priview}}</p>
             <p class="f14" v-html="item.content">{{item.content}}</p>
-            <p class="f14">create by iphone 12</p>
+            <p class="f14"><i class="el-icon-mobile-phone">来自 iphone 12</i></p>
           </viewer>
           </li>
         </ul>
