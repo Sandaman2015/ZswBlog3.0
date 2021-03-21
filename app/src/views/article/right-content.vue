@@ -13,7 +13,7 @@
       <h5 class="other-item-title">关注我</h5>
       <div class="aside-list">
             <div class="aside-list-item"><a href="/messageboard/" class="thumbnail" ><img
-                  src="../../assets/img/about-me.jpg" alt="haha"></a>
+                  src="http://thirdqq.qlogo.cn/g?b=oidb&k=G9TRERmssnfaKEE3OKxVicA&s=40&t=1591118864" alt="haha"></a>
               <div class="content">
                 <ul class="follow">
                   <li>
