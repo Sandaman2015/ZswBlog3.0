@@ -13,7 +13,7 @@
             <p class="f14" v-html="item.content">{{item.content}}</p>
             <viewer :images="item.imgList">
               <p class="f14">
-                <img class="f14" :src="img.path" v-if="img" v-for="(img,idx) in item.imgList" alt="分享图片" />
+                <img class="f14" :src="img.url" v-if="img" v-for="(img,idx) in item.imgList" alt="分享图片" />
               </p>
             </viewer>
             <p class="f14"><i class="el-icon-mobile-phone">来自{{item.createBy}}</i></p>
