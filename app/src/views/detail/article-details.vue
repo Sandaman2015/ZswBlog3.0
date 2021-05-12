@@ -55,7 +55,7 @@
     </div>
     <div class="warp">
       <div class="details-warp">
-        <!-- 内容区域 -->        
+        <!-- 内容区域 -->
         <viewer :images="article.content">
           <div class="article-detail container" v-html="article.content" v-highlight></div>
         </viewer>
@@ -159,7 +159,7 @@
             <span>公告</span></div>
           <ul>
             <li v-if="announcementList" v-for="(item,index) in announcementList" :key="index">
-              <p class="wow fadeInLeft announcement-p" >
+              <p class="wow fadeInLeft announcement-p">
                 <p>{{index+1}}、<span class="announcement-span" v-html="item.content">{{item.content}}</span></p>
               </p>
             </li>
@@ -203,7 +203,8 @@
     addComment
   } from "../../api/comment.api";
   import {
-    getMusicList
+    getMusicList,
+    getDetailsConfig
   } from "../../api/common.api"
   import {
     getArticleById,
@@ -218,7 +219,6 @@
   import {
     getNearSaveMessage
   } from "../../api/message.api"
-  import list from "../../assets/data/detailsPic.json";
   import {
     get
   } from "../../utils/storage";
@@ -265,7 +265,9 @@
     methods: {
       initBackgroundImage() {
         let index = Math.floor(Math.random() * (0 - 4) + 4);
-        this.headerStyle.backgroundImage = "url(" + list[index].src + ")";
+        getDetailsConfig().then((res) => {
+          this.headerStyle.backgroundImage = "url(" + res.result[index].src + ")";
+        });
       },
       async getArticleDetailAndCategoryList() {
         if (this.articleId == undefined || this.articleId == null || this.articleId === '' || this.articleId <= 0) {

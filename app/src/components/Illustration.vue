@@ -8,7 +8,9 @@
 </template>
 
 <script>
-  import list from "../assets/data/illustration.json";
+  import {
+    getIllustrationConfig
+  } from "../api/common.api"
   export default {
     props: {
       title: {
@@ -28,12 +30,12 @@
       return {
         headerStyle: {
           backgroundImage: "",
-          height:0,
-          width:0
+          height: 0,
+          width: 0
         },
-        contentStyle:{
-          height:0,
-          width:0
+        contentStyle: {
+          height: 0,
+          width: 0
         }
       }
     },
@@ -43,15 +45,17 @@
     methods: {
       initBackgroundImage() {
         let index = Math.floor(Math.random() * (0 - 4) + 4);
-        this.headerStyle.backgroundImage = "url(" + list[index].src + ")";
-        this.headerStyle.height = this.coverHeight + "px";
-        this.contentStyle.height = this.coverHeight + "px";
-        if(this.coverWidth){
-          this.headerStyle.width = this.coverWidth + "%";
-          this.contentStyle.width = this.coverWidth + "%";
-          this.headerStyle.margin ="margin 0 auto";
-          this.contentStyle.margin ="margin 0 auto";
-        }        
+        getIllustrationConfig().then((res) => {
+          this.headerStyle.backgroundImage = "url(" + res.result[index].src + ")";
+          this.headerStyle.height = this.coverHeight + "px";
+          this.contentStyle.height = this.coverHeight + "px";
+          if (this.coverWidth) {
+            this.headerStyle.width = this.coverWidth + "%";
+            this.contentStyle.width = this.coverWidth + "%";
+            this.headerStyle.margin = "margin 0 auto";
+            this.contentStyle.margin = "margin 0 auto";
+          }
+        })
       }
     }
   };

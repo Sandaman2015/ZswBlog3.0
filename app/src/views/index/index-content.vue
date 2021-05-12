@@ -16,7 +16,7 @@
               <li class="wechat"><a href="#"><img
                     src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/wechat.png"></a>
                 <div class="wechatInner">
-                  <img src="../../assets/img/wechat.jpg" alt="微信"/>
+                  <img src="../../assets/img/wechat.jpg" alt="微信" />
                 </div>
               </li>
               <li><a href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1"
@@ -62,7 +62,7 @@
           <div class="middle-container">
             <h2 class="introduce">最新文章</h2>
             <div class="articles-content">
-              <el-col tag="article" v-for="(item,index) in hotArticles" :key="index" >
+              <el-col tag="article" v-for="(item,index) in hotArticles" :key="index">
                 <a :href="'/web/article-details/'+item.id">
                   <div class="imgBox">
                     <img :src="item.coverImage" class="mini-img" alt="文章插图" />
@@ -172,7 +172,9 @@
   import {
     getInitData
   } from "@/api/index.api.js";
-  import video from "../../assets/data/index-video.json";
+  import {
+    getInitVideoConfig
+  } from "@/api/common.api";
   export default {
     components: {
       countTo
@@ -222,11 +224,16 @@
     },
     mounted() {
       this.initData();
-      this.videoSrc = video.videosrc;
-      this.poster = video.poster;
-      this.$refs.localVideo.volume = video.volume;
+      this.initConfig();
     },
     methods: {
+      async initConfig() {
+        getInitVideoConfig().then((res) => {
+          this.videoSrc = res.result.videosrc;
+          this.poster = res.result.poster;
+          this.$refs.localVideo.volume = res.result.volume;
+        })
+      },
       isMobile() {
         let flag = navigator.userAgent.match(
           `
