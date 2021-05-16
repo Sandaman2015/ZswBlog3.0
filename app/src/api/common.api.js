@@ -9,7 +9,7 @@ export const getInitVideoConfig = () => {
 }
 
 export const getDetailsConfig = () => {
-  return request('get', `/config/get/illustration`)
+  return request('get', `/config/get/details`)
 }
 
 export const getIllustrationConfig = () => {

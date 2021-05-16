@@ -272,14 +272,20 @@
       async getArticleDetailAndCategoryList() {
         if (this.articleId == undefined || this.articleId == null || this.articleId === '' || this.articleId <= 0) {
           this.$router.push({
-            path: `/404`,
+            path: `/web/404`,
           })
         }
         await getArticleById(this.articleId).then(e => {
           if (e.code === 404) {
             this.$router.push({
-              path: `/404`,
+              path: `/web/404`,
             })
+          }
+          if (e.returnStatus == null && !e.success) {
+            this.$message({
+              message: e.msg,
+              type: "error"
+            });
           }
           this.article = e.result;
         })
