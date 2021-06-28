@@ -1,5 +1,6 @@
 <template>
   <div id="content">
+    <ipAddress />
     <div class="content-header" :style="headerStyle">
       <!-- 文章信息 -->
       <div class="warp-content wow slideInRight" v-if="article">
@@ -222,10 +223,12 @@
   import {
     get
   } from "../../utils/storage";
+  import ipAddress from "../../components/ipaddress";
   export default {
     components: {
       editor: editorBar,
-      comments: comment
+      comments: comment,
+      "ipAddress": ipAddress
     },
     data() {
       return {
@@ -376,7 +379,8 @@
                 browser: this.getBrowser(),
                 userId: parseInt(userId),
                 articleId: this.articleId,
-                content: this.comment
+                content: this.comment,
+                location: returnCitySN["cip"]
               };
               addComment(param).then(e => {
                 if (e.result) {

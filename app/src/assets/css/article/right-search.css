@@ -234,8 +234,14 @@
   background: #428BCA;
 }
 
+.nav_category .widget a:nth-child(9n-9) {
+  background: #808080;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+
  .nav_category .widget a:nth-child(9n-8) {
-  background: #567E95;
+  background: #FFD700;
   -webkit-transform-origin: right bottom;
   transform-origin: right bottom;
 }
@@ -282,7 +288,7 @@
   transform-origin: left top;
 }
 
- .nav_category .widgeta:nth-child(9n) {
+ .nav_category .widgeta:nth-child(9n-0) {
   background: #ed4014;
   -webkit-transform-origin: left top;
   transform-origin: right top;

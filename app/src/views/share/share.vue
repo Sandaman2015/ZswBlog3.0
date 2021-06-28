@@ -1,10 +1,10 @@
 <template>
   <div>
-    <cover description="{ 旅行分享 }" coverHeight="280" coverWidth="100" class="content-warp" />
+    <cover description="{ 生活分享 }" coverHeight="280" coverWidth="100" class="content-warp" />
     <div class="content-cont">
       <div class="wrapper clearfix-time">
         <div class="tit">
-          <h5 class="f24">旅行历程</h5>
+          <h5 class="f24">生活历程</h5>
         </div>
         <ul class="clearfix-time" v-if="travelList">
           <li v-for="(item,index) in travelList" :key="index">

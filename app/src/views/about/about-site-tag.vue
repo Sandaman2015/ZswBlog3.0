@@ -1,31 +1,34 @@
 <template>
-    <div>
-      <el-form
-        :inline="true"
-        ref="tagApplyForm"
-        :model="formInline"
-        :rules="rules"
-        class="demo-form-inline"
-      >
-        <el-form-item label="插入标签" prop="tagTitle">
-          <el-input v-model="formInline.tagTitle" placeholder="请输入标签"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="beforeSubmit">插入</el-button>
-        </el-form-item>
-      </el-form>
-      <tag-cloud :data="hotTag" @clickTag="clickTagItem" :config="option"></tag-cloud>
-    </div>
-  </template>
-  
-  <script>
-  import { getAllSiteTag, addSiteTag } from "../../api/about.api";
-  import{get} from "../../utils/storage";
+  <div>
+    <el-form :inline="true" ref="tagApplyForm" :model="formInline" :rules="rules" class="demo-form-inline">
+      <el-form-item label="插入标签" prop="tagTitle">
+        <el-input v-model="formInline.tagTitle" placeholder="请输入标签"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="beforeSubmit">插入</el-button>
+      </el-form-item>
+    </el-form>
+    <tag-cloud :data="hotTag" @clickTag="clickTagItem" :config="option"></tag-cloud>
+  </div>
+</template>
+
+<script>
+  import {
+    getAllSiteTag,
+    addSiteTag
+  } from "../../api/about.api";
+  import {
+    get
+  } from "../../utils/storage";
   export default {
     data() {
       return {
         rules: {
-          tagTitle: [{ required: true, message: "请填写标签", trigger: "blur" }]
+          tagTitle: [{
+            required: true,
+            message: "请填写标签",
+            trigger: "blur"
+          }]
         },
         option: {
           radius: 300, // 滚动半径，单位px
@@ -47,8 +50,9 @@
       this.$notify({
         title: "温馨提示",
         message: h(
-          "i",
-          { style: "color: #296fc7" },
+          "i", {
+            style: "color: #296fc7"
+          },
           "记得登录才可以添加标签哦！\r\n添加标签请注意文明用语哦！"
         )
       });
@@ -62,7 +66,10 @@
       },
       clickTagItem(tag) {
         let str = "成功为" + tag.name + "添加一次点击率，点击率越高显示时间越长";
-        this.$message({ message: str, type: "success" });
+        this.$message({
+          message: str,
+          type: "success"
+        });
       },
       onSubmit(formName) {
         this.$refs[formName].validate(valid => {
@@ -74,7 +81,7 @@
             addSiteTag(sitetag).then(e => {
               if (e.result) {
                 this.$message({
-                  message: "提交成功,请耐心等待管理员审核查看！",
+                  message: "提交成功！感谢您的支持",
                   type: "success"
                 });
               } else {
@@ -94,7 +101,7 @@
       },
       beforeSubmit() {
         let userId = get("userId");
-        if (userId !== null && userId >= 0) {
+        if (userId !== null && userId != 0) {
           this.userId = userId;
           this.onSubmit("tagApplyForm");
         } else {
@@ -106,21 +113,23 @@
       }
     }
   };
-  </script>
-  
-  <style scoped>
+</script>
+
+<style scoped>
   .el-form {
     text-align: center;
     margin: 20px 0;
   }
+
   .tag-cloud {
     width: 700px !important;
     height: 700px !important;
   }
-  .tag-cloud > p:hover {
+
+  .tag-cloud>p:hover {
     cursor: pointer;
     border: #45aaa4 solid 1px;
     color: black;
     transition: 0.5s;
   }
-  </style>
+</style>

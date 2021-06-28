@@ -1,6 +1,7 @@
 <template>
   <div class="w1000">
     <cdn-flower />
+    <ipAddress />
     <div class="content-cont">
       <div class="form-box warp-out">
         <el-tooltip class="item" effect="dark" content="愿你遇良人 予你欢喜城 长歌暖浮生 怎知我所希求" placement="left-start">
@@ -38,6 +39,7 @@
   import messageComment from "./message-comment";
   import cdnFlower from "../../components/sakura-board.vue";
   import editorBar from "../../components/wang-editor";
+  import ipAddress from "../../components/ipaddress";
   import {
     getMessageByPage,
     addMessage
@@ -49,7 +51,8 @@
     components: {
       editor: editorBar,
       "cdn-flower": cdnFlower,
-      comments: messageComment
+      comments: messageComment,
+      "ipAddress": ipAddress
     },
     data() {
       return {
@@ -62,7 +65,7 @@
         total: 1
       };
     },
-    created() {
+    mounted() {
       this.pageLoad();
     },
     methods: {
@@ -82,7 +85,8 @@
               let param = {
                 browser: this.getBrowser(),
                 userId: parseInt(userId),
-                content: this.message
+                content: this.message,
+                ip: returnCitySN["cip"]
               };
               await addMessage(param).then(e => {
                 if (e.result) {

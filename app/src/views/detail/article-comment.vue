@@ -95,6 +95,7 @@
 
 <script>
   import editorBar from "../../components/wang-editor";
+  import ipAddress from "../../components/ipaddress";
   import {
     addComment
   } from "../../api/comment.api";
@@ -164,7 +165,8 @@
                 articleId: this.articleId,
                 content: mainText,
                 targetId: tId,
-                targetUserId: tUserId
+                targetUserId: tUserId,
+                location: returnCitySN["cip"]
               };
               await addComment(param).then(e => {
                 if (e.result) {
@@ -261,7 +263,8 @@
                 articleId: this.articleId,
                 content: this.replyText,
                 targetId: tId,
-                targetUserId: tUserId
+                targetUserId: tUserId,
+                location: returnCitySN["cip"]
               };
               await addComment(param).then(e => {
                 if (e.result) {

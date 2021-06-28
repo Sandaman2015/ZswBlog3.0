@@ -3,7 +3,7 @@
     <ul class="flow-default">
       <li v-for="(item,index) in articleList" data-wow-delay="0.5s" data-wow-duration="1s" class="wow zoomIn"
         :key="index">
-        <div class="post-wrapper" v-if="item" >
+        <div class="post-wrapper" v-if="item">
           <article class="post reveal" data-sr-id="0"
             style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;">
             <!-- 文章统计 -->
@@ -77,8 +77,7 @@
                 </div>
                 <hr />
                 <div class="readmore">
-                  <a :href="'/web/article-details/'+item.id"
-                    class="flat-box waves-effect waves-block">
+                  <a :href="'/web/article-details/'+item.id" class="flat-box waves-effect waves-block">
                     <i class="fa fa-folder-open-o" aria-hidden="true"></i>
                     阅读全文
                   </a>
@@ -86,7 +85,8 @@
               </div>
               <!-- 文章标签 -->
               <div class="full-width auto-padding tags">
-                <a href="javascript:void(0)" rel="nofollow" v-if="item.tags" v-for="(tag,index) in item.tags" :key="tag.id">
+                <a href="javascript:void(0)" rel="nofollow" v-if="item.tags" v-for="(tag,index) in item.tags"
+                  :key="tag.id">
                   &nbsp;
                   <i class="fa fa-tag"></i>
                   &nbsp;{{tag.name}}
@@ -118,7 +118,7 @@
       categoryId: {
         type: Number
       },
-      total:{
+      total: {
         type: Number,
         default: 10
       }
@@ -138,17 +138,14 @@
     },
     methods: {
       //   加载更多
-      loadMore() {
+      async loadMore() {
         this.pageIndex++
-        if (this.total<=this.articleList.length && (this.total%this.pageSize) <= this.pageIndex) {
-          this.message = "没有更多了";
-          this.disabled = true;
-        } else {
+        if (this.articleList.length <= this.total && this.total !== 0 && this.articleList.length !== 0) {
           //   如果不是搜索类型则按照默认分页查询文章列表
           if (!this.isClassType) {
-            getArticlesByPage(this.pageSize, this.pageIndex).then(e => {
+            await getArticlesByPage(this.pageSize, this.pageIndex).then(e => {
               // let index = e.result.count - this.articleList.length;
-              for (let i = 0; i <= e.result.count; i++) {
+              for (let i = 0; i <= e.result.data.length; i++) {
                 this.articleList.push(e.result.data[i]);
               }
             });
@@ -163,6 +160,9 @@
               }
             });
           }
+        } else {
+          this.message = "没有更多了";
+          this.disabled = true;
         }
       }
     }
