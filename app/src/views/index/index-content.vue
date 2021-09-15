@@ -14,27 +14,27 @@
                 <img class="flipx" src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/next-b.svg">
               </li>
               <li class="wechat"><a href="#"><img
-                    src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/wechat.png"></a>
+                  src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/wechat.png"></a>
                 <div class="wechatInner">
-                  <img src="../../assets/img/wechat.jpg" alt="微信" />
+                  <img src="../../assets/img/wechat.jpg" alt="微信"/>
                 </div>
               </li>
               <li><a href="https://weibo.com/5060565838/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1"
-                  target="_blank" class="social-sina" title="sina"><img
-                    src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/sina.png"></a></li>
+                     target="_blank" class="social-sina" title="sina"><img
+                  src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/sina.png"></a></li>
               <li class="qq"><a href="//wpa.qq.com/msgrd?v=3&amp;uin=1761317983&amp;site=qq&amp;menu=yes"
-                  target="_blank" title="Initiate chat ?"><img
-                    src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/qq.png"></a></li>
+                                target="_blank" title="Initiate chat ?"><img
+                  src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/qq.png"></a></li>
               <li><a href="https://github.com/Sandaman2015" target="_blank" class="social-github" title="github"><img
-                    src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/github.png"></a></li>
+                  src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/github.png"></a></li>
               <li><a href="https://space.bilibili.com/12014895" target="_blank" class="social-bili"
-                  title="bilibili"><img
-                    src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/bilibili.png"></a></li>
+                     title="bilibili"><img
+                  src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/bilibili.png"></a></li>
               <li><a href="https://twitter.com/DnUJoG07tYOs99p" target="_blank" class="social-wangyiyun"
-                  title="Twitter"><img
-                    src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/twitter.png"></a></li>
+                     title="Twitter"><img
+                  src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/twitter.png"></a></li>
               <li><a href="https://www.zhihu.com/people/ben-jiu-yi-yang" target="_blank" class="social-wangyiyun"
-                  title="知乎"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/zhihu.png"></a>
+                     title="知乎"><img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/sns/zhihu.png"></a>
               </li>
               <li id="bg-next">
                 <img src="https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.6/img/Sakura/images/next-b.svg">
@@ -51,9 +51,9 @@
           <h3>Winged Words</h3>
           <p class="typing title-h">
             当你忘了自己的过去，满意自己的现在，漠视自己的未来，你就站在了生活的最高处。
-            <br />当成功不会让你太高兴，失败不会把你怎么样，平淡不会淹没你时，你就站在了生命的最高处。
-            <br />当你以微笑的心想到了过去，以希望的心向前看，以宽厚的心向下看，以坦然的心向上看时，
-            <br />你就站在了灵魂的最高处。
+            <br/>当成功不会让你太高兴，失败不会把你怎么样，平淡不会淹没你时，你就站在了生命的最高处。
+            <br/>当你以微笑的心想到了过去，以希望的心向前看，以宽厚的心向下看，以坦然的心向上看时，
+            <br/>你就站在了灵魂的最高处。
           </p>
           <a href="/web/about">About-me</a>
         </el-col>
@@ -65,11 +65,11 @@
               <el-col tag="article" v-for="(item,index) in hotArticles" :key="index">
                 <a :href="'/web/article-details/'+item.id">
                   <div class="imgBox">
-                    <img :src="item.coverImage" class="mini-img" alt="文章插图" />
+                    <img :src="item.coverImage" class="mini-img" alt="文章插图"/>
                   </div>
-                  <span class="source">{{item.createDate|filterDate}}</span>
-                  <h2 class="title">{{item.title}}</h2>
-                  <span class="detail" v-html="item.content">{{item.content}}</span>
+                  <span class="source">{{ item.createDate|filterDate }}</span>
+                  <h2 class="title">{{ item.title }}</h2>
+                  <span class="detail" v-html="item.content">{{ item.content }}</span>
                 </a>
               </el-col>
             </div>
@@ -84,16 +84,16 @@
                 <swiper-slide v-for="(item,index) in messageList" :key="index">
                   <div class="ols-card">
                     <div class="ols-header">
-                      <img :src="item.userPortrait" alt="留言头像" class="ols-desc-img" />
+                      <img :src="item.userPortrait" alt="留言头像" class="ols-desc-img"/>
                       <div class="ols-desc-name">
-                        {{item.userName}}
-                        <br />
-                        <span>{{item.createDate|filterDate}}</span>
+                        {{ item.userName }}
+                        <br/>
+                        <span>{{ item.createDate|filterDate }}</span>
                       </div>
                     </div>
                     <div class="ols-body">
                       留言:
-                      <p class="ols-message-body" v-html="item.content">{{item.content}}</p>
+                      <p class="ols-message-body" v-html="item.content">{{ item.content }}</p>
                     </div>
                   </div>
                 </swiper-slide>
@@ -150,7 +150,7 @@
                 </li>
                 <li class="li-5">
                   <b>
-                    <i id="productNumber_5">{{numberAdd.version}}</i>
+                    <i id="productNumber_5">{{ numberAdd.version }}</i>
                   </b>
                   <p>当前版本</p>
                 </li>
@@ -163,101 +163,102 @@
   </div>
 </template>
 <script>
-  import countTo from "vue-count-to";
-  import {
-    Swiper,
-    SwiperSlide,
-    directive
-  } from "vue-awesome-swiper";
-  import {
-    getInitData
-  } from "@/api/index.api.js";
-  import {
-    getInitVideoConfig
-  } from "@/api/common.api";
-  export default {
-    components: {
-      countTo
-    },
-    data() {
-      return {
-        videoSrc: "",
-        poster: "",
-        swiperOption: {
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true // 允许点击小圆点跳转
-          },
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: true // 手动切换之后继续自动轮播
-          },
-          loop: false,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-          },
-          slidesPerView: this.isMobile() == true ? 1 : 3,
-          spaceBetween: 25,
-          centeredSlides: true
+import countTo from "vue-count-to";
+import {
+  Swiper,
+  SwiperSlide,
+  directive
+} from "vue-awesome-swiper";
+import {
+  getInitData
+} from "@/api/index.api.js";
+import {
+  getInitVideoConfig
+} from "@/api/common.api";
+
+export default {
+  components: {
+    countTo
+  },
+  data() {
+    return {
+      videoSrc: "",
+      poster: "",
+      swiperOption: {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true // 允许点击小圆点跳转
         },
-        messageList: [],
-        hotArticles: [],
-        numberAdd: {
-          startNum: 0,
-          visitCount: 0,
-          runDays: 0,
-          articleCount: 0,
-          siteTag: 0,
-          version: "v3.0.1"
-        }
-      };
-    },
-    filters: {
-      filterDate(date) {
-        if (date.indexOf("T") !== -1) {
-          return date.replace("T", " ");
-        } else {
-          return date;
-        }
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: true // 手动切换之后继续自动轮播
+        },
+        loop: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        slidesPerView: this.isMobile() === true ? 1 : 3,
+        spaceBetween: 25,
+        centeredSlides: true
+      },
+      messageList: [],
+      hotArticles: [],
+      numberAdd: {
+        startNum: 0,
+        visitCount: 0,
+        runDays: 0,
+        articleCount: 0,
+        siteTag: 0,
+        version: "v3.0.1"
       }
-    },
-    mounted() {
-      this.initData();
-      this.initConfig();
-    },
-    methods: {
-      async initConfig() {
-        getInitVideoConfig().then((res) => {
-          this.videoSrc = res.result.videosrc;
-          this.poster = res.result.poster;
-          this.$refs.localVideo.volume = res.result.volume;
-        })
-      },
-      isMobile() {
-        let flag = navigator.userAgent.match(
-          `
-        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
-        );
-        return flag;
-      },
-      async initData() {
-        await getInitData().then(e => {
-          this.numberAdd.runDays = Number.parseInt(e.result.dataCount.runDays);
-          this.numberAdd.articleCount = Number.parseInt(
-            e.result.dataCount.articleCount
-          );
-          this.numberAdd.siteTag = Number.parseInt(e.result.dataCount.tagsCount);
-          this.numberAdd.visitCount = Number.parseInt(
-            e.result.dataCount.visitsCount
-          );
-          this.hotArticles = e.result.articles;
-          this.messageList = e.result.messages;
-        });
+    };
+  },
+  filters: {
+    filterDate(date) {
+      if (date.indexOf("T") !== -1) {
+        return date.replace("T", " ");
+      } else {
+        return date;
       }
     }
-  };
+  },
+  mounted() {
+    this.initData();
+    this.initConfig();
+  },
+  methods: {
+    async initConfig() {
+      getInitVideoConfig().then((res) => {
+        this.videoSrc = res.result.videosrc;
+        this.poster = res.result.poster;
+        this.$refs.localVideo.volume = res.result.volume;
+      })
+    },
+    isMobile() {
+      let flag = navigator.userAgent.match(
+          `
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
+      );
+      return flag;
+    },
+    async initData() {
+      await getInitData().then(e => {
+        this.numberAdd.runDays = Number.parseInt(e.result.dataCount.runDays);
+        this.numberAdd.articleCount = Number.parseInt(
+            e.result.dataCount.articleCount
+        );
+        this.numberAdd.siteTag = Number.parseInt(e.result.dataCount.tagsCount);
+        this.numberAdd.visitCount = Number.parseInt(
+            e.result.dataCount.visitsCount
+        );
+        this.hotArticles = e.result.articles;
+        this.messageList = e.result.messages;
+      });
+    }
+  }
+};
 </script>
 <style scoped>
-  @import "../../assets/css/index/index-content.css";
+@import "../../assets/css/index/index-content.css";
 </style>

@@ -204,7 +204,6 @@
     addComment
   } from "../../api/comment.api";
   import {
-    getMusicList,
     getDetailsConfig
   } from "../../api/common.api"
   import {
@@ -224,6 +223,7 @@
     get
   } from "../../utils/storage";
   import ipAddress from "../../components/ipaddress";
+  import marked from 'marked'
   export default {
     components: {
       editor: editorBar,
@@ -273,7 +273,7 @@
         });
       },
       async getArticleDetailAndCategoryList() {
-        if (this.articleId == undefined || this.articleId == null || this.articleId === '' || this.articleId <= 0) {
+        if (this.articleId === undefined || this.articleId === null || this.articleId === '' || this.articleId <= 0) {
           this.$router.push({
             path: `/web/404`,
           })
@@ -291,6 +291,7 @@
             });
           }
           this.article = e.result;
+          this.article.content = marked(this.article.content)
         })
         await getAllCategory().then(e => {
           this.categoryList = e.result;

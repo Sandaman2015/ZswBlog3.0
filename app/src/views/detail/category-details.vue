@@ -11,13 +11,13 @@
         <a :href="'/web/article-details/' + item.id">
           <div class="post-entry">
             <div class="feature">
-              <a href="javascript::void(0)">
+              <a :href="'/web/article-details/' + item.id">
                 <img width="150" height="150" :src="item.coverImage"
                   class="attachment-post-thumbnail size-post-thumbnail" alt="">
               </a>
             </div>
             <h1 class="entry-title">
-              <a href="javascript::void(0)">{{item.title}}</a>
+              <a :href="'/web/article-details/' + item.id">{{item.title}}</a>
             </h1>
             <div class="p-time">
               <!-- <i class="fa fa-fire"></i> -->
