@@ -423,4 +423,5 @@
 
 <style scoped>
   @import "../../assets/css/detail/article-details.css";
+  @import "../../assets/css/detail/article-details-markdown.css";
 </style>
