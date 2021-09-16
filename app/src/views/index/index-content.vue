@@ -210,7 +210,7 @@ export default {
         runDays: 0,
         articleCount: 0,
         siteTag: 0,
-        version: "v3.0.1"
+        version: "v3.1.6"
       }
     };
   },

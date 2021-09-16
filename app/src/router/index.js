@@ -62,10 +62,15 @@ const routes = [{
     path: "/web/about",
     name: "about",
     component: () => import("../views/about/about.vue")
-  }
-  ,{
+  },
+  {
     path: "*",
     redirect: "/web/404"
+  },
+  {
+    path: "/web/login",
+    name: "login",
+    component: () => import("../views/login.vue")
   }
 ];
 

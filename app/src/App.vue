@@ -1,13 +1,13 @@
 <template>
   <div id="parent">
-    <common-header  v-if="isShow" />
+    <common-header v-if="isShow"/>
     <router-view :key="$route.fullPath"></router-view>
-    <common-footer class="float" v-if="isShow" />
-    <scroll-top />
-    <music style="padding:0;margin-left:0.3px;" v-if="isShow" />
+    <common-footer class="float" v-if="isShow"/>
+    <scroll-top/>
+    <music style="padding:0;margin-left:0.3px;" v-if="isShow"/>
     <audio v-if="!isShow" autoplay loop src="https://zswblog.oss-cn-hangzhou.aliyuncs.com/404/404.mp3">
     </audio>
-    <bulletin-board />
+    <bulletin-board/>
   </div>
 </template>
 <script>
@@ -18,6 +18,7 @@ import head from "./components/header";
 import foot from "./components/footer";
 import scroll from "./components/scroll-top";
 import musicLocation from "./components/vue-aplayer";
+
 export default {
   components: {
     music: musicLocation,
@@ -32,7 +33,10 @@ export default {
     };
   },
   updated() {
-    if (this.$route.fullPath == "/web/404") {
+    if (window.location.pathname.indexOf("/web/404") !== -1) {
+      this.isShow = false;
+    }
+    if (window.location.pathname.indexOf("/web/login") !== -1) {
       this.isShow = false;
     }
     // const script = document.createElement("script");
@@ -41,6 +45,6 @@ export default {
     // script.language = "JavaScript";
     // document.getElementById("parent")[0].appendChild(script);
   },
-  
+
 };
 </script>
