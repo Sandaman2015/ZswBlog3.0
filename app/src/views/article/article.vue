@@ -25,7 +25,6 @@ import {
 import {
   getNearUsers
 } from "../../api/user.api"
-import marked from "marked";
 
 export default {
   components: {
@@ -52,9 +51,9 @@ export default {
     //   页面初始化
     async pageLoad() {
       await getArticlesByPage(3, 1).then(e => {
-        for (let i = 0; i < e.result.data.length; i++) {
-          e.result.data[i].content = marked(e.result.data[i].content);
-        }
+        // for (let i = 0; i < e.result.data.length; i++) {
+        //   e.result.data[i].content = marked(e.result.data[i].content);
+        // }
         this.articleList = e.result.data;
         this.total = e.result.count;
       });
@@ -76,9 +75,9 @@ export default {
       this.isClassType = true;
       await getArticlesPageByCategory(pageSize, pageIndex, this.categoryId).then(
           e => {
-            for (let i = 0; i < e.result.data.length; i++) {
-              e.result.data[i].content = marked(e.result.data[i].content);
-            }
+            // for (let i = 0; i < e.result.data.length; i++) {
+            //   e.result.data[i].content = marked(e.result.data[i].content);
+            // }
             this.articleList = e.result;
           }
       );
@@ -94,18 +93,18 @@ export default {
           });
         } else {
           await getArticlesByPage(3, 1).then(e => {
-            for (let i = 0; i < e.result.data.length; i++) {
-              e.result.data[i].content = marked(e.result.data[i].content);
-            }
+            // for (let i = 0; i < e.result.data.length; i++) {
+            //   e.result.data[i].content = marked(e.result.data[i].content);
+            // }
             this.articleList = e.result.data;
             this.total = e.result.count;
           });
         }
       } else {
         await getArticleByDimTitle(title).then(e => {
-          for (let i = 0; i < e.result.data.length; i++) {
-            e.result.data[i].content = marked(e.result.data[i].content);
-          }
+          // for (let i = 0; i < e.result.data.length; i++) {
+          //   e.result.data[i].content = marked(e.result.data[i].content);
+          // }
           this.articleList = e.result;
         });
       }

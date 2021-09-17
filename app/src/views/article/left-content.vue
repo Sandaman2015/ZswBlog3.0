@@ -74,7 +74,7 @@
             <section class="article typo">
               <div class="article-entry">
                 <div class="content-body">
-                  <img class="articleImage" :src="item.coverImage"/>
+                  <el-image class="articleImage" :fit="scale-down" :src="item.coverImage"></el-image>
                   <p class="article-content" v-html="item.content">{{ item.content }}</p>
                 </div>
                 <hr/>
@@ -110,7 +110,6 @@
 import {
   getArticlesByPage
 } from "../../api/article.api";
-import marked from 'marked'
 
 export default {
   props: {
@@ -151,7 +150,7 @@ export default {
           await getArticlesByPage(this.pageSize, this.pageIndex).then(e => {
             // let index = e.result.count - this.articleList.length;
             for (let i = 0; i <= e.result.data.length; i++) {
-              e.result.data[i].content = marked(e.result.data()[i].content);
+              // e.result.data[i].content = marked(e.result.data()[i].content);
               this.articleList.push(e.result.data[i]);
             }
           });
@@ -162,7 +161,7 @@ export default {
               this.categoryId
           ).then(e => {
             for (let i = 0; i < e.result.length; i++) {
-              e.result.data[i].content = marked(e.result.data()[i].content);
+              // e.result.data[i].content = marked(e.result.data()[i].content);
               this.articleList.push(e.result[i]);
             }
           });

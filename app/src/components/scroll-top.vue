@@ -82,7 +82,7 @@ export default {
       cancelAnimationFrame(timer);
       timer = requestAnimationFrame(function fn() {
         if (that.scrollTop > 0) {
-          that.scrollTop -= 200;
+          that.scrollTop -= 500;
           document.body.scrollTop = document.documentElement.scrollTop =
             that.scrollTop;
           timer = requestAnimationFrame(fn);

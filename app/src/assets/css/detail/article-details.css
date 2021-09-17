@@ -1,32 +1,16 @@
-/* html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-display: swap;
-    font-size: 16px;
-    line-height: 1.5rem;
-    width: 100%;
-  } */
-
-
 .content-header {
-    display: inline-block;
     height: 300px;
-    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #f6f6f6;
 }
 
 .content-header .warp-content {
-    width: 1000px;
-    margin: 0 auto;
     margin-top: 80px;
 }
 
 .warp {
-    width: calc(75vw);
     margin: 0 auto;
-    margin-top: 10px;
 }
 
 .warp:after {
@@ -118,88 +102,7 @@
     margin: 0 auto;
     border-radius: 10px;
     padding: 4px;
-}
-
-.article-detail:after {
-    clear: both;
-    display: block;
-    content: " ";
-}
-
-.article-detail >>> a {
-    text-decoration: none;
-    color: #2db7f5;
-}
-
-.article-detail >>> h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-
-.article-detail >>> h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-
-.article-detail >>> h4 {
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-
-.article-detail >>> h5 {
-    display: block;
-    font-size: 0.83em;
-    margin-block-start: 1.67em;
-    margin-block-end: 1.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-
-.article-detail >>> figure {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 40px;
-    margin-inline-end: 40px;
-    margin: .5rem;
-    text-align: center;
-}
-
-.article-detail p {
-    margin: .5rem;
-    color: #161209;
-    overflow-wrap: break-word;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5rem;
-}
-
-.article-detail >>> blockquote {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 40px;
-    margin-inline-end: 40px;
-    display: block;
-    border-left: 0.5rem solid #6bd6fd;
-    background-color: rgba(107, 214, 253, 0.2);
-    padding: .25rem .75rem;
-    margin: 1rem 0;
+    height: 100%;
 }
 
 .article-detail img {
@@ -335,13 +238,13 @@ li {
 
 /* 右边区域 */
 
-.ad {
-    float: right;
-    width: 300px;
-    min-height: 800px;
-    border-radius: 10px;
-    transition: 0.5s;
-}
+/*.ad {*/
+/*    float: right;*/
+/*    width: 300px;*/
+/*    min-height: 800px;*/
+/*    border-radius: 10px;*/
+/*    transition: 0.5s;*/
+/*}*/
 
 .whitebg {
     position: relative;
@@ -357,6 +260,10 @@ li {
     -o-transition: all .3s;
     -ms-transition: all .3s;
     transition: all .3s;
+}
+
+.aside-list-item {
+    border-radius: 5px;
 }
 
 .whitebg:hover {
@@ -660,4 +567,39 @@ li {
     .article-detail > p {
         margin: 10px;
     }
+}
+
+
+li[class="menu-item parent"]:hover > a {
+    color: #1E9FFF;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+li[class="menu-item child"]:hover > a {
+    color: #6bc30d;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.menu ul li a {
+    color: #1a1a1a;
+}
+
+div[class="whitebg cloud about-me box-details box-details-active"] {
+    z-index: 99999;
+    position: fixed;
+    box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.15);
+    top: 60px;
+    background-color: #fff !important;;
+}
+
+div[class="whitebg cloud menu box-details box-details-active"] {
+    z-index: 99999;
+    position: fixed;
+    box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.15);
+    top: 220px;
+    background-color: #fff !important;
 }

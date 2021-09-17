@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset=UTF-8>
     <meta name=referrer content=never>
     <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -8,20 +8,32 @@
     <meta name=keywords content=zswblog,ZswBlog个人博客,ZswBlog文章,张晟玮分享,张晟玮原创,Vue博客,Vue,.NetCore博客,zsw,好看的博客,网页内嵌视频,C#博客>
     <meta name=author content=1761317983@qq.com>
     <meta name=description content=zswblog个人博客,记录个人生活和学习的网站,爱分享.NET新技术和JAVA等技术知识.>
-    <meta property="og:title" content="ZswBlog网站首页" />
-    <meta property="og:type" content="个人博客" />
-    <meta property="og:url" content="http://www.zswblog.xyz" />
-    <meta property="og:image" content="http://www.zswblog.xyz/static/favicon.ico" />
-    <meta property="og:site_name" content="www.zswblog.xyz" />
-    <meta property="og:description" content="ZswBlog,Zsw个人博客,记录个人生活和学习的网站,爱分享.NET新技术和JAVA等技术知识." />
+    <meta property="og:title" content="ZswBlog网站首页"/>
+    <meta property="og:type" content="个人博客"/>
+    <meta property="og:url" content="http://www.zswblog.xyz"/>
+    <meta property="og:image" content="http://www.zswblog.xyz/static/favicon.ico"/>
+    <meta property="og:site_name" content="www.zswblog.xyz"/>
+    <meta property="og:description" content="ZswBlog,Zsw个人博客,记录个人生活和学习的网站,爱分享.NET新技术和JAVA等技术知识."/>
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <style>
+        @media screen and (max-width: 475px) {
+            #waifu-toggle {
+                display: none;
+            }
+
+            .aplayer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
 </html>

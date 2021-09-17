@@ -1,9 +1,10 @@
 <template>
   <div class="container-404">
-    <vue-particles class="particles" color="#fff" :particleOpacity="0.2" :particlesNumber="60" shapeType="circle"
-                   :particleSize="4" linesColor="#fff" :linesWidth="0.8" :lineLinked="true" :lineOpacity="0.4"
-                   :linesDistance="150" :moveSpeed="2" :hoverEffect="true" hoverMode="grab" :clickEffect="true"
-                   clickMode="push" height="100%">
+    <vue-particles
+        class="particles" color="#fff" :particleOpacity="0.2" :particlesNumber="60" shapeType="circle"
+        :particleSize="4" linesColor="#fff" :linesWidth="0.8" :lineLinked="true" :lineOpacity="0.4"
+        :linesDistance="150" :moveSpeed="2" :hoverEffect="true" hoverMode="grab" :clickEffect="true"
+        clickMode="push" height="100%">
     </vue-particles>
     <div class="text-sign">
       <h3>登录成功,即将跳转页面!</h3>
@@ -18,7 +19,6 @@
 </template>
 
 <script>
-// import { setInterval, clearInterval } from "timers";
 import {parseUrl} from "../api/user.api";
 import {set} from "../utils/storage";
 
@@ -62,7 +62,8 @@ export default {
               type: "success"
             });
           }
-          window.location.href = e.result.url;
+          console.log(e.result.url);
+          window.location.href = `http://${e.result.url}`;
         } else {
           this.$message({
             message: e.result.msg,
@@ -71,21 +72,7 @@ export default {
         }
       });
     }
-
-
-    // clearInterval(this.timer);
-    // this.timer = setInterval(() => {
-    //   var that = this;
-    //   that.index++;
-    //   if (that.index >= this.msg.length-1) {
-    //     clearInterval(this.timer);
-    //   }
-    //   this.showMsg += "" + this.msg[that.index];
-    // }, 100);
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
-  },
+  }
 };
 </script>
 
