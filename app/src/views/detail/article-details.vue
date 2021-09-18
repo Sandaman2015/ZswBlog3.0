@@ -61,10 +61,10 @@
       <el-col :xs="{span:21,offset:1}" :sm="{span:21,offset:1}" :md="{span:12,offset:4}" :lg="{span:12,offset:4}"
               :xl="{span:12,offset:4}">
         <!-- 内容区域 -->
-        <!--        <viewer :images="article.content">-->
-        <div id="write" ref="articleContent" class="article-detail" v-html="article.content"
-             v-highlight></div>
-        <!--        </viewer>-->
+        <viewer :images="article.content">
+          <div id="write" ref="articleContent" class="article-detail" v-html="article.content"
+               v-highlight></div>
+        </viewer>
         <!-- 分享 -->
         <div class="share-info">
           <blockquote class="elem-quote quote-nm share">
