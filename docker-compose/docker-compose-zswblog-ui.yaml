@@ -3,7 +3,7 @@ version: '3.1'
 services:
   zswblogui:
     #please change your local version
-    image: registry.cn-hangzhou.aliyuncs.com/zswblogui/zswblogui:latest-10
+    image: registry.cn-hangzhou.aliyuncs.com/zswblogui/zswblogui:latest-20
     restart: always
     container_name: zswblogui
     volumes:
