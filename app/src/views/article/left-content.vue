@@ -74,8 +74,8 @@
             <section class="article typo">
               <div class="article-entry">
                 <div class="content-body">
-                  <el-image class="articleImage" :fit="scale-down" :src="item.coverImage"></el-image>
-                  <p class="article-content" v-html="item.content">{{ item.content }}</p>
+                  <el-image class="articleImage" :src="item.coverImage"></el-image>
+                  <p class="article-content" v-html="item.content"></p>
                 </div>
                 <hr/>
                 <div class="readmore">

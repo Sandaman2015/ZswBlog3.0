@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="cont wow fadeInRight">
-            <ul>
-                <li v-if="messageList" v-for="(item,index) in messageList" :key="index">
+            <ul v-if="messageList" >
+                <li v-for="(item,index) in messageList" :key="index">
                     <div class="main-reply">
                         <div class="user-info">
                             <!-- 图片的路径 -->

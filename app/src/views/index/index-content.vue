@@ -69,7 +69,7 @@
                   </div>
                   <span class="source">{{ item.createDate|filterDate }}</span>
                   <h2 class="title">{{ item.title }}</h2>
-                  <span class="detail" v-html="item.content">{{ item.content }}</span>
+                  <span class="detail" v-html="item.content"></span>
                 </a>
               </el-col>
             </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="ols-body">
                       留言:
-                      <p class="ols-message-body" v-html="item.content">{{ item.content }}</p>
+                      <p class="ols-message-body" v-html="item.content"></p>
                     </div>
                   </div>
                 </swiper-slide>

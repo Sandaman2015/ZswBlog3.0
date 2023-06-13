@@ -204,18 +204,18 @@
                   p-id="5702" fill="#d81e06"></path>
             </svg>
             <span>公告</span></div>
-          <ul>
-            <li v-if="announcementList" v-for="(item,index) in announcementList" :key="index">
+          <ul  v-if="announcementList">
+            <li v-for="(item,index) in announcementList" :key="index">
               <p class="wow fadeInLeft announcement-p">
-              <p>{{ index + 1 }}、<span class="announcement-span" v-html="item.content">{{ item.content }}</span></p>
+              <p>{{ index + 1 }}、<span class="announcement-span" v-html="item.content"></span></p>
               </p>
             </li>
           </ul>
         </div>
         <div class="whitebg cloud">
           <div class="item-headline"><i class="fa fa-bars"></i><span>所有分类</span></div>
-          <ul class="category-list">
-            <a :href="'/web/category-details/'+item.id" v-if="categoryList" v-for="(item,index) in categoryList"
+          <ul class="category-list" v-if="categoryList">
+            <a :href="'/web/category-details/'+item.id"  v-for="(item,index) in categoryList"
                :key="index" class="wow fadeInLeft">{{ item.name }}</a>
           </ul>
         </div>
@@ -228,7 +228,6 @@
               </a>
               <div class="content">
                 <p class="comment" v-html="item.content">
-                  {{ item.content }}
                 </p>
                 <div class="name">
                   <span>{{ item.userName }}</span>

@@ -142,7 +142,7 @@ export default {
     // QQ登录
     qqLogin() {
       const params = {
-        callBackUrl: window.location.host + window.location.pathname
+        callBackUrl: window.location.host + "/api/front/user/login/qq/callback"
       };
       getQQLoginUrl(params).then(e => {
         this.callbackUrl = e.result;
