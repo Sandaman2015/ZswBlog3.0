@@ -8,7 +8,8 @@ module.exports = {
     },
     before: () => {}
   },
-  publicPath: "/",
+  productionSourceMap: false,
+  publicPath: "./",
   lintOnSave: false,
   chainWebpack: config => {
     config.plugin('html')
