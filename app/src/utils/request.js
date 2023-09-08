@@ -8,7 +8,7 @@ import {
 import config from '../config/config'
 // 过滤请求
 axios.interceptors.request.use(config => {
-  config.timeout = 10 * 1000 // 请求响应时间
+  config.timeout = 10 * 60 * 1000 // 请求响应时间
   config.headers = {
     'Content-Type': 'application/json; charset=utf-8'
   };

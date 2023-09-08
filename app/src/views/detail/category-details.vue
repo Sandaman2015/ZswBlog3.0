@@ -44,10 +44,10 @@
 <script>
 import {
   getCategoryById
-} from "../../api/category.api";
+} from "@/api/category.api";
 import {
   getArticlesPageByCategory
-} from "../../api/article.api";
+} from "@/api/article.api";
 
 export default {
   data() {

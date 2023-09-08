@@ -96,9 +96,8 @@
   </header>
 </template>
 <script>
-import {getQQLoginUrl, getQQLoginUserInfo} from "../api/login.api";
-import {clear, get, set} from "../utils/storage";
-import el from "element-ui/src/locale/lang/el";
+import {getQQLoginUrl, getQQLoginUserInfo} from "@/api/login.api";
+import {clear, get, set} from "@/utils/storage";
 
 export default {
   data() {

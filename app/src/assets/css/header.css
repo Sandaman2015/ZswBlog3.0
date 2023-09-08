@@ -1,208 +1,208 @@
 header {
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.15);
-  height: 70px;
-  z-index: 999;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+    height: 70px;
+    z-index: 999;
 }
 
 .box-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(80vw);
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(80vw);
+    margin: 0 auto;
 }
 
 .box-active {
-  position: fixed;
-  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.15);
-  background: #fff;
+    position: fixed;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
 }
 
 .box-active a,
 .box-active p,
 .box-active h1,
 .box-active h2 {
-  z-index: 99;
-  color: black;
+    z-index: 99;
+    color: black;
 }
 
 .logo {
-  font-size: 30px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #444444;
-  font-weight: 100;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #444444;
+    font-weight: 100;
 }
 
 .site-nav {
-  margin-left: 30%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: 30%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .site-nav ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
 }
 
 .site-nav ul:hover li:not(:hover) a {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
 .site-nav ul li {
-  position: relative;
-  padding: 15px 20px 15px 20px;
-  cursor: pointer;
+    position: relative;
+    padding: 15px 20px 15px 20px;
+    cursor: pointer;
 }
 
 .site-nav ul li::after {
-  position: absolute;
-  content: "";
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #3498db;
-  transform: scaleX(0);
-  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #3498db;
+    transform: scaleX(0);
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .site-nav ul li:hover::after,
 ul li.active::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 .site-nav ul li a {
-  position: relative;
-  display: flex;
-  color: black;
-  font-family: Lato, sans-serif;
-  text-decoration: none;
-  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    display: flex;
+    color: black;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .header-login {
-  margin-left: 10%;
+    margin-left: 10%;
 }
 
 .qqLogin {
-  display: inline-block;
-  line-height: 50px;
+    display: inline-block;
+    line-height: 50px;
 }
 
 .userImage {
-  margin-top: 15px;
-  border-radius: 50%;
+    margin-top: 15px;
+    border-radius: 50%;
 }
 
 .media-menu {
-  display: none;
+    display: none;
 }
 
 @media screen and (max-width: 475px) {
 
-  .cont {
-    width: 100% !important;
-  }
+    .cont {
+        width: 100% !important;
+    }
 
-  .box {
-    width: 100% !important;
-  }
+    .box {
+        width: 100% !important;
+    }
 
-  .site-nav {
-    display: none !important;
-  }
+    .site-nav {
+        display: none !important;
+    }
 
-  .head-login {
-    display: none !important;
-  }
+    .head-login {
+        display: none !important;
+    }
 
-  .hide {
-    display: none !important;
-  }
+    .hide {
+        display: none !important;
+    }
 
-  .show {
-    position: relative;
-    padding-left: 50px !important;
-    line-height: 100px !important;
-  }
+    .show {
+        position: relative;
+        padding-left: 50px !important;
+        line-height: 100px !important;
+    }
 
-  .el-tooltip {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+    .el-tooltip {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 
-  .media-menu {
-    display: flex;
-  }
+    .media-menu {
+        display: flex;
+    }
 
-  .fa-bars {
-    font-size: 28px;
-  }
+    .fa-bars {
+        font-size: 28px;
+    }
 
-  .menu {
-    position: relative;
-    line-height: 100px;
-    margin-left: 36%;
-    width: 100%;
-  }
+    .menu {
+        position: relative;
+        line-height: 100px;
+        margin-left: 36%;
+        width: 100%;
+    }
 
-  .menu img {
-    line-height: 100px;
-  }
+    .menu img {
+        line-height: 100px;
+    }
 
-  .mobile-menu {
-    display: inline-block;
-    position: relative;
-    width: 96%;
-    height: 270px;
-    z-index: 99999;
-    margin: 0px 2%;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+    .mobile-menu {
+        display: inline-block;
+        position: relative;
+        width: 96%;
+        height: 270px;
+        z-index: 99999;
+        margin: 0 2%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
-  .mobile-menu ul {
-    content: "";
-    display: table !important;
-    clear: both;
-    position: absolute;
-    width: 100%;
-  }
+    .mobile-menu ul {
+        content: "";
+        display: table !important;
+        clear: both;
+        position: absolute;
+        width: 100%;
+    }
 
-  .mobile-menu ul li {
-    padding: 0 !important;
-    height: 28px;
-    line-height: 28px;
-    margin: 15px 0;
-    transition: 0.5s;
-  }
+    .mobile-menu ul li {
+        padding: 0 !important;
+        height: 28px;
+        line-height: 28px;
+        margin: 15px 0;
+        transition: 0.5s;
+    }
 
-  .box-active .mobile-menu ul li a {
-    display: block;
-    color: #fff !important;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 400;
-    font-family: Microsoft YaHei;
-  }
+    .box-active .mobile-menu ul li a {
+        display: block;
+        color: #fff !important;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 400;
+        font-family: Microsoft YaHei;
+    }
 
-  .mobile-menu ul li a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 400;
-    font-family: Microsoft YaHei;
-  }
+    .mobile-menu ul li a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 400;
+        font-family: Microsoft YaHei;
+    }
 
-  .mobile-menu ul li img {
-    /* display: block; */
-    width: 22px;
-    height: 22px;
-    text-align: center;
-    vertical-align: middle;
-  }
+    .mobile-menu ul li img {
+        /* display: block; */
+        width: 22px;
+        height: 22px;
+        text-align: center;
+        vertical-align: middle;
+    }
 }

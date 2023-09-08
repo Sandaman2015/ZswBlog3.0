@@ -1,4 +1,3 @@
-import inputNumber from "element-ui/packages/input-number";
 
 /**
  * 获取缓存数据

@@ -262,26 +262,26 @@ marked.setOptions({
 import {
   getAllComment,
   addComment
-} from "../../api/comment.api";
+} from "@/api/comment.api";
 import {
   getDetailsConfig
-} from "../../api/common.api"
+} from "@/api/common.api"
 import {
   getArticleById,
   addArticleLike
-} from "../../api/article.api";
+} from "@/api/article.api";
 import {
   getAllCategory
-} from "../../api/category.api";
+} from "@/api/category.api";
 import {
   getPushAnnouncement
-} from "../../api/annocement.api";
+} from "@/api/annocement.api";
 import {
   getNearSaveMessage
-} from "../../api/message.api"
+} from "@/api/message.api"
 import {
   get
-} from "../../utils/storage";
+} from "@/utils/storage";
 import ipAddress from "../../components/ipaddress";
 
 export default {

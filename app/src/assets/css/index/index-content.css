@@ -153,7 +153,7 @@ video {
 
 .flipx {
     transform: scaleX(-1);
-    filter: FlipH;
+    /*filter: FlipH;*/
 }
 
 
@@ -214,8 +214,8 @@ video {
 .about-me > p {
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 16px;
     color: #777;
     line-height: 1.9em;
@@ -574,7 +574,7 @@ article .detail {
         width: 100%;
         margin: 0 auto;
         -webkit-overflow-scrolling: touch;
-        scroll-behavior: touch;
+        scroll-behavior: auto;
         background-color: #F9F9F9
     }
 

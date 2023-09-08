@@ -10,7 +10,7 @@
   .card-holder {
     z-index: 9999;
     position: fixed;
-    width: 0px;
+    width: 0;
     overflow: visible;
   }
   .card-holder::after{
