@@ -204,10 +204,10 @@
                   p-id="5702" fill="#d81e06"></path>
             </svg>
             <span>公告</span></div>
-          <ul  v-if="announcementList">
+          <ul v-if="announcementList">
             <li v-for="(item,index) in announcementList" :key="index">
               <p class="wow fadeInLeft announcement-p">
-              <p>{{ index + 1 }}、<span class="announcement-span" v-html="item.content"></span></p>
+                <p>{{ index + 1 }}、<span class="announcement-span" v-html="item.content"></span></p>
               </p>
             </li>
           </ul>
@@ -215,7 +215,7 @@
         <div class="whitebg cloud">
           <div class="item-headline"><i class="fa fa-bars"></i><span>所有分类</span></div>
           <ul class="category-list" v-if="categoryList">
-            <a :href="'/web/category-details/'+item.id"  v-for="(item,index) in categoryList"
+            <a :href="'/web/category-details/'+item.id" v-for="(item,index) in categoryList"
                :key="index" class="wow fadeInLeft">{{ item.name }}</a>
           </ul>
         </div>
@@ -329,8 +329,8 @@ export default {
     this.articleId = this.$route.params.id;
     this.article = {};
     this.initBackgroundImage();
-    this.getArticleDetailAndCategoryList();
     this.loadInitData();
+    this.getArticleDetailAndCategoryList();
   },
   methods: {
     initBackgroundImage() {
@@ -367,9 +367,6 @@ export default {
       await getAllCategory().then(e => {
         this.categoryList = e.result;
       });
-      await getAllComment(this.articleId, this.pageSize, this.pageIndex).then(e => {
-        this.commentList = e.result.data;
-      });
     },
     loadInitData() {
       getNearSaveMessage(5).then(e => {
@@ -378,6 +375,9 @@ export default {
       getPushAnnouncement().then(e => {
         this.announcementList = e.result;
       })
+      getAllComment(this.articleId, this.pageSize, this.pageIndex).then(e => {
+        this.commentList = e.result.data;
+      });
     },
     loadMoreComments(p) {
       if (p == null) {

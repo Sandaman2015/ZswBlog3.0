@@ -159,7 +159,7 @@ ul li.active::after {
     position: relative;
     width: 96%;
     height: 270px;
-    z-index: 99999999;
+    z-index: 99999;
     margin: 0px 2%;
     background-color: rgba(0, 0, 0, 0.8);
   }

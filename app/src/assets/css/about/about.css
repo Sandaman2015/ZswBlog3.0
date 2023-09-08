@@ -84,7 +84,7 @@
   }
   @media screen and (max-width: 475px) {
     .box-card {
-      z-index: 9999999;
+      z-index: 9999;
     }
   
     .card-wrapper:nth-child(1) {

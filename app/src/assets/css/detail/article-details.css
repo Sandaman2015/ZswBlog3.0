@@ -589,7 +589,7 @@ li[class="menu-item child"]:hover > a {
 }
 
 div[class="whitebg cloud about-me box-details box-details-active"] {
-    z-index: 99999;
+    z-index: 999;
     position: fixed;
     box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.15);
     top: 60px;

@@ -4,7 +4,7 @@
     <div class="nav_serch">
       <label class="search-wrap">
         <input type="text" name="title" autocomplete="off" id="keywords" lay-verify="required" placeholder="输入关键字搜索" />
-        <span class="search-icon" v-on:click="SerchArticle($event)">
+        <span class="search-icon" v-on:click="SearchArticle($event)">
           <i class="fa fa-search"></i>
         </span>
       </label>
@@ -131,7 +131,7 @@
         this.$emit("ReturnAllArticle");
       },
       // 搜索文章
-      SerchArticle(event) {
+      SearchArticle(event) {
         let inputText =
           event.target.parentElement.parentElement.childNodes[0].value;
         this.$emit("SearchArticle", inputText);

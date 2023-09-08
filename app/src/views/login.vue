@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import {parseUrl} from "../api/user.api";
-import {set} from "../utils/storage";
 
 export default {
   data() {
@@ -33,45 +31,7 @@ export default {
     };
   },
   mounted() {
-    let accessToken = window.location.hash.toString().substring(14, 46);
-    // 验证token字符有效
-    if (accessToken !== "" && accessToken.length === 32) {
-      let statusCode = window.location.search.substring(12);
-      const params = {
-        accessToken: accessToken,
-        statusCode: statusCode
-      };
-      parseUrl(params).then(e => {
-        // 判断是否登录成功
-        if (e.result.code === 200) {
-          this.userImage = e.result.user.portrait;
-          this.userId = e.result.user.id;
-          // 保存用户到localstorage
-          set("userImage", this.userImage);
-          set("userId", this.userId);
-          set("userEmail", e.result.user.email);
-          if (e.result.user.loginCount <= 1) {
-            this.$message({
-              message: "第一次访问建议先完善邮箱哦",
-              type: "success"
-            });
-            // 此处应该弹出完善邮箱的信息
-          } else {
-            this.$message({
-              message: "欢迎您，" + e.result.user.nickName,
-              type: "success"
-            });
-          }
-          console.log(e.result.url);
-          window.location.href = `http://${e.result.url}`;
-        } else {
-          this.$message({
-            message: e.result.msg,
-            type: "warning"
-          });
-        }
-      });
-    }
+
   }
 };
 </script>

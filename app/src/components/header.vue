@@ -37,7 +37,7 @@
             </div>
           </div>
           <div v-else>
-            <a :href="callbackUrl" target="blank">直接点击登录哦！</a>
+            <a :href="callbackUrl" target="_self" @click="loopGetUserInfo">直接点击登录哦！</a>
           </div>
           <a :href="callbackUrl" target="blank" class="qqLogin" slot="reference">
             <p id="userId" hidden>{{ userId }}</p>
@@ -96,8 +96,9 @@
   </header>
 </template>
 <script>
-import {getQQLoginUrl} from "../api/login.api";
-import {clear, get} from "../utils/storage";
+import {getQQLoginUrl, getQQLoginUserInfo} from "../api/login.api";
+import {clear, get, set} from "../utils/storage";
+import el from "element-ui/src/locale/lang/el";
 
 export default {
   data() {
@@ -108,17 +109,16 @@ export default {
       value: false,
       showMenu: this.isMobile(),
       menu: require("../assets/img/cc-menu.png"),
-      callbackUrl: ""
+      callbackUrl: "",
     };
   },
   created() {
-    this.qqLogin();
-    this.login();
+    this.loginCheck();
   },
   methods: {
     isMobile() {
       return navigator.userAgent.match(
-        `/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
+          `/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i`
       );
     },
     changeMenu() {
@@ -142,21 +142,55 @@ export default {
     // QQ登录
     qqLogin() {
       const params = {
-        callBackUrl: window.location.host + "/api/front/user/login/qq/callback"
+        requestPath: window.location.toString()
       };
       getQQLoginUrl(params).then(e => {
-        this.callbackUrl = e.result;
+        this.callbackUrl = e.result.generateUrl;
+        set("state", e.result.state)
+        set("requestFlag", e.result.requestFlag)
+        set("expireIn", e.result.expireIn)
+        console.log(e.result.expireIn, "Key过期时间");
       });
     },
-    login() {
-      let image = get("userImage");
-      let id = get("userId");
-      if (image !== null && id !== null && id !== 0) {
-        this.userId = id;
-        this.userImage = image.replace("%3A", ":");
+    loopGetUserInfo(){
+        const params = {
+          state: get("state")
+        }
+        getQQLoginUserInfo(params).then(e => {
+          // 判断是否登录成功
+          if (e.result.code === 200) {
+            this.userImage = e.result.user.portrait;
+            this.userId = e.result.user.id;
+            // 保存用户到localstorage
+            set("userImage", this.userImage);
+            set("userId", this.userId);
+            set("userEmail", e.result.user.email);
+            if (e.result.user.loginCount <= 1) {
+              this.$message({
+                message: "第一次访问建议先完善邮箱哦",
+                type: "success"
+              });
+              // 此处应该弹出完善邮箱的信息
+            } else {
+              this.$message({
+                message: "欢迎您，" + e.result.user.nickName,
+                type: "success"
+              });
+            }
+          }
+        })
+    },
+    loginCheck() {console.log(1);
+      if (get("userImage") && get("userId") && get("userEmail")) {
+        this.userImage =get("userImage")
+        this.userId = get("userId")
       } else {
-        this.userImage = require("../assets/img/qq.png");
-        this.userId = 0;
+        if (get("requestFlag") && new Date() <= new Date(get("expireIn"))){
+          this.loopGetUserInfo();
+        } else{
+          clear();
+          this.qqLogin();
+        }
       }
     }
   }
