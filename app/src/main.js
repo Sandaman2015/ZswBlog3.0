@@ -37,12 +37,13 @@ Vue.use(Viewer);
 Viewer.setDefaults({
   Options: { "inline": true, "button": true, "navbar": true, "title": true, "toolbar": true, "tooltip": true, "movable": true, "zoomable": true, "rotatable": true, "scalable": true, "transition": true, "fullscreen": true, "keyboard": true, "url": "data-source" }
 });
-// Vue音乐播放器组件
-import APlayer from '@moefe/vue-aplayer';
-Vue.use(APlayer, {
-  defaultCover: 'https://github.com/u3u.png',
-  productionTip: true,
-});
+// Vue音乐播放器组件，2023-09-09,因组件问题，后续移除该项目更新
+// import APlayer from '@moefe/vue-aplayer';
+// Vue.use(APlayer, {
+//   defaultCover: 'https://github.com/u3u.png',
+//   productionTip: true,
+// });
+
 
 // 关于页面的标签云
 import tagCloud from 'v-tag-cloud';
