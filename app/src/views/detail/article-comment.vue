@@ -198,7 +198,7 @@ export default {
               content: mainText,
               targetId: tId,
               targetUserId: tUserId,
-              location: returnCitySN["cip"],
+              // location: returnCitySN["cip"],
             };
             await addComment(param).then((e) => {
               if (e.result) {
@@ -298,7 +298,7 @@ export default {
               content: this.replyText,
               targetId: tId,
               targetUserId: tUserId,
-              location: returnCitySN["cip"],
+              // location: returnCitySN["cip"],
             };
             await addComment(param).then((e) => {
               if (e.result) {

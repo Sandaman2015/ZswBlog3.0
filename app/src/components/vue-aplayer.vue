@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { getMusicList } from "../api/common.api";
+import { getMusicList } from "@/api/common.api";
 export default {
   data() {
     return {
@@ -13,7 +13,7 @@ export default {
       songList: []
     };
   },
-  created() {
+  mounted() {
     this.init();
   },
   methods: {

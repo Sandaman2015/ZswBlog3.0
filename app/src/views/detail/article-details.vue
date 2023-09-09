@@ -452,7 +452,7 @@ export default {
               userId: parseInt(userId),
               articleId: this.articleId,
               content: this.comment,
-              location: returnCitySN["cip"]
+              // location: returnCitySN["cip"]
             };
             addComment(param).then(e => {
               if (e.result) {

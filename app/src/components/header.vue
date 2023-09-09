@@ -39,7 +39,7 @@
           <div v-else>
             <a :href="callbackUrl" target="_self" @click="loopGetUserInfo">直接点击登录哦！</a>
           </div>
-          <a :href="callbackUrl" target="blank" class="qqLogin" slot="reference">
+          <a :href="callbackUrl" target="_self" class="qqLogin" @click="loopGetUserInfo" slot="reference">
             <p id="userId" hidden>{{ userId }}</p>
             <img :src="userImage" alt="头像" class="userImage"/>
           </a>

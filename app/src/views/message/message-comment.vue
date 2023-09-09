@@ -164,7 +164,7 @@
                                 content: mainText,
                                 targetId: tId,
                                 targetUserId: tUserId,
-                                ip: returnCitySN["cip"]
+                                // ip: returnCitySN["cip"]
                             };
                             await addMessage(param).then(e => {
                                 if (e.result) {
@@ -259,7 +259,7 @@
                                 content: this.replyText,
                                 targetId: tId,
                                 targetUserId: tUserId,
-                                ip: returnCitySN["cip"]
+                                // ip: returnCitySN["cip"]
                             };
                             await addMessage(param).then(e => {
                                 if (e.result) {

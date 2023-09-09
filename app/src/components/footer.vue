@@ -24,7 +24,7 @@
               <a href="http://www.miit.gov.cn/">皖ICP备19012774号</a>
             </p>
             <p class="mt05">
-              Powered by .NET 5 on Docker
+              Powered by .NET 6 on Docker
             </p>
           </div>
         </div>
@@ -37,23 +37,10 @@
     data() {
       return {
         copyright: "Copyright",
-        footerText: "2019-2021 张晟玮 All rights reserved"
+        footerText: "2019-2023 张晟玮 All rights reserved"
       };
     },
     mounted() {
-      const script = document.createElement("script");
-      script.src =
-        "https://v1.cnzz.com/z_stat.php?id=1278706390&web_id=1278706390"; //友盟中的代码
-      script.language = "JavaScript";
-      document.getElementsByClassName("mt05")[1].appendChild(script);
-
-      const a = document.createElement("a");
-      a.href =
-        "https://web.umeng.com/main.php?c=site&a=frame&siteid=1278706390#!/1584922058639/site/overview/1/1278706390/2020-03-23/2020-03-23"; //友盟中的代码
-      a.title = "网站统计";
-      a.text = "网站统计";
-      a.style = "font-size:13px;color: #212220;";
-      document.getElementsByClassName("mt05")[1].appendChild(a);
     },
     watch: {
       $route() {

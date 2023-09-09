@@ -86,7 +86,7 @@
                 browser: this.getBrowser(),
                 userId: parseInt(userId),
                 content: this.message,
-                ip: returnCitySN["cip"]
+                // ip: returnCitySN["cip"]
               };
               await addMessage(param).then(e => {
                 if (e.result) {
