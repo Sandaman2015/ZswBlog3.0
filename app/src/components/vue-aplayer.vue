@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { getMusicList } from "@/api/common.api";
+import {getMusicList} from "@/api/common.api";
 export default {
   data() {
     return {
@@ -17,12 +17,12 @@ export default {
     this.init();
   },
   methods: {
-    async init() {
+    init() {
       this.flag = true;
       this.songList.length = 0;
-      await getMusicList().then(e=>{
-        this.songList=e.result;      
-      })      
+      getMusicList().then(e => {
+        this.songList = e.result;
+      })
     }
   }
 };
