@@ -3,19 +3,32 @@ name: Build and Deploy Docker Image to Alibaba Cloud
 on:
   push:
     branches:
-      - develop  # 触发分支，可根据需要修改为 dev 或其他分支
+      - develop
+  workflow_dispatch:
+    inputs:
+      build_version:
+        description: '指定构建版本号（默认 latest-N）'
+        required: false
+        type: string
 
 jobs:
   build-and-deploy:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
+    environment: develop
 
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
 
-      - name: 设置环境变量
-        run: echo "BUILD_VERSION=${{ github.sha }}" >> $GITHUB_ENV
+      - name: 设置构建版本号
+        id: set_build_version
+        run: |
+          if [ -z "${{ github.event.inputs.build_version }}" ]; then
+            echo "BUILD_VERSION=latest-${{ github.run_number }}" >> $GITHUB_ENV
+          else
+            echo "BUILD_VERSION=${{ github.event.inputs.build_version }}" >> $GITHUB_ENV
+          fi
 
       - name: 安装 Docker Buildx
         uses: docker/setup-buildx-action@v2
