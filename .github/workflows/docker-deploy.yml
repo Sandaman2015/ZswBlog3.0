@@ -16,6 +16,11 @@ jobs:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
     environment: develop
+    env:
+      LOCAL_REPO: zswblogui
+      REMOTE_REPO_NAME: zswblogui
+      DOCKERFILE_PATH: ./app/Dockerfile
+      BUILD_CONTEXT: ./app
 
     steps:
       - name: 检出代码
@@ -39,17 +44,37 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: registry.cn-hangzhou.aliyuncs.com
-      - name: 设置 Docker 构建参数
+
+      - name: 打印当前环境变量（调试用）
         run: |
-          echo "LOCAL_REPO=my-app" >> $GITHUB_ENV
-          echo "DOCKERFILE_PATH=./app/Dockerfile" >> $GITHUB_ENV
-          echo "BUILD_CONTEXT=./app" >> $GITHUB_ENV
-            - name: 构建 Docker 镜像
-              run: |
-                docker build \
-                  --tag ${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }} \
-                  --file ${{ env.DOCKERFILE_PATH }} \
-                  ${{ env.BUILD_CONTEXT }}
+          echo "======================="
+          echo " LOCAL_REPO        = ${{ env.LOCAL_REPO }}"
+          echo " REMOTE_REPO_NAME  = ${{ env.REMOTE_REPO_NAME }}"
+          echo " DOCKERFILE_PATH   = ${{ env.DOCKERFILE_PATH }}"
+          echo " BUILD_CONTEXT     = ${{ env.BUILD_CONTEXT }}"
+          echo " BUILD_VERSION     = ${{ env.BUILD_VERSION }}"
+          echo "======================="
+
+      - name: 打印当前目录结构（调试用）
+        run: |
+          echo "==> 当前工作目录内容："
+          ls -la ${{ env.BUILD_CONTEXT }}
+
+      - name: 检查 Dockerfile 是否存在
+        run: |
+          if [ -f "${{ env.DOCKERFILE_PATH }}" ]; then
+            echo "✅ Dockerfile 存在：${{ env.DOCKERFILE_PATH }}"
+          else
+            echo "❌ 错误：Dockerfile 不存在于路径：${{ env.DOCKERFILE_PATH }}" >&2
+            exit 1
+          fi
+
+      - name: 构建 Docker 镜像
+        run: |
+          docker build \
+            --tag ${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }} \
+            --file ${{ env.DOCKERFILE_PATH }} \
+            ${{ env.BUILD_CONTEXT }}
 
       - name: 打标签并推送到阿里云
         run: |
