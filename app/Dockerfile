@@ -16,7 +16,7 @@ WORKDIR /app
 
 # COPY . .
 
-RUN npm install --registry=https://registry.npm.taobao.org && npm update --registry=https://registry.npm.taobao.org && npm run build
+RUN npm install && npm update && npm run build
 
 # STEP 2: Setup
 FROM nginx:1.17
