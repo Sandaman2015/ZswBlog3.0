@@ -3,7 +3,7 @@ name: Build and Deploy Docker Image to Alibaba Cloud
 on:
   push:
     branches:
-      - main  # 触发分支，可根据需要修改为 dev 或其他分支
+      - develop  # 触发分支，可根据需要修改为 dev 或其他分支
 
 jobs:
   build-and-deploy:
