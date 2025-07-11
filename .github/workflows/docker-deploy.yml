@@ -78,10 +78,10 @@ jobs:
 
       - name: 打标签并推送到阿里云
         run: |
-          docker tag ${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }} registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}:${{ env.BUILD_VERSION }}
-          docker push registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}:${{ env.BUILD_VERSION }}
+          docker tag ${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }} registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}/${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }}
+          docker push registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}/${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }}
 
       - name: 清理本地镜像
         run: |
-          docker rmi registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}:${{ env.BUILD_VERSION }} || true
+          docker rmi registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}/${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }} || true
           docker image prune -af
