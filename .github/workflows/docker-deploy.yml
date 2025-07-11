@@ -1,0 +1,45 @@
+name: Build and Deploy Docker Image to Alibaba Cloud
+
+on:
+  push:
+    branches:
+      - main  # 触发分支，可根据需要修改为 dev 或其他分支
+
+jobs:
+  build-and-deploy:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 设置环境变量
+        run: echo "BUILD_VERSION=${{ github.sha }}" >> $GITHUB_ENV
+
+      - name: 安装 Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: 登录阿里云容器 Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: registry.cn-hangzhou.aliyuncs.com
+
+      - name: 构建 Docker 镜像
+        run: |
+          docker build \
+            --tag ${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }} \
+            --file ${{ env.DOCKERFILE_PATH }} \
+            ${{ env.BUILD_CONTEXT }}
+
+      - name: 打标签并推送到阿里云
+        run: |
+          docker tag ${{ env.LOCAL_REPO }}:${{ env.BUILD_VERSION }} registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}:${{ env.BUILD_VERSION }}
+          docker push registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}:${{ env.BUILD_VERSION }}
+
+      - name: 清理本地镜像
+        run: |
+          docker rmi registry.cn-hangzhou.aliyuncs.com/${{ env.REMOTE_REPO_NAME }}:${{ env.BUILD_VERSION }} || true
+          docker image prune -af
