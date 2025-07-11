@@ -1,7 +1,7 @@
 # ZswBlog3.0
 ZswBlog-UI3.0
 ### 项目概述
-该项目为ZswBlog前端页面，采用Vue2.0 + Element 开发，界面风格舒适，后端采用Dotnet 5.0 + C#开发
+该项目为ZswBlog前端页面，采用Vue2.0 + Element 开发，界面风格舒适，后端采用Dotnet 6.0 + C#开发
 
 该项目只适用于学习，不适合个人商业用途，请注意！
 

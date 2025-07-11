@@ -83,7 +83,7 @@
               </h4>
               <h4>
                 <strong>本文网址：</strong>
-                <span>http://www.zswblog.xyz/article-details/{{ article.id }}</span>
+                <span>http://zswblog.site/article-details/{{ article.id }}</span>
               </h4>
             </div>
             <p>温馨提示：本站所有文章，若非特别声明，均为原创，转载请注明作者及原文链接。</p>

@@ -37,7 +37,7 @@
     data() {
       return {
         copyright: "Copyright",
-        footerText: "2019-2023 张晟玮 All rights reserved"
+        footerText: "2019-2025 张晟玮 All rights reserved"
       };
     },
     mounted() {

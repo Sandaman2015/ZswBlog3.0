@@ -3,7 +3,7 @@
     <div>
       <div class="main animated zoomIn">
         <img src="../../assets/img/about-me.jpg" alt="图标" class="favicon animated rotateIn" />
-        <h1>Zsw</h1>
+        <h1>ZSW</h1>
         <p>追求自我,成为更完美！</p>
       </div>
       <div class="location">
@@ -31,14 +31,14 @@
         <h4>个人信息：</h4>
         <p class="about-me animated bounceInLeft">
           <span>
-            <br />年龄：23
+            <br />年龄：27
             <br />星座：双鱼座🐟
             <br />身高：181cm,我希望还能再长一点点！😊
             <br />体重：180我觉得我有信心减肥！-> ->170斤啦！2021-06-28 一个月已经减肥10斤啦！💪
             <br />颜值：59分吧,差一分及格吧!😎
             <br />爱好：女！！！！，记住我喜欢漂亮的女孩子！什么旅游,看电影,写代码,踢足球,打游戏啊都是小事😁
             <br />性格：开朗活泼以至于别人只记住了我经常笑的样子！😳
-            <br />专业：计算机应用技术🐰
+            <br />专业：计算机科学与技术🐰
             <br />对另一半想说的：该相遇的总会在生命中相遇，我是一个抓住机会不松手的人，所以你只要等着，等着我去找你，然后把你泡到手！哈哈哈哈😘
           </span>
         </p>
@@ -57,7 +57,8 @@
             <br />2020-11-10更新：今天定了个小目标，虽然冲刺不了大厂但是我觉得我可以冲刺大厂外包！！打工人！加油！💪
             <br />2021-05-12更新：今天和主管提出离职，很舍不得小伙伴们，但是未来的征途是星尘大海，该让自己脱离舒适圈了，迈出更大的一步💪
             <br />2021-06-28更新：和父亲聊了未来的生活，准备明天向人事正式提出离职，希望前途漫漫，大家各自安好！👌
-            <br />2023-05-31更新：这两年的时间里我收获了很多，也遇到了一个我很喜欢的人，但是因为异地我们很少见面，所以我决定继续提出离职，这次是返回家乡陪伴身边的人，希望平安顺心，和气生财！👌
+            <br />2023-05-31更新：这两年的时间里我收获了很多，也遇到了一个我很喜欢的人，但是因为异地我们很少见面，所以我决定继续提出离职，这次是返回家乡陪伴身边的人，希望平安顺心，和气生财！
+            <br />2025-07-11更新：这两年的时间里我遇到了大环境不好的情况，还好之前喜欢的人一直陪在我身边，准备明年结婚了，希望未来的我能摆脱水逆，勇往直前，坚信自己会成为想成为的人。
           </span>
         </p>
       </div>
@@ -65,13 +66,13 @@
         <div class="item">
           <el-tag type="danger" size="mini" effect="dark">Java</el-tag>
           <div class="pro">
-            <el-progress :text-inside="true" :stroke-width="20" :percentage="80"></el-progress>
+            <el-progress :text-inside="true" :stroke-width="20" :percentage="90"></el-progress>
           </div>
         </div>
         <div class="item">
           <el-tag type="success" size="mini" effect="dark">C#</el-tag>
           <div class="pro">
-            <el-progress :text-inside="true" :stroke-width="20" :percentage="70"></el-progress>
+            <el-progress :text-inside="true" :stroke-width="20" :percentage="60"></el-progress>
           </div>
         </div>
         <div class="item">
@@ -89,7 +90,7 @@
         <div class="item">
           <el-tag type="danger" size="mini" effect="dark">Mysql</el-tag>
           <div class="pro">
-            <el-progress :text-inside="true" :stroke-width="20" :percentage="70"></el-progress>
+            <el-progress :text-inside="true" :stroke-width="20" :percentage="80"></el-progress>
           </div>
         </div>
         <div class="item">

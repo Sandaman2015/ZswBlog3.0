@@ -73,7 +73,7 @@
       },
       onSubmit(formName) {
         this.$refs[formName].validate(valid => {
-          if (valid) {
+          if (valid && this.formInline.tagTitle !== "") {
             let sitetag = {
               title: this.formInline.tagTitle,
               operatorId: this.userId

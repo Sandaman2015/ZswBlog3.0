@@ -9,9 +9,9 @@
     <div @click="goToGithub" v-show="visiable" class="icons">
       <i class="icon fa fa-github" aria-hidden="true"></i>
     </div>
-    <div @click="playTour" v-show="visiable" class="icons">
+    <!-- <div @click="playTour" v-show="visiable" class="icons">
       <i class="icon el-icon-present"></i>
-    </div>
+    </div> -->
     <div @click="playLoading" v-show="visiable" class="icons">
       <i :class="icon"></i>
     </div>
@@ -30,8 +30,6 @@ export default {
       copyText: "欢迎访问zswblog博客!",
       scrollTop: null, // 初始化scrollTop
       visiable: false, // 默认不显示
-      aliPayImg: require("../assets/img/alipay.jpg"),
-      webchatPayImg: require("../assets/img/wxpay.jpg"),
     };
   },
   created() {
@@ -125,18 +123,18 @@ export default {
       this.$message.error("复制失败！");
     },
     playTour() {
-      this.$notify({
-        title: "感谢您的支持！",
-        dangerouslyUseHTMLString: true,
-        message:
-          "<img src=" +
-          this.aliPayImg +
-          " alt='支付宝' ><img src=" +
-          this.webchatPayImg +
-          " alt='微信' ><br/><span>本站获得的所有打赏均用于服务器的维护以及内容的添加,感谢您的支持!</span>",
-        duration: 0,
-        showClose: true,
-      });
+      // this.$notify({
+      //   title: "感谢您的支持！",
+      //   dangerouslyUseHTMLString: true,
+      //   message:
+      //     "<img src=" +
+      //     this.aliPayImg +
+      //     " alt='支付宝' ><img src=" +
+      //     this.webchatPayImg +
+      //     " alt='微信' ><br/><span>本站获得的所有打赏均用于服务器的维护以及内容的添加,感谢您的支持!</span>",
+      //   duration: 0,
+      //   showClose: true,
+      // });
     },
     playLoading() {
       this.$notify({

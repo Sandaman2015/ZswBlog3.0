@@ -6,7 +6,7 @@
       <h3>您需要的页面找不到了</h3>
       <h3>404</h3>
       <a href="/web/index">点我返回主页</a>
-      <p id="showText" v-html="showMsg">{{showMsg}}</p>
+      <p id="showText" v-html="showMsg"></p>
     </div>
   </div>
 </template>

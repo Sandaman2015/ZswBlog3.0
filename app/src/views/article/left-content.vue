@@ -15,7 +15,7 @@
                 </h2>
                 <div class="new-meta-box">
                   <div class="new-meta-item author">
-                    <el-tooltip class="item" effect="dark" content="打工人，打工魂，打工都是人上人！"
+                    <el-tooltip class="item" effect="dark" content="老乡，你点个star啊！"
                                 placement="left-start">
                       <a href="/web/index" rel="nofollow">
                         <img class="article-image" src="../../assets/img/icon-me.jpg"/>
@@ -87,9 +87,9 @@
                 </div>
               </div>
               <!-- 文章标签 -->
-              <div class="full-width auto-padding tags">
-                <a href="javascript:void(0)" rel="nofollow" v-if="item.tags"
-                   v-for="(tag,index) in item.tags"
+              <div class="full-width auto-padding tags" v-if="item.tags">
+                <a href="javascript:void(0)" rel="nofollow"
+                   v-for="tag in item.tags"
                    :key="tag.id">
                   &nbsp;
                   <i class="fa fa-tag"></i>
@@ -160,6 +160,11 @@ export default {
               this.pageIndex,
               this.categoryId
           ).then(e => {
+            if (e.result.length === 0) {
+              this.message = "没有更多了";
+              this.disabled = true;
+              return;
+            }
             for (let i = 0; i < e.result.length; i++) {
               // e.result.data[i].content = marked(e.result.data()[i].content);
               this.articleList.push(e.result[i]);

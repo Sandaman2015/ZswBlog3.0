@@ -1,12 +1,16 @@
 《ZswBlog 3.0开源前端》
 
-项目地址：http://www.zswblog.xyz
+项目地址：https://zswblog.site
 
 项目预览：
 
 ![](https://singleblog.oss-cn-beijing.aliyuncs.com/preview/index-preview.png)
 
 ![](https://singleblog.oss-cn-beijing.aliyuncs.com/preview/article-preview.png)
+
+2025-07-11 --------------------------------------------------------------------------------------3.2 记录
+
+1.更换站点到zswblog.site
 
 2021-09-17 --------------------------------------------------------------------------------------3.1.6记录
 

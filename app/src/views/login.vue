@@ -13,7 +13,7 @@
         <br>
         (If the page does not jump please click me back home)
       </a>
-      <p id="showText" v-html="showMsg">{{ showMsg }}</p>
+      <p id="showText" v-html="showMsg"></p>
     </div>
   </div>
 </template>
